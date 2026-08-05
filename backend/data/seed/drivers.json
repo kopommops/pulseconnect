@@ -1,0 +1,159 @@
+{
+  "source": "seed",
+  "data": [
+    {
+      "id": "VER",
+      "name": "Max Verstappen",
+      "num": 3,
+      "country": "NL",
+      "debut_season": 2015
+    },
+    {
+      "id": "HAD",
+      "name": "Isack Hadjar",
+      "num": 6,
+      "country": "FR",
+      "debut_season": 2025
+    },
+    {
+      "id": "LEC",
+      "name": "Charles Leclerc",
+      "num": 16,
+      "country": "MC",
+      "debut_season": 2018
+    },
+    {
+      "id": "HAM",
+      "name": "Lewis Hamilton",
+      "num": 44,
+      "country": "GB",
+      "debut_season": 2007
+    },
+    {
+      "id": "RUS",
+      "name": "George Russell",
+      "num": 63,
+      "country": "GB",
+      "debut_season": 2019
+    },
+    {
+      "id": "ANT",
+      "name": "Kimi Antonelli",
+      "num": 12,
+      "country": "IT",
+      "debut_season": 2025
+    },
+    {
+      "id": "NOR",
+      "name": "Lando Norris",
+      "num": 1,
+      "country": "GB",
+      "debut_season": 2019
+    },
+    {
+      "id": "PIA",
+      "name": "Oscar Piastri",
+      "num": 81,
+      "country": "AU",
+      "debut_season": 2023
+    },
+    {
+      "id": "ALO",
+      "name": "Fernando Alonso",
+      "num": 14,
+      "country": "ES",
+      "debut_season": 2001
+    },
+    {
+      "id": "STR",
+      "name": "Lance Stroll",
+      "num": 18,
+      "country": "CA",
+      "debut_season": 2017
+    },
+    {
+      "id": "GAS",
+      "name": "Pierre Gasly",
+      "num": 10,
+      "country": "FR",
+      "debut_season": 2017
+    },
+    {
+      "id": "COL",
+      "name": "Franco Colapinto",
+      "num": 43,
+      "country": "AR",
+      "debut_season": 2024
+    },
+    {
+      "id": "LAW",
+      "name": "Liam Lawson",
+      "num": 30,
+      "country": "NZ",
+      "debut_season": 2023
+    },
+    {
+      "id": "LIN",
+      "name": "Arvid Lindblad",
+      "num": 41,
+      "country": "GB",
+      "debut_season": 2026
+    },
+    {
+      "id": "OCO",
+      "name": "Esteban Ocon",
+      "num": 31,
+      "country": "FR",
+      "debut_season": 2016
+    },
+    {
+      "id": "BEA",
+      "name": "Oliver Bearman",
+      "num": 87,
+      "country": "GB",
+      "debut_season": 2024
+    },
+    {
+      "id": "HUL",
+      "name": "Nico Hulkenberg",
+      "num": 27,
+      "country": "DE",
+      "debut_season": 2010
+    },
+    {
+      "id": "BOR",
+      "name": "Gabriel Bortoleto",
+      "num": 5,
+      "country": "BR",
+      "debut_season": 2025
+    },
+    {
+      "id": "ALB",
+      "name": "Alex Albon",
+      "num": 23,
+      "country": "TH",
+      "debut_season": 2019
+    },
+    {
+      "id": "SAI",
+      "name": "Carlos Sainz",
+      "num": 55,
+      "country": "ES",
+      "debut_season": 2015
+    },
+    {
+      "id": "PER",
+      "name": "Sergio Perez",
+      "num": 11,
+      "country": "MX",
+      "debut_season": 2011
+    },
+    {
+      "id": "BOT",
+      "name": "Valtteri Bottas",
+      "num": 77,
+      "country": "FI",
+      "debut_season": 2013
+    }
+  ]
+}

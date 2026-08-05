@@ -1,0 +1,2070 @@
+{
+  "VER": {
+    "bahrain": {
+      "score": 63,
+      "predicted_delta_s": -0.766
+    },
+    "jeddah": {
+      "score": 75,
+      "predicted_delta_s": -1.391
+    },
+    "melbourne": {
+      "score": 58,
+      "predicted_delta_s": -0.473
+    },
+    "baku": {
+      "score": 73,
+      "predicted_delta_s": -1.328
+    },
+    "miami": {
+      "score": 66,
+      "predicted_delta_s": -0.943
+    },
+    "monaco": {
+      "score": 67,
+      "predicted_delta_s": -0.984
+    },
+    "catalunya": {
+      "score": 61,
+      "predicted_delta_s": -0.664
+    },
+    "montreal": {
+      "score": 67,
+      "predicted_delta_s": -0.947
+    },
+    "spielberg": {
+      "score": 64,
+      "predicted_delta_s": -0.812
+    },
+    "silverstone": {
+      "score": 60,
+      "predicted_delta_s": -0.56
+    },
+    "hungaroring": {
+      "score": 63,
+      "predicted_delta_s": -0.774
+    },
+    "spa-francorchamps": {
+      "score": 84,
+      "predicted_delta_s": -1.942
+    },
+    "zandvoort": {
+      "score": 65,
+      "predicted_delta_s": -0.848
+    },
+    "monza": {
+      "score": 66,
+      "predicted_delta_s": -0.908
+    },
+    "madring": {
+      "score": 71,
+      "predicted_delta_s": -1.198
+    },
+    "marina-bay": {
+      "score": 66,
+      "predicted_delta_s": -0.935
+    },
+    "suzuka": {
+      "score": 67,
+      "predicted_delta_s": -0.953
+    },
+    "lusail": {
+      "score": 63,
+      "predicted_delta_s": -0.756
+    },
+    "austin": {
+      "score": 72,
+      "predicted_delta_s": -1.276
+    },
+    "mexico-city": {
+      "score": 65,
+      "predicted_delta_s": -0.871
+    },
+    "interlagos": {
+      "score": 63,
+      "predicted_delta_s": -0.776
+    },
+    "las-vegas": {
+      "score": 66,
+      "predicted_delta_s": -0.914
+    },
+    "yas-marina": {
+      "score": 66,
+      "predicted_delta_s": -0.942
+    }
+  },
+  "HAD": {
+    "bahrain": {
+      "score": 45,
+      "predicted_delta_s": 0.257
+    },
+    "jeddah": {
+      "score": 48,
+      "predicted_delta_s": 0.102
+    },
+    "melbourne": {
+      "score": 45,
+      "predicted_delta_s": 0.274
+    },
+    "baku": {
+      "score": 49,
+      "predicted_delta_s": 0.047
+    },
+    "miami": {
+      "score": 44,
+      "predicted_delta_s": 0.296
+    },
+    "monaco": {
+      "score": 43,
+      "predicted_delta_s": 0.364
+    },
+    "catalunya": {
+      "score": 45,
+      "predicted_delta_s": 0.247
+    },
+    "montreal": {
+      "score": 46,
+      "predicted_delta_s": 0.167
+    },
+    "spielberg": {
+      "score": 48,
+      "predicted_delta_s": 0.059
+    },
+    "silverstone": {
+      "score": 49,
+      "predicted_delta_s": 0.055
+    },
+    "hungaroring": {
+      "score": 48,
+      "predicted_delta_s": 0.09
+    },
+    "spa-francorchamps": {
+      "score": 52,
+      "predicted_delta_s": -0.154
+    },
+    "zandvoort": {
+      "score": 54,
+      "predicted_delta_s": -0.263
+    },
+    "monza": {
+      "score": 46,
+      "predicted_delta_s": 0.181
+    },
+    "madring": {
+      "score": 44,
+      "predicted_delta_s": 0.32
+    },
+    "marina-bay": {
+      "score": 46,
+      "predicted_delta_s": 0.214
+    },
+    "suzuka": {
+      "score": 46,
+      "predicted_delta_s": 0.195
+    },
+    "lusail": {
+      "score": 43,
+      "predicted_delta_s": 0.354
+    },
+    "austin": {
+      "score": 44,
+      "predicted_delta_s": 0.297
+    },
+    "mexico-city": {
+      "score": 43,
+      "predicted_delta_s": 0.364
+    },
+    "interlagos": {
+      "score": 51,
+      "predicted_delta_s": -0.079
+    },
+    "las-vegas": {
+      "score": 55,
+      "predicted_delta_s": -0.309
+    },
+    "yas-marina": {
+      "score": 45,
+      "predicted_delta_s": 0.276
+    }
+  },
+  "LEC": {
+    "bahrain": {
+      "score": 59,
+      "predicted_delta_s": -0.548
+    },
+    "jeddah": {
+      "score": 63,
+      "predicted_delta_s": -0.749
+    },
+    "melbourne": {
+      "score": 61,
+      "predicted_delta_s": -0.658
+    },
+    "baku": {
+      "score": 63,
+      "predicted_delta_s": -0.758
+    },
+    "miami": {
+      "score": 62,
+      "predicted_delta_s": -0.686
+    },
+    "monaco": {
+      "score": 57,
+      "predicted_delta_s": -0.43
+    },
+    "catalunya": {
+      "score": 57,
+      "predicted_delta_s": -0.427
+    },
+    "montreal": {
+      "score": 60,
+      "predicted_delta_s": -0.605
+    },
+    "spielberg": {
+      "score": 60,
+      "predicted_delta_s": -0.557
+    },
+    "silverstone": {
+      "score": 61,
+      "predicted_delta_s": -0.637
+    },
+    "hungaroring": {
+      "score": 60,
+      "predicted_delta_s": -0.572
+    },
+    "spa-francorchamps": {
+      "score": 47,
+      "predicted_delta_s": 0.126
+    },
+    "zandvoort": {
+      "score": 56,
+      "predicted_delta_s": -0.374
+    },
+    "monza": {
+      "score": 61,
+      "predicted_delta_s": -0.625
+    },
+    "madring": {
+      "score": 64,
+      "predicted_delta_s": -0.826
+    },
+    "marina-bay": {
+      "score": 61,
+      "predicted_delta_s": -0.654
+    },
+    "suzuka": {
+      "score": 61,
+      "predicted_delta_s": -0.64
+    },
+    "lusail": {
+      "score": 56,
+      "predicted_delta_s": -0.37
+    },
+    "austin": {
+      "score": 66,
+      "predicted_delta_s": -0.898
+    },
+    "mexico-city": {
+      "score": 58,
+      "predicted_delta_s": -0.473
+    },
+    "interlagos": {
+      "score": 56,
+      "predicted_delta_s": -0.379
+    },
+    "las-vegas": {
+      "score": 61,
+      "predicted_delta_s": -0.619
+    },
+    "yas-marina": {
+      "score": 63,
+      "predicted_delta_s": -0.738
+    }
+  },
+  "HAM": {
+    "bahrain": {
+      "score": 58,
+      "predicted_delta_s": -0.484
+    },
+    "jeddah": {
+      "score": 61,
+      "predicted_delta_s": -0.643
+    },
+    "melbourne": {
+      "score": 59,
+      "predicted_delta_s": -0.552
+    },
+    "baku": {
+      "score": 61,
+      "predicted_delta_s": -0.651
+    },
+    "miami": {
+      "score": 60,
+      "predicted_delta_s": -0.608
+    },
+    "monaco": {
+      "score": 57,
+      "predicted_delta_s": -0.44
+    },
+    "catalunya": {
+      "score": 59,
+      "predicted_delta_s": -0.548
+    },
+    "montreal": {
+      "score": 62,
+      "predicted_delta_s": -0.673
+    },
+    "spielberg": {
+      "score": 57,
+      "predicted_delta_s": -0.417
+    },
+    "silverstone": {
+      "score": 60,
+      "predicted_delta_s": -0.585
+    },
+    "hungaroring": {
+      "score": 60,
+      "predicted_delta_s": -0.599
+    },
+    "spa-francorchamps": {
+      "score": 66,
+      "predicted_delta_s": -0.938
+    },
+    "zandvoort": {
+      "score": 58,
+      "predicted_delta_s": -0.465
+    },
+    "monza": {
+      "score": 58,
+      "predicted_delta_s": -0.481
+    },
+    "madring": {
+      "score": 62,
+      "predicted_delta_s": -0.68
+    },
+    "marina-bay": {
+      "score": 61,
+      "predicted_delta_s": -0.642
+    },
+    "suzuka": {
+      "score": 60,
+      "predicted_delta_s": -0.566
+    },
+    "lusail": {
+      "score": 58,
+      "predicted_delta_s": -0.494
+    },
+    "austin": {
+      "score": 63,
+      "predicted_delta_s": -0.753
+    },
+    "mexico-city": {
+      "score": 58,
+      "predicted_delta_s": -0.496
+    },
+    "interlagos": {
+      "score": 57,
+      "predicted_delta_s": -0.406
+    },
+    "las-vegas": {
+      "score": 60,
+      "predicted_delta_s": -0.603
+    },
+    "yas-marina": {
+      "score": 60,
+      "predicted_delta_s": -0.602
+    }
+  },
+  "RUS": {
+    "bahrain": {
+      "score": 55,
+      "predicted_delta_s": -0.287
+    },
+    "jeddah": {
+      "score": 56,
+      "predicted_delta_s": -0.337
+    },
+    "melbourne": {
+      "score": 56,
+      "predicted_delta_s": -0.356
+    },
+    "baku": {
+      "score": 56,
+      "predicted_delta_s": -0.346
+    },
+    "miami": {
+      "score": 57,
+      "predicted_delta_s": -0.406
+    },
+    "monaco": {
+      "score": 54,
+      "predicted_delta_s": -0.266
+    },
+    "catalunya": {
+      "score": 56,
+      "predicted_delta_s": -0.338
+    },
+    "montreal": {
+      "score": 56,
+      "predicted_delta_s": -0.355
+    },
+    "spielberg": {
+      "score": 55,
+      "predicted_delta_s": -0.29
+    },
+    "silverstone": {
+      "score": 55,
+      "predicted_delta_s": -0.319
+    },
+    "hungaroring": {
+      "score": 58,
+      "predicted_delta_s": -0.454
+    },
+    "spa-francorchamps": {
+      "score": 66,
+      "predicted_delta_s": -0.933
+    },
+    "zandvoort": {
+      "score": 56,
+      "predicted_delta_s": -0.337
+    },
+    "monza": {
+      "score": 56,
+      "predicted_delta_s": -0.365
+    },
+    "madring": {
+      "score": 54,
+      "predicted_delta_s": -0.261
+    },
+    "marina-bay": {
+      "score": 57,
+      "predicted_delta_s": -0.439
+    },
+    "suzuka": {
+      "score": 56,
+      "predicted_delta_s": -0.352
+    },
+    "lusail": {
+      "score": 54,
+      "predicted_delta_s": -0.271
+    },
+    "austin": {
+      "score": 54,
+      "predicted_delta_s": -0.223
+    },
+    "mexico-city": {
+      "score": 54,
+      "predicted_delta_s": -0.26
+    },
+    "interlagos": {
+      "score": 53,
+      "predicted_delta_s": -0.181
+    },
+    "las-vegas": {
+      "score": 61,
+      "predicted_delta_s": -0.659
+    },
+    "yas-marina": {
+      "score": 56,
+      "predicted_delta_s": -0.377
+    }
+  },
+  "ANT": {
+    "bahrain": {
+      "score": 58,
+      "predicted_delta_s": -0.446
+    },
+    "jeddah": {
+      "score": 63,
+      "predicted_delta_s": -0.732
+    },
+    "melbourne": {
+      "score": 58,
+      "predicted_delta_s": -0.471
+    },
+    "baku": {
+      "score": 64,
+      "predicted_delta_s": -0.786
+    },
+    "miami": {
+      "score": 61,
+      "predicted_delta_s": -0.615
+    },
+    "monaco": {
+      "score": 54,
+      "predicted_delta_s": -0.228
+    },
+    "catalunya": {
+      "score": 55,
+      "predicted_delta_s": -0.309
+    },
+    "montreal": {
+      "score": 61,
+      "predicted_delta_s": -0.66
+    },
+    "spielberg": {
+      "score": 62,
+      "predicted_delta_s": -0.706
+    },
+    "silverstone": {
+      "score": 65,
+      "predicted_delta_s": -0.836
+    },
+    "hungaroring": {
+      "score": 60,
+      "predicted_delta_s": -0.572
+    },
+    "spa-francorchamps": {
+      "score": 59,
+      "predicted_delta_s": -0.542
+    },
+    "zandvoort": {
+      "score": 58,
+      "predicted_delta_s": -0.489
+    },
+    "monza": {
+      "score": 55,
+      "predicted_delta_s": -0.315
+    },
+    "madring": {
+      "score": 62,
+      "predicted_delta_s": -0.702
+    },
+    "marina-bay": {
+      "score": 60,
+      "predicted_delta_s": -0.606
+    },
+    "suzuka": {
+      "score": 62,
+      "predicted_delta_s": -0.686
+    },
+    "lusail": {
+      "score": 54,
+      "predicted_delta_s": -0.252
+    },
+    "austin": {
+      "score": 64,
+      "predicted_delta_s": -0.797
+    },
+    "mexico-city": {
+      "score": 56,
+      "predicted_delta_s": -0.371
+    },
+    "interlagos": {
+      "score": 56,
+      "predicted_delta_s": -0.37
+    },
+    "las-vegas": {
+      "score": 60,
+      "predicted_delta_s": -0.565
+    },
+    "yas-marina": {
+      "score": 59,
+      "predicted_delta_s": -0.506
+    }
+  },
+  "NOR": {
+    "bahrain": {
+      "score": 58,
+      "predicted_delta_s": -0.446
+    },
+    "jeddah": {
+      "score": 57,
+      "predicted_delta_s": -0.417
+    },
+    "melbourne": {
+      "score": 58,
+      "predicted_delta_s": -0.46
+    },
+    "baku": {
+      "score": 57,
+      "predicted_delta_s": -0.425
+    },
+    "miami": {
+      "score": 60,
+      "predicted_delta_s": -0.589
+    },
+    "monaco": {
+      "score": 56,
+      "predicted_delta_s": -0.358
+    },
+    "catalunya": {
+      "score": 57,
+      "predicted_delta_s": -0.403
+    },
+    "montreal": {
+      "score": 58,
+      "predicted_delta_s": -0.454
+    },
+    "spielberg": {
+      "score": 57,
+      "predicted_delta_s": -0.439
+    },
+    "silverstone": {
+      "score": 59,
+      "predicted_delta_s": -0.524
+    },
+    "hungaroring": {
+      "score": 59,
+      "predicted_delta_s": -0.547
+    },
+    "spa-francorchamps": {
+      "score": 59,
+      "predicted_delta_s": -0.519
+    },
+    "zandvoort": {
+      "score": 57,
+      "predicted_delta_s": -0.39
+    },
+    "monza": {
+      "score": 58,
+      "predicted_delta_s": -0.474
+    },
+    "madring": {
+      "score": 58,
+      "predicted_delta_s": -0.479
+    },
+    "marina-bay": {
+      "score": 61,
+      "predicted_delta_s": -0.616
+    },
+    "suzuka": {
+      "score": 59,
+      "predicted_delta_s": -0.539
+    },
+    "lusail": {
+      "score": 61,
+      "predicted_delta_s": -0.63
+    },
+    "austin": {
+      "score": 57,
+      "predicted_delta_s": -0.423
+    },
+    "mexico-city": {
+      "score": 57,
+      "predicted_delta_s": -0.401
+    },
+    "interlagos": {
+      "score": 54,
+      "predicted_delta_s": -0.264
+    },
+    "las-vegas": {
+      "score": 58,
+      "predicted_delta_s": -0.469
+    },
+    "yas-marina": {
+      "score": 60,
+      "predicted_delta_s": -0.59
+    }
+  },
+  "PIA": {
+    "bahrain": {
+      "score": 58,
+      "predicted_delta_s": -0.452
+    },
+    "jeddah": {
+      "score": 57,
+      "predicted_delta_s": -0.401
+    },
+    "melbourne": {
+      "score": 59,
+      "predicted_delta_s": -0.51
+    },
+    "baku": {
+      "score": 56,
+      "predicted_delta_s": -0.387
+    },
+    "miami": {
+      "score": 58,
+      "predicted_delta_s": -0.497
+    },
+    "monaco": {
+      "score": 54,
+      "predicted_delta_s": -0.223
+    },
+    "catalunya": {
+      "score": 58,
+      "predicted_delta_s": -0.449
+    },
+    "montreal": {
+      "score": 58,
+      "predicted_delta_s": -0.475
+    },
+    "spielberg": {
+      "score": 58,
+      "predicted_delta_s": -0.486
+    },
+    "silverstone": {
+      "score": 58,
+      "predicted_delta_s": -0.463
+    },
+    "hungaroring": {
+      "score": 60,
+      "predicted_delta_s": -0.585
+    },
+    "spa-francorchamps": {
+      "score": 66,
+      "predicted_delta_s": -0.919
+    },
+    "zandvoort": {
+      "score": 58,
+      "predicted_delta_s": -0.453
+    },
+    "monza": {
+      "score": 59,
+      "predicted_delta_s": -0.527
+    },
+    "madring": {
+      "score": 57,
+      "predicted_delta_s": -0.413
+    },
+    "marina-bay": {
+      "score": 58,
+      "predicted_delta_s": -0.493
+    },
+    "suzuka": {
+      "score": 59,
+      "predicted_delta_s": -0.505
+    },
+    "lusail": {
+      "score": 62,
+      "predicted_delta_s": -0.718
+    },
+    "austin": {
+      "score": 56,
+      "predicted_delta_s": -0.341
+    },
+    "mexico-city": {
+      "score": 56,
+      "predicted_delta_s": -0.378
+    },
+    "interlagos": {
+      "score": 54,
+      "predicted_delta_s": -0.274
+    },
+    "las-vegas": {
+      "score": 61,
+      "predicted_delta_s": -0.665
+    },
+    "yas-marina": {
+      "score": 59,
+      "predicted_delta_s": -0.535
+    }
+  },
+  "ALO": {
+    "bahrain": {
+      "score": 45,
+      "predicted_delta_s": 0.259
+    },
+    "jeddah": {
+      "score": 45,
+      "predicted_delta_s": 0.228
+    },
+    "melbourne": {
+      "score": 46,
+      "predicted_delta_s": 0.21
+    },
+    "baku": {
+      "score": 45,
+      "predicted_delta_s": 0.244
+    },
+    "miami": {
+      "score": 43,
+      "predicted_delta_s": 0.361
+    },
+    "monaco": {
+      "score": 45,
+      "predicted_delta_s": 0.258
+    },
+    "catalunya": {
+      "score": 49,
+      "predicted_delta_s": 0.015
+    },
+    "montreal": {
+      "score": 47,
+      "predicted_delta_s": 0.154
+    },
+    "spielberg": {
+      "score": 44,
+      "predicted_delta_s": 0.302
+    },
+    "silverstone": {
+      "score": 42,
+      "predicted_delta_s": 0.416
+    },
+    "hungaroring": {
+      "score": 47,
+      "predicted_delta_s": 0.142
+    },
+    "spa-francorchamps": {
+      "score": 39,
+      "predicted_delta_s": 0.575
+    },
+    "zandvoort": {
+      "score": 50,
+      "predicted_delta_s": -0.036
+    },
+    "monza": {
+      "score": 45,
+      "predicted_delta_s": 0.225
+    },
+    "madring": {
+      "score": 42,
+      "predicted_delta_s": 0.393
+    },
+    "marina-bay": {
+      "score": 46,
+      "predicted_delta_s": 0.212
+    },
+    "suzuka": {
+      "score": 44,
+      "predicted_delta_s": 0.295
+    },
+    "lusail": {
+      "score": 45,
+      "predicted_delta_s": 0.267
+    },
+    "austin": {
+      "score": 44,
+      "predicted_delta_s": 0.327
+    },
+    "mexico-city": {
+      "score": 41,
+      "predicted_delta_s": 0.469
+    },
+    "interlagos": {
+      "score": 50,
+      "predicted_delta_s": -0.036
+    },
+    "las-vegas": {
+      "score": 45,
+      "predicted_delta_s": 0.267
+    },
+    "yas-marina": {
+      "score": 46,
+      "predicted_delta_s": 0.176
+    }
+  },
+  "STR": {
+    "bahrain": {
+      "score": 43,
+      "predicted_delta_s": 0.336
+    },
+    "jeddah": {
+      "score": 35,
+      "predicted_delta_s": 0.789
+    },
+    "melbourne": {
+      "score": 44,
+      "predicted_delta_s": 0.328
+    },
+    "baku": {
+      "score": 38,
+      "predicted_delta_s": 0.661
+    },
+    "miami": {
+      "score": 40,
+      "predicted_delta_s": 0.545
+    },
+    "monaco": {
+      "score": 43,
+      "predicted_delta_s": 0.389
+    },
+    "catalunya": {
+      "score": 44,
+      "predicted_delta_s": 0.306
+    },
+    "montreal": {
+      "score": 40,
+      "predicted_delta_s": 0.514
+    },
+    "spielberg": {
+      "score": 41,
+      "predicted_delta_s": 0.453
+    },
+    "silverstone": {
+      "score": 36,
+      "predicted_delta_s": 0.76
+    },
+    "hungaroring": {
+      "score": 42,
+      "predicted_delta_s": 0.426
+    },
+    "spa-francorchamps": {
+      "score": 35,
+      "predicted_delta_s": 0.815
+    },
+    "zandvoort": {
+      "score": 45,
+      "predicted_delta_s": 0.264
+    },
+    "monza": {
+      "score": 44,
+      "predicted_delta_s": 0.308
+    },
+    "madring": {
+      "score": 40,
+      "predicted_delta_s": 0.553
+    },
+    "marina-bay": {
+      "score": 39,
+      "predicted_delta_s": 0.558
+    },
+    "suzuka": {
+      "score": 34,
+      "predicted_delta_s": 0.849
+    },
+    "lusail": {
+      "score": 44,
+      "predicted_delta_s": 0.33
+    },
+    "austin": {
+      "score": 39,
+      "predicted_delta_s": 0.568
+    },
+    "mexico-city": {
+      "score": 40,
+      "predicted_delta_s": 0.539
+    },
+    "interlagos": {
+      "score": 44,
+      "predicted_delta_s": 0.295
+    },
+    "las-vegas": {
+      "score": 40,
+      "predicted_delta_s": 0.505
+    },
+    "yas-marina": {
+      "score": 44,
+      "predicted_delta_s": 0.288
+    }
+  },
+  "GAS": {
+    "bahrain": {
+      "score": 45,
+      "predicted_delta_s": 0.241
+    },
+    "jeddah": {
+      "score": 45,
+      "predicted_delta_s": 0.269
+    },
+    "melbourne": {
+      "score": 46,
+      "predicted_delta_s": 0.207
+    },
+    "baku": {
+      "score": 44,
+      "predicted_delta_s": 0.319
+    },
+    "miami": {
+      "score": 43,
+      "predicted_delta_s": 0.364
+    },
+    "monaco": {
+      "score": 44,
+      "predicted_delta_s": 0.317
+    },
+    "catalunya": {
+      "score": 47,
+      "predicted_delta_s": 0.121
+    },
+    "montreal": {
+      "score": 45,
+      "predicted_delta_s": 0.272
+    },
+    "spielberg": {
+      "score": 44,
+      "predicted_delta_s": 0.28
+    },
+    "silverstone": {
+      "score": 42,
+      "predicted_delta_s": 0.413
+    },
+    "hungaroring": {
+      "score": 45,
+      "predicted_delta_s": 0.242
+    },
+    "spa-francorchamps": {
+      "score": 36,
+      "predicted_delta_s": 0.724
+    },
+    "zandvoort": {
+      "score": 49,
+      "predicted_delta_s": 0.015
+    },
+    "monza": {
+      "score": 44,
+      "predicted_delta_s": 0.282
+    },
+    "madring": {
+      "score": 42,
+      "predicted_delta_s": 0.4
+    },
+    "marina-bay": {
+      "score": 44,
+      "predicted_delta_s": 0.324
+    },
+    "suzuka": {
+      "score": 43,
+      "predicted_delta_s": 0.36
+    },
+    "lusail": {
+      "score": 43,
+      "predicted_delta_s": 0.335
+    },
+    "austin": {
+      "score": 42,
+      "predicted_delta_s": 0.418
+    },
+    "mexico-city": {
+      "score": 42,
+      "predicted_delta_s": 0.408
+    },
+    "interlagos": {
+      "score": 49,
+      "predicted_delta_s": 0.021
+    },
+    "las-vegas": {
+      "score": 43,
+      "predicted_delta_s": 0.383
+    },
+    "yas-marina": {
+      "score": 46,
+      "predicted_delta_s": 0.183
+    }
+  },
+  "COL": {
+    "bahrain": {
+      "score": 43,
+      "predicted_delta_s": 0.35
+    },
+    "jeddah": {
+      "score": 39,
+      "predicted_delta_s": 0.606
+    },
+    "melbourne": {
+      "score": 44,
+      "predicted_delta_s": 0.318
+    },
+    "baku": {
+      "score": 40,
+      "predicted_delta_s": 0.547
+    },
+    "miami": {
+      "score": 41,
+      "predicted_delta_s": 0.492
+    },
+    "monaco": {
+      "score": 42,
+      "predicted_delta_s": 0.418
+    },
+    "catalunya": {
+      "score": 46,
+      "predicted_delta_s": 0.22
+    },
+    "montreal": {
+      "score": 41,
+      "predicted_delta_s": 0.486
+    },
+    "spielberg": {
+      "score": 41,
+      "predicted_delta_s": 0.454
+    },
+    "silverstone": {
+      "score": 39,
+      "predicted_delta_s": 0.561
+    },
+    "hungaroring": {
+      "score": 43,
+      "predicted_delta_s": 0.346
+    },
+    "spa-francorchamps": {
+      "score": 39,
+      "predicted_delta_s": 0.559
+    },
+    "zandvoort": {
+      "score": 44,
+      "predicted_delta_s": 0.299
+    },
+    "monza": {
+      "score": 44,
+      "predicted_delta_s": 0.326
+    },
+    "madring": {
+      "score": 40,
+      "predicted_delta_s": 0.527
+    },
+    "marina-bay": {
+      "score": 41,
+      "predicted_delta_s": 0.479
+    },
+    "suzuka": {
+      "score": 40,
+      "predicted_delta_s": 0.525
+    },
+    "lusail": {
+      "score": 38,
+      "predicted_delta_s": 0.665
+    },
+    "austin": {
+      "score": 39,
+      "predicted_delta_s": 0.558
+    },
+    "mexico-city": {
+      "score": 37,
+      "predicted_delta_s": 0.674
+    },
+    "interlagos": {
+      "score": 43,
+      "predicted_delta_s": 0.367
+    },
+    "las-vegas": {
+      "score": 44,
+      "predicted_delta_s": 0.289
+    },
+    "yas-marina": {
+      "score": 45,
+      "predicted_delta_s": 0.267
+    }
+  },
+  "LAW": {
+    "bahrain": {
+      "score": 44,
+      "predicted_delta_s": 0.328
+    },
+    "jeddah": {
+      "score": 39,
+      "predicted_delta_s": 0.567
+    },
+    "melbourne": {
+      "score": 46,
+      "predicted_delta_s": 0.207
+    },
+    "baku": {
+      "score": 42,
+      "predicted_delta_s": 0.432
+    },
+    "miami": {
+      "score": 38,
+      "predicted_delta_s": 0.612
+    },
+    "monaco": {
+      "score": 40,
+      "predicted_delta_s": 0.542
+    },
+    "catalunya": {
+      "score": 44,
+      "predicted_delta_s": 0.278
+    },
+    "montreal": {
+      "score": 39,
+      "predicted_delta_s": 0.587
+    },
+    "spielberg": {
+      "score": 41,
+      "predicted_delta_s": 0.477
+    },
+    "silverstone": {
+      "score": 38,
+      "predicted_delta_s": 0.638
+    },
+    "hungaroring": {
+      "score": 42,
+      "predicted_delta_s": 0.435
+    },
+    "spa-francorchamps": {
+      "score": 41,
+      "predicted_delta_s": 0.45
+    },
+    "zandvoort": {
+      "score": 43,
+      "predicted_delta_s": 0.389
+    },
+    "monza": {
+      "score": 44,
+      "predicted_delta_s": 0.296
+    },
+    "madring": {
+      "score": 39,
+      "predicted_delta_s": 0.58
+    },
+    "marina-bay": {
+      "score": 40,
+      "predicted_delta_s": 0.537
+    },
+    "suzuka": {
+      "score": 39,
+      "predicted_delta_s": 0.581
+    },
+    "lusail": {
+      "score": 38,
+      "predicted_delta_s": 0.64
+    },
+    "austin": {
+      "score": 39,
+      "predicted_delta_s": 0.564
+    },
+    "mexico-city": {
+      "score": 33,
+      "predicted_delta_s": 0.892
+    },
+    "interlagos": {
+      "score": 41,
+      "predicted_delta_s": 0.457
+    },
+    "las-vegas": {
+      "score": 42,
+      "predicted_delta_s": 0.434
+    },
+    "yas-marina": {
+      "score": 46,
+      "predicted_delta_s": 0.216
+    }
+  },
+  "LIN": {
+    "bahrain": {
+      "score": 44,
+      "predicted_delta_s": 0.289
+    },
+    "jeddah": {
+      "score": 45,
+      "predicted_delta_s": 0.265
+    },
+    "melbourne": {
+      "score": 45,
+      "predicted_delta_s": 0.262
+    },
+    "baku": {
+      "score": 44,
+      "predicted_delta_s": 0.313
+    },
+    "miami": {
+      "score": 42,
+      "predicted_delta_s": 0.405
+    },
+    "monaco": {
+      "score": 38,
+      "predicted_delta_s": 0.618
+    },
+    "catalunya": {
+      "score": 46,
+      "predicted_delta_s": 0.182
+    },
+    "montreal": {
+      "score": 44,
+      "predicted_delta_s": 0.298
+    },
+    "spielberg": {
+      "score": 44,
+      "predicted_delta_s": 0.329
+    },
+    "silverstone": {
+      "score": 42,
+      "predicted_delta_s": 0.441
+    },
+    "hungaroring": {
+      "score": 44,
+      "predicted_delta_s": 0.289
+    },
+    "spa-francorchamps": {
+      "score": 48,
+      "predicted_delta_s": 0.11
+    },
+    "zandvoort": {
+      "score": 47,
+      "predicted_delta_s": 0.146
+    },
+    "monza": {
+      "score": 44,
+      "predicted_delta_s": 0.315
+    },
+    "madring": {
+      "score": 42,
+      "predicted_delta_s": 0.418
+    },
+    "marina-bay": {
+      "score": 43,
+      "predicted_delta_s": 0.36
+    },
+    "suzuka": {
+      "score": 43,
+      "predicted_delta_s": 0.382
+    },
+    "lusail": {
+      "score": 52,
+      "predicted_delta_s": -0.158
+    },
+    "austin": {
+      "score": 42,
+      "predicted_delta_s": 0.4
+    },
+    "mexico-city": {
+      "score": 41,
+      "predicted_delta_s": 0.474
+    },
+    "interlagos": {
+      "score": 48,
+      "predicted_delta_s": 0.11
+    },
+    "las-vegas": {
+      "score": 44,
+      "predicted_delta_s": 0.284
+    },
+    "yas-marina": {
+      "score": 45,
+      "predicted_delta_s": 0.245
+    }
+  },
+  "OCO": {
+    "bahrain": {
+      "score": 43,
+      "predicted_delta_s": 0.349
+    },
+    "jeddah": {
+      "score": 38,
+      "predicted_delta_s": 0.622
+    },
+    "melbourne": {
+      "score": 44,
+      "predicted_delta_s": 0.326
+    },
+    "baku": {
+      "score": 38,
+      "predicted_delta_s": 0.625
+    },
+    "miami": {
+      "score": 40,
+      "predicted_delta_s": 0.53
+    },
+    "monaco": {
+      "score": 43,
+      "predicted_delta_s": 0.363
+    },
+    "catalunya": {
+      "score": 46,
+      "predicted_delta_s": 0.212
+    },
+    "montreal": {
+      "score": 41,
+      "predicted_delta_s": 0.496
+    },
+    "spielberg": {
+      "score": 42,
+      "predicted_delta_s": 0.437
+    },
+    "silverstone": {
+      "score": 39,
+      "predicted_delta_s": 0.603
+    },
+    "hungaroring": {
+      "score": 43,
+      "predicted_delta_s": 0.346
+    },
+    "spa-francorchamps": {
+      "score": 34,
+      "predicted_delta_s": 0.835
+    },
+    "zandvoort": {
+      "score": 45,
+      "predicted_delta_s": 0.232
+    },
+    "monza": {
+      "score": 44,
+      "predicted_delta_s": 0.331
+    },
+    "madring": {
+      "score": 39,
+      "predicted_delta_s": 0.579
+    },
+    "marina-bay": {
+      "score": 40,
+      "predicted_delta_s": 0.533
+    },
+    "suzuka": {
+      "score": 39,
+      "predicted_delta_s": 0.566
+    },
+    "lusail": {
+      "score": 40,
+      "predicted_delta_s": 0.547
+    },
+    "austin": {
+      "score": 38,
+      "predicted_delta_s": 0.642
+    },
+    "mexico-city": {
+      "score": 40,
+      "predicted_delta_s": 0.55
+    },
+    "interlagos": {
+      "score": 44,
+      "predicted_delta_s": 0.307
+    },
+    "las-vegas": {
+      "score": 42,
+      "predicted_delta_s": 0.424
+    },
+    "yas-marina": {
+      "score": 45,
+      "predicted_delta_s": 0.273
+    }
+  },
+  "BEA": {
+    "bahrain": {
+      "score": 40,
+      "predicted_delta_s": 0.506
+    },
+    "jeddah": {
+      "score": 46,
+      "predicted_delta_s": 0.184
+    },
+    "melbourne": {
+      "score": 41,
+      "predicted_delta_s": 0.49
+    },
+    "baku": {
+      "score": 42,
+      "predicted_delta_s": 0.416
+    },
+    "miami": {
+      "score": 38,
+      "predicted_delta_s": 0.632
+    },
+    "monaco": {
+      "score": 35,
+      "predicted_delta_s": 0.779
+    },
+    "catalunya": {
+      "score": 42,
+      "predicted_delta_s": 0.44
+    },
+    "montreal": {
+      "score": 42,
+      "predicted_delta_s": 0.41
+    },
+    "spielberg": {
+      "score": 40,
+      "predicted_delta_s": 0.522
+    },
+    "silverstone": {
+      "score": 37,
+      "predicted_delta_s": 0.686
+    },
+    "hungaroring": {
+      "score": 34,
+      "predicted_delta_s": 0.868
+    },
+    "spa-francorchamps": {
+      "score": 41,
+      "predicted_delta_s": 0.489
+    },
+    "zandvoort": {
+      "score": 42,
+      "predicted_delta_s": 0.427
+    },
+    "monza": {
+      "score": 42,
+      "predicted_delta_s": 0.425
+    },
+    "madring": {
+      "score": 37,
+      "predicted_delta_s": 0.673
+    },
+    "marina-bay": {
+      "score": 41,
+      "predicted_delta_s": 0.497
+    },
+    "suzuka": {
+      "score": 37,
+      "predicted_delta_s": 0.677
+    },
+    "lusail": {
+      "score": 32,
+      "predicted_delta_s": 0.995
+    },
+    "austin": {
+      "score": 40,
+      "predicted_delta_s": 0.537
+    },
+    "mexico-city": {
+      "score": 44,
+      "predicted_delta_s": 0.318
+    },
+    "interlagos": {
+      "score": 49,
+      "predicted_delta_s": 0.019
+    },
+    "las-vegas": {
+      "score": 44,
+      "predicted_delta_s": 0.315
+    },
+    "yas-marina": {
+      "score": 41,
+      "predicted_delta_s": 0.458
+    }
+  },
+  "HUL": {
+    "bahrain": {
+      "score": 44,
+      "predicted_delta_s": 0.327
+    },
+    "jeddah": {
+      "score": 40,
+      "predicted_delta_s": 0.547
+    },
+    "melbourne": {
+      "score": 44,
+      "predicted_delta_s": 0.284
+    },
+    "baku": {
+      "score": 41,
+      "predicted_delta_s": 0.454
+    },
+    "miami": {
+      "score": 42,
+      "predicted_delta_s": 0.395
+    },
+    "monaco": {
+      "score": 44,
+      "predicted_delta_s": 0.328
+    },
+    "catalunya": {
+      "score": 45,
+      "predicted_delta_s": 0.223
+    },
+    "montreal": {
+      "score": 42,
+      "predicted_delta_s": 0.408
+    },
+    "spielberg": {
+      "score": 43,
+      "predicted_delta_s": 0.386
+    },
+    "silverstone": {
+      "score": 41,
+      "predicted_delta_s": 0.449
+    },
+    "hungaroring": {
+      "score": 43,
+      "predicted_delta_s": 0.354
+    },
+    "spa-francorchamps": {
+      "score": 40,
+      "predicted_delta_s": 0.547
+    },
+    "zandvoort": {
+      "score": 44,
+      "predicted_delta_s": 0.316
+    },
+    "monza": {
+      "score": 43,
+      "predicted_delta_s": 0.351
+    },
+    "madring": {
+      "score": 42,
+      "predicted_delta_s": 0.427
+    },
+    "marina-bay": {
+      "score": 43,
+      "predicted_delta_s": 0.388
+    },
+    "suzuka": {
+      "score": 42,
+      "predicted_delta_s": 0.433
+    },
+    "lusail": {
+      "score": 37,
+      "predicted_delta_s": 0.683
+    },
+    "austin": {
+      "score": 42,
+      "predicted_delta_s": 0.408
+    },
+    "mexico-city": {
+      "score": 40,
+      "predicted_delta_s": 0.534
+    },
+    "interlagos": {
+      "score": 44,
+      "predicted_delta_s": 0.306
+    },
+    "las-vegas": {
+      "score": 43,
+      "predicted_delta_s": 0.341
+    },
+    "yas-marina": {
+      "score": 45,
+      "predicted_delta_s": 0.25
+    }
+  },
+  "BOR": {
+    "bahrain": {
+      "score": 44,
+      "predicted_delta_s": 0.302
+    },
+    "jeddah": {
+      "score": 34,
+      "predicted_delta_s": 0.855
+    },
+    "melbourne": {
+      "score": 46,
+      "predicted_delta_s": 0.174
+    },
+    "baku": {
+      "score": 40,
+      "predicted_delta_s": 0.506
+    },
+    "miami": {
+      "score": 39,
+      "predicted_delta_s": 0.58
+    },
+    "monaco": {
+      "score": 39,
+      "predicted_delta_s": 0.584
+    },
+    "catalunya": {
+      "score": 45,
+      "predicted_delta_s": 0.242
+    },
+    "montreal": {
+      "score": 40,
+      "predicted_delta_s": 0.534
+    },
+    "spielberg": {
+      "score": 41,
+      "predicted_delta_s": 0.451
+    },
+    "silverstone": {
+      "score": 38,
+      "predicted_delta_s": 0.618
+    },
+    "hungaroring": {
+      "score": 42,
+      "predicted_delta_s": 0.399
+    },
+    "spa-francorchamps": {
+      "score": 47,
+      "predicted_delta_s": 0.121
+    },
+    "zandvoort": {
+      "score": 43,
+      "predicted_delta_s": 0.37
+    },
+    "monza": {
+      "score": 45,
+      "predicted_delta_s": 0.269
+    },
+    "madring": {
+      "score": 39,
+      "predicted_delta_s": 0.566
+    },
+    "marina-bay": {
+      "score": 40,
+      "predicted_delta_s": 0.531
+    },
+    "suzuka": {
+      "score": 40,
+      "predicted_delta_s": 0.55
+    },
+    "lusail": {
+      "score": 40,
+      "predicted_delta_s": 0.555
+    },
+    "austin": {
+      "score": 40,
+      "predicted_delta_s": 0.542
+    },
+    "mexico-city": {
+      "score": 35,
+      "predicted_delta_s": 0.806
+    },
+    "interlagos": {
+      "score": 42,
+      "predicted_delta_s": 0.41
+    },
+    "las-vegas": {
+      "score": 42,
+      "predicted_delta_s": 0.4
+    },
+    "yas-marina": {
+      "score": 46,
+      "predicted_delta_s": 0.184
+    }
+  },
+  "ALB": {
+    "bahrain": {
+      "score": 43,
+      "predicted_delta_s": 0.36
+    },
+    "jeddah": {
+      "score": 38,
+      "predicted_delta_s": 0.65
+    },
+    "melbourne": {
+      "score": 43,
+      "predicted_delta_s": 0.341
+    },
+    "baku": {
+      "score": 41,
+      "predicted_delta_s": 0.482
+    },
+    "miami": {
+      "score": 41,
+      "predicted_delta_s": 0.46
+    },
+    "monaco": {
+      "score": 43,
+      "predicted_delta_s": 0.344
+    },
+    "catalunya": {
+      "score": 44,
+      "predicted_delta_s": 0.324
+    },
+    "montreal": {
+      "score": 39,
+      "predicted_delta_s": 0.578
+    },
+    "spielberg": {
+      "score": 41,
+      "predicted_delta_s": 0.464
+    },
+    "silverstone": {
+      "score": 40,
+      "predicted_delta_s": 0.508
+    },
+    "hungaroring": {
+      "score": 41,
+      "predicted_delta_s": 0.458
+    },
+    "spa-francorchamps": {
+      "score": 41,
+      "predicted_delta_s": 0.486
+    },
+    "zandvoort": {
+      "score": 44,
+      "predicted_delta_s": 0.324
+    },
+    "monza": {
+      "score": 44,
+      "predicted_delta_s": 0.31
+    },
+    "madring": {
+      "score": 41,
+      "predicted_delta_s": 0.472
+    },
+    "marina-bay": {
+      "score": 41,
+      "predicted_delta_s": 0.479
+    },
+    "suzuka": {
+      "score": 40,
+      "predicted_delta_s": 0.521
+    },
+    "lusail": {
+      "score": 43,
+      "predicted_delta_s": 0.387
+    },
+    "austin": {
+      "score": 39,
+      "predicted_delta_s": 0.558
+    },
+    "mexico-city": {
+      "score": 40,
+      "predicted_delta_s": 0.529
+    },
+    "interlagos": {
+      "score": 42,
+      "predicted_delta_s": 0.399
+    },
+    "las-vegas": {
+      "score": 44,
+      "predicted_delta_s": 0.333
+    },
+    "yas-marina": {
+      "score": 44,
+      "predicted_delta_s": 0.318
+    }
+  },
+  "SAI": {
+    "bahrain": {
+      "score": 54,
+      "predicted_delta_s": -0.249
+    },
+    "jeddah": {
+      "score": 59,
+      "predicted_delta_s": -0.529
+    },
+    "melbourne": {
+      "score": 54,
+      "predicted_delta_s": -0.269
+    },
+    "baku": {
+      "score": 59,
+      "predicted_delta_s": -0.537
+    },
+    "miami": {
+      "score": 55,
+      "predicted_delta_s": -0.332
+    },
+    "monaco": {
+      "score": 53,
+      "predicted_delta_s": -0.175
+    },
+    "catalunya": {
+      "score": 53,
+      "predicted_delta_s": -0.192
+    },
+    "montreal": {
+      "score": 51,
+      "predicted_delta_s": -0.072
+    },
+    "spielberg": {
+      "score": 50,
+      "predicted_delta_s": -0.007
+    },
+    "silverstone": {
+      "score": 53,
+      "predicted_delta_s": -0.187
+    },
+    "hungaroring": {
+      "score": 53,
+      "predicted_delta_s": -0.202
+    },
+    "spa-francorchamps": {
+      "score": 54,
+      "predicted_delta_s": -0.278
+    },
+    "zandvoort": {
+      "score": 53,
+      "predicted_delta_s": -0.192
+    },
+    "monza": {
+      "score": 54,
+      "predicted_delta_s": -0.276
+    },
+    "madring": {
+      "score": 57,
+      "predicted_delta_s": -0.431
+    },
+    "marina-bay": {
+      "score": 56,
+      "predicted_delta_s": -0.371
+    },
+    "suzuka": {
+      "score": 53,
+      "predicted_delta_s": -0.18
+    },
+    "lusail": {
+      "score": 54,
+      "predicted_delta_s": -0.252
+    },
+    "austin": {
+      "score": 56,
+      "predicted_delta_s": -0.374
+    },
+    "mexico-city": {
+      "score": 52,
+      "predicted_delta_s": -0.165
+    },
+    "interlagos": {
+      "score": 51,
+      "predicted_delta_s": -0.087
+    },
+    "las-vegas": {
+      "score": 56,
+      "predicted_delta_s": -0.357
+    },
+    "yas-marina": {
+      "score": 55,
+      "predicted_delta_s": -0.333
+    }
+  },
+  "PER": {
+    "bahrain": {
+      "score": 56,
+      "predicted_delta_s": -0.338
+    },
+    "jeddah": {
+      "score": 66,
+      "predicted_delta_s": -0.894
+    },
+    "melbourne": {
+      "score": 57,
+      "predicted_delta_s": -0.419
+    },
+    "baku": {
+      "score": 66,
+      "predicted_delta_s": -0.922
+    },
+    "miami": {
+      "score": 55,
+      "predicted_delta_s": -0.333
+    },
+    "monaco": {
+      "score": 54,
+      "predicted_delta_s": -0.256
+    },
+    "catalunya": {
+      "score": 55,
+      "predicted_delta_s": -0.299
+    },
+    "montreal": {
+      "score": 49,
+      "predicted_delta_s": 0.018
+    },
+    "spielberg": {
+      "score": 46,
+      "predicted_delta_s": 0.206
+    },
+    "silverstone": {
+      "score": 53,
+      "predicted_delta_s": -0.174
+    },
+    "hungaroring": {
+      "score": 53,
+      "predicted_delta_s": -0.216
+    },
+    "spa-francorchamps": {
+      "score": 56,
+      "predicted_delta_s": -0.357
+    },
+    "zandvoort": {
+      "score": 55,
+      "predicted_delta_s": -0.317
+    },
+    "monza": {
+      "score": 55,
+      "predicted_delta_s": -0.312
+    },
+    "madring": {
+      "score": 61,
+      "predicted_delta_s": -0.637
+    },
+    "marina-bay": {
+      "score": 58,
+      "predicted_delta_s": -0.446
+    },
+    "suzuka": {
+      "score": 53,
+      "predicted_delta_s": -0.2
+    },
+    "lusail": {
+      "score": 54,
+      "predicted_delta_s": -0.248
+    },
+    "austin": {
+      "score": 60,
+      "predicted_delta_s": -0.603
+    },
+    "mexico-city": {
+      "score": 54,
+      "predicted_delta_s": -0.229
+    },
+    "interlagos": {
+      "score": 53,
+      "predicted_delta_s": -0.181
+    },
+    "las-vegas": {
+      "score": 58,
+      "predicted_delta_s": -0.455
+    },
+    "yas-marina": {
+      "score": 58,
+      "predicted_delta_s": -0.477
+    }
+  },
+  "BOT": {
+    "bahrain": {
+      "score": 42,
+      "predicted_delta_s": 0.403
+    },
+    "jeddah": {
+      "score": 35,
+      "predicted_delta_s": 0.823
+    },
+    "melbourne": {
+      "score": 41,
+      "predicted_delta_s": 0.46
+    },
+    "baku": {
+      "score": 36,
+      "predicted_delta_s": 0.749
+    },
+    "miami": {
+      "score": 37,
+      "predicted_delta_s": 0.682
+    },
+    "monaco": {
+      "score": 41,
+      "predicted_delta_s": 0.47
+    },
+    "catalunya": {
+      "score": 42,
+      "predicted_delta_s": 0.41
+    },
+    "montreal": {
+      "score": 41,
+      "predicted_delta_s": 0.477
+    },
+    "spielberg": {
+      "score": 43,
+      "predicted_delta_s": 0.347
+    },
+    "silverstone": {
+      "score": 33,
+      "predicted_delta_s": 0.893
+    },
+    "hungaroring": {
+      "score": 41,
+      "predicted_delta_s": 0.453
+    },
+    "spa-francorchamps": {
+      "score": 30,
+      "predicted_delta_s": 1.103
+    },
+    "zandvoort": {
+      "score": 44,
+      "predicted_delta_s": 0.317
+    },
+    "monza": {
+      "score": 43,
+      "predicted_delta_s": 0.352
+    },
+    "madring": {
+      "score": 38,
+      "predicted_delta_s": 0.635
+    },
+    "marina-bay": {
+      "score": 36,
+      "predicted_delta_s": 0.739
+    },
+    "suzuka": {
+      "score": 32,
+      "predicted_delta_s": 0.991
+    },
+    "lusail": {
+      "score": 42,
+      "predicted_delta_s": 0.439
+    },
+    "austin": {
+      "score": 39,
+      "predicted_delta_s": 0.603
+    },
+    "mexico-city": {
+      "score": 37,
+      "predicted_delta_s": 0.679
+    },
+    "interlagos": {
+      "score": 45,
+      "predicted_delta_s": 0.237
+    },
+    "las-vegas": {
+      "score": 30,
+      "predicted_delta_s": 1.073
+    },
+    "yas-marina": {
+      "score": 42,
+      "predicted_delta_s": 0.413
+    }
+  }
+}

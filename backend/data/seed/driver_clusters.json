@@ -1,0 +1,33 @@
+{
+  "labels": {
+    "0": "Smooth & Consistent",
+    "1": "Aggressive Attacker",
+    "2": "Technical Precision",
+    "3": "Raw Pace / High Variance"
+  },
+  "assignments": {
+    "VER": 3,
+    "HAD": 2,
+    "LEC": 3,
+    "HAM": 3,
+    "RUS": 1,
+    "ANT": 2,
+    "NOR": 1,
+    "PIA": 1,
+    "ALO": 3,
+    "STR": 0,
+    "GAS": 1,
+    "COL": 0,
+    "LAW": 2,
+    "LIN": 0,
+    "OCO": 2,
+    "BEA": 0,
+    "HUL": 2,
+    "BOR": 0,
+    "ALB": 1,
+    "SAI": 1,
+    "PER": 1,
+    "BOT": 1
+  },
+  "source": "seed"
+}

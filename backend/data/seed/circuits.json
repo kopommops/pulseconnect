@@ -1,0 +1,189 @@
+{
+  "source": "seed",
+  "data": [
+    {
+      "id": "bahrain",
+      "name": "Bahrain International Circuit",
+      "country": "Bahrain",
+      "type": "Balanced",
+      "length_km": 5.41,
+      "corners": 15
+    },
+    {
+      "id": "jeddah",
+      "name": "Jeddah Corniche Circuit",
+      "country": "Saudi Arabia",
+      "type": "Street",
+      "length_km": 6.17,
+      "corners": 27
+    },
+    {
+      "id": "melbourne",
+      "name": "Albert Park Circuit",
+      "country": "Australia",
+      "type": "Balanced",
+      "length_km": 5.28,
+      "corners": 14
+    },
+    {
+      "id": "baku",
+      "name": "Baku City Circuit",
+      "country": "Azerbaijan",
+      "type": "Street",
+      "length_km": 6.0,
+      "corners": 20
+    },
+    {
+      "id": "miami",
+      "name": "Miami International Autodrome",
+      "country": "USA",
+      "type": "Balanced",
+      "length_km": 5.41,
+      "corners": 19
+    },
+    {
+      "id": "monaco",
+      "name": "Circuit de Monaco",
+      "country": "Monaco",
+      "type": "Street",
+      "length_km": 3.34,
+      "corners": 19
+    },
+    {
+      "id": "catalunya",
+      "name": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "type": "Technical",
+      "length_km": 4.66,
+      "corners": 14
+    },
+    {
+      "id": "montreal",
+      "name": "Circuit Gilles Villeneuve",
+      "country": "Canada",
+      "type": "Mixed",
+      "length_km": 4.36,
+      "corners": 14
+    },
+    {
+      "id": "spielberg",
+      "name": "Red Bull Ring",
+      "country": "Austria",
+      "type": "Power",
+      "length_km": 4.32,
+      "corners": 10
+    },
+    {
+      "id": "silverstone",
+      "name": "Silverstone Circuit",
+      "country": "United Kingdom",
+      "type": "Balanced",
+      "length_km": 5.89,
+      "corners": 18
+    },
+    {
+      "id": "hungaroring",
+      "name": "Hungaroring",
+      "country": "Hungary",
+      "type": "Technical",
+      "length_km": 4.38,
+      "corners": 14
+    },
+    {
+      "id": "spa-francorchamps",
+      "name": "Circuit de Spa-Francorchamps",
+      "country": "Belgium",
+      "type": "High-Speed",
+      "length_km": 7.0,
+      "corners": 19
+    },
+    {
+      "id": "zandvoort",
+      "name": "Circuit Zandvoort",
+      "country": "Netherlands",
+      "type": "Technical",
+      "length_km": 4.26,
+      "corners": 14
+    },
+    {
+      "id": "monza",
+      "name": "Autodromo Nazionale Monza",
+      "country": "Italy",
+      "type": "Power",
+      "length_km": 5.79,
+      "corners": 11
+    },
+    {
+      "id": "madring",
+      "name": "Madrid In-Motion Ring",
+      "country": "Spain",
+      "type": "Balanced",
+      "length_km": 5.47,
+      "corners": 20
+    },
+    {
+      "id": "marina-bay",
+      "name": "Marina Bay Street Circuit",
+      "country": "Singapore",
+      "type": "Street",
+      "length_km": 4.94,
+      "corners": 19
+    },
+    {
+      "id": "suzuka",
+      "name": "Suzuka International Racing Course",
+      "country": "Japan",
+      "type": "Technical",
+      "length_km": 5.81,
+      "corners": 18
+    },
+    {
+      "id": "lusail",
+      "name": "Lusail International Circuit",
+      "country": "Qatar",
+      "type": "High-Speed",
+      "length_km": 5.38,
+      "corners": 16
+    },
+    {
+      "id": "austin",
+      "name": "Circuit of the Americas",
+      "country": "USA",
+      "type": "Mixed",
+      "length_km": 5.51,
+      "corners": 20
+    },
+    {
+      "id": "mexico-city",
+      "name": "Autodromo Hermanos Rodriguez",
+      "country": "Mexico",
+      "type": "Balanced",
+      "length_km": 4.3,
+      "corners": 17
+    },
+    {
+      "id": "interlagos",
+      "name": "Autodromo Jose Carlos Pace",
+      "country": "Brazil",
+      "type": "Mixed",
+      "length_km": 4.31,
+      "corners": 15
+    },
+    {
+      "id": "las-vegas",
+      "name": "Las Vegas Strip Circuit",
+      "country": "USA",
+      "type": "Power",
+      "length_km": 6.2,
+      "corners": 17
+    },
+    {
+      "id": "yas-marina",
+      "name": "Yas Marina Circuit",
+      "country": "Abu Dhabi",
+      "type": "Balanced",
+      "length_km": 5.28,
+      "corners": 16
+    }
+  ]
+}

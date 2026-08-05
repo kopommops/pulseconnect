@@ -1,0 +1,137 @@
+{
+  "source": "seed",
+  "data": [
+    {
+      "id": "redbull",
+      "name": "Oracle Red Bull Racing",
+      "short": "RBR",
+      "accent": "#2C5CC5",
+      "founded_season": null,
+      "engine": "Red Bull Ford",
+      "drivers": [
+        "VER",
+        "HAD"
+      ]
+    },
+    {
+      "id": "ferrari",
+      "name": "Scuderia Ferrari HP",
+      "short": "FER",
+      "accent": "#E8002D",
+      "founded_season": null,
+      "engine": "Ferrari",
+      "drivers": [
+        "LEC",
+        "HAM"
+      ]
+    },
+    {
+      "id": "mercedes",
+      "name": "Mercedes-AMG PETRONAS Formula One Team",
+      "short": "MER",
+      "accent": "#27BFA3",
+      "founded_season": null,
+      "engine": "Mercedes",
+      "drivers": [
+        "RUS",
+        "ANT"
+      ]
+    },
+    {
+      "id": "mclaren",
+      "name": "McLaren Mastercard F1 Team",
+      "short": "MCL",
+      "accent": "#FF8700",
+      "founded_season": null,
+      "engine": "Mercedes",
+      "drivers": [
+        "NOR",
+        "PIA"
+      ]
+    },
+    {
+      "id": "astonmartin",
+      "name": "Aston Martin Aramco Formula One Team",
+      "short": "AMR",
+      "accent": "#1E8262",
+      "founded_season": null,
+      "engine": "Honda",
+      "drivers": [
+        "ALO",
+        "STR"
+      ]
+    },
+    {
+      "id": "alpine",
+      "name": "BWT Alpine Formula One Team",
+      "short": "ALP",
+      "accent": "#2E86D6",
+      "founded_season": null,
+      "engine": "Renault",
+      "drivers": [
+        "GAS",
+        "COL"
+      ]
+    },
+    {
+      "id": "racingbulls",
+      "name": "Visa Cash App Racing Bulls F1 Team",
+      "short": "VCARB",
+      "accent": "#5B7CFF",
+      "founded_season": null,
+      "engine": "Red Bull Ford",
+      "drivers": [
+        "LAW",
+        "LIN"
+      ]
+    },
+    {
+      "id": "haas",
+      "name": "TGR Haas F1 Team",
+      "short": "HAA",
+      "accent": "#B6BABD",
+      "founded_season": null,
+      "engine": "Ferrari",
+      "drivers": [
+        "OCO",
+        "BEA"
+      ]
+    },
+    {
+      "id": "audi",
+      "name": "Audi Revolut F1 Team",
+      "short": "AUDI",
+      "accent": "#BB0A30",
+      "founded_season": 2026,
+      "engine": "Audi",
+      "drivers": [
+        "HUL",
+        "BOR"
+      ]
+    },
+    {
+      "id": "williams",
+      "name": "Atlassian Williams F1 Team",
+      "short": "WIL",
+      "accent": "#5AC5F2",
+      "founded_season": null,
+      "engine": "Mercedes",
+      "drivers": [
+        "ALB",
+        "SAI"
+      ]
+    },
+    {
+      "id": "cadillac",
+      "name": "Cadillac Formula 1 Team",
+      "short": "CAD",
+      "accent": "#8A8D8F",
+      "founded_season": 2026,
+      "engine": "Ferrari",
+      "drivers": [
+        "PER",
+        "BOT"
+      ]
+    }
+  ]
+}

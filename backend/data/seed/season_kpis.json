@@ -1,0 +1,1751 @@
+{
+  "2021": {
+    "consistency": {
+      "VER": {
+        "min": 1,
+        "q1": 1.2,
+        "median": 2.8,
+        "q3": 4.4,
+        "max": 9,
+        "n_races": 20
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "min": 1,
+        "q1": 2.5,
+        "median": 4.3,
+        "q3": 6.1,
+        "max": 10,
+        "n_races": 22
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 2.1,
+        "median": 3.9,
+        "q3": 5.7,
+        "max": 10,
+        "n_races": 18
+      },
+      "RUS": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 22
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "min": 1,
+        "q1": 2.6,
+        "median": 4.5,
+        "q3": 6.3,
+        "max": 11,
+        "n_races": 24
+      },
+      "PIA": "unknown",
+      "ALO": {
+        "min": 1,
+        "q1": 2.3,
+        "median": 4.1,
+        "q3": 5.8,
+        "max": 10,
+        "n_races": 23
+      },
+      "STR": {
+        "min": 1,
+        "q1": 5.1,
+        "median": 7.3,
+        "q3": 9.5,
+        "max": 14,
+        "n_races": 18
+      },
+      "GAS": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 21
+      },
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 19
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "min": 1,
+        "q1": 4.0,
+        "median": 6.0,
+        "q3": 8.0,
+        "max": 13,
+        "n_races": 22
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 21
+      },
+      "SAI": {
+        "min": 1,
+        "q1": 3.2,
+        "median": 5.2,
+        "q3": 7.2,
+        "max": 12,
+        "n_races": 24
+      },
+      "PER": {
+        "min": 1,
+        "q1": 3.5,
+        "median": 5.4,
+        "q3": 7.4,
+        "max": 12,
+        "n_races": 24
+      },
+      "BOT": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 20
+      }
+    },
+    "race_pace": {
+      "VER": 0.206,
+      "HAD": "unknown",
+      "LEC": 0.083,
+      "HAM": 0.195,
+      "RUS": 0.404,
+      "ANT": "unknown",
+      "NOR": 0.124,
+      "PIA": "unknown",
+      "ALO": 0.102,
+      "STR": 0.523,
+      "GAS": 0.386,
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": 0.271,
+      "BEA": "unknown",
+      "HUL": 0.522,
+      "BOR": "unknown",
+      "ALB": 0.337,
+      "SAI": 0.25,
+      "PER": 0.202,
+      "BOT": 0.404
+    },
+    "tyre_degradation": {
+      "VER": {
+        "SOFT": 0.024,
+        "MEDIUM": 0.008,
+        "HARD": 0.012
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.009,
+        "HARD": 0.008
+      },
+      "HAM": {
+        "SOFT": 0.018,
+        "MEDIUM": 0.018,
+        "HARD": 0.014
+      },
+      "RUS": {
+        "SOFT": 0.03,
+        "MEDIUM": 0.016,
+        "HARD": 0.015
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "SOFT": 0.026,
+        "MEDIUM": 0.018,
+        "HARD": 0.01
+      },
+      "PIA": "unknown",
+      "ALO": {
+        "SOFT": 0.029,
+        "MEDIUM": 0.019,
+        "HARD": 0.008
+      },
+      "STR": {
+        "SOFT": 0.033,
+        "MEDIUM": 0.019,
+        "HARD": 0.011
+      },
+      "GAS": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.015,
+        "HARD": 0.014
+      },
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": {
+        "SOFT": 0.025,
+        "MEDIUM": 0.018,
+        "HARD": 0.008
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.017,
+        "HARD": 0.013
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "SOFT": 0.038,
+        "MEDIUM": 0.011,
+        "HARD": 0.011
+      },
+      "SAI": {
+        "SOFT": 0.032,
+        "MEDIUM": 0.019,
+        "HARD": 0.011
+      },
+      "PER": {
+        "SOFT": 0.024,
+        "MEDIUM": 0.021,
+        "HARD": 0.005
+      },
+      "BOT": {
+        "SOFT": 0.039,
+        "MEDIUM": 0.023,
+        "HARD": 0.007
+      }
+    },
+    "quali_race_delta": {
+      "VER": -0.019,
+      "HAD": "unknown",
+      "LEC": -0.298,
+      "HAM": 0.659,
+      "RUS": -0.425,
+      "ANT": "unknown",
+      "NOR": 0.456,
+      "PIA": "unknown",
+      "ALO": 0.496,
+      "STR": 0.354,
+      "GAS": 0.468,
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": 0.008,
+      "BEA": "unknown",
+      "HUL": -0.437,
+      "BOR": "unknown",
+      "ALB": 0.613,
+      "SAI": 0.17,
+      "PER": 0.58,
+      "BOT": -0.033
+    },
+    "source": "seed"
+  },
+  "2022": {
+    "consistency": {
+      "VER": {
+        "min": 1,
+        "q1": 1.2,
+        "median": 2.8,
+        "q3": 4.4,
+        "max": 9,
+        "n_races": 23
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "min": 1,
+        "q1": 2.5,
+        "median": 4.3,
+        "q3": 6.1,
+        "max": 10,
+        "n_races": 19
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 2.1,
+        "median": 3.9,
+        "q3": 5.7,
+        "max": 10,
+        "n_races": 18
+      },
+      "RUS": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 22
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "min": 1,
+        "q1": 2.6,
+        "median": 4.5,
+        "q3": 6.3,
+        "max": 11,
+        "n_races": 19
+      },
+      "PIA": "unknown",
+      "ALO": {
+        "min": 1,
+        "q1": 2.3,
+        "median": 4.1,
+        "q3": 5.8,
+        "max": 10,
+        "n_races": 19
+      },
+      "STR": {
+        "min": 1,
+        "q1": 5.1,
+        "median": 7.3,
+        "q3": 9.5,
+        "max": 14,
+        "n_races": 19
+      },
+      "GAS": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 24
+      },
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 18
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "min": 1,
+        "q1": 4.0,
+        "median": 6.0,
+        "q3": 8.0,
+        "max": 13,
+        "n_races": 18
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 20
+      },
+      "SAI": {
+        "min": 1,
+        "q1": 3.2,
+        "median": 5.2,
+        "q3": 7.2,
+        "max": 12,
+        "n_races": 20
+      },
+      "PER": {
+        "min": 1,
+        "q1": 3.5,
+        "median": 5.4,
+        "q3": 7.4,
+        "max": 12,
+        "n_races": 21
+      },
+      "BOT": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 24
+      }
+    },
+    "race_pace": {
+      "VER": 0.026,
+      "HAD": "unknown",
+      "LEC": 0.296,
+      "HAM": 0.08,
+      "RUS": 0.204,
+      "ANT": "unknown",
+      "NOR": 0.109,
+      "PIA": "unknown",
+      "ALO": 0.127,
+      "STR": 0.561,
+      "GAS": 0.444,
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": 0.39,
+      "BEA": "unknown",
+      "HUL": 0.33,
+      "BOR": "unknown",
+      "ALB": 0.394,
+      "SAI": 0.337,
+      "PER": 0.319,
+      "BOT": 0.418
+    },
+    "tyre_degradation": {
+      "VER": {
+        "SOFT": 0.035,
+        "MEDIUM": 0.013,
+        "HARD": 0.01
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.013,
+        "HARD": 0.008
+      },
+      "HAM": {
+        "SOFT": 0.025,
+        "MEDIUM": 0.013,
+        "HARD": 0.005
+      },
+      "RUS": {
+        "SOFT": 0.026,
+        "MEDIUM": 0.015,
+        "HARD": 0.014
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "SOFT": 0.021,
+        "MEDIUM": 0.019,
+        "HARD": 0.003
+      },
+      "PIA": "unknown",
+      "ALO": {
+        "SOFT": 0.017,
+        "MEDIUM": 0.015,
+        "HARD": 0.008
+      },
+      "STR": {
+        "SOFT": 0.031,
+        "MEDIUM": 0.021,
+        "HARD": 0.013
+      },
+      "GAS": {
+        "SOFT": 0.036,
+        "MEDIUM": 0.023,
+        "HARD": 0.009
+      },
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.013,
+        "HARD": 0.016
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.01,
+        "HARD": 0.006
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.013,
+        "HARD": 0.009
+      },
+      "SAI": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.011,
+        "HARD": 0.01
+      },
+      "PER": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.011,
+        "HARD": 0.008
+      },
+      "BOT": {
+        "SOFT": 0.029,
+        "MEDIUM": 0.013,
+        "HARD": 0.015
+      }
+    },
+    "quali_race_delta": {
+      "VER": 0.62,
+      "HAD": "unknown",
+      "LEC": 0.984,
+      "HAM": 0.339,
+      "RUS": 1.032,
+      "ANT": "unknown",
+      "NOR": 0.89,
+      "PIA": "unknown",
+      "ALO": 0.526,
+      "STR": -0.804,
+      "GAS": -0.012,
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": -0.005,
+      "BEA": "unknown",
+      "HUL": -0.518,
+      "BOR": "unknown",
+      "ALB": 0.365,
+      "SAI": 1.005,
+      "PER": -0.166,
+      "BOT": -0.071
+    },
+    "source": "seed"
+  },
+  "2023": {
+    "consistency": {
+      "VER": {
+        "min": 1,
+        "q1": 1.2,
+        "median": 2.8,
+        "q3": 4.4,
+        "max": 9,
+        "n_races": 23
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "min": 1,
+        "q1": 2.5,
+        "median": 4.3,
+        "q3": 6.1,
+        "max": 10,
+        "n_races": 23
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 2.1,
+        "median": 3.9,
+        "q3": 5.7,
+        "max": 10,
+        "n_races": 22
+      },
+      "RUS": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 24
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "min": 1,
+        "q1": 2.6,
+        "median": 4.5,
+        "q3": 6.3,
+        "max": 11,
+        "n_races": 21
+      },
+      "PIA": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 23
+      },
+      "ALO": {
+        "min": 1,
+        "q1": 2.3,
+        "median": 4.1,
+        "q3": 5.8,
+        "max": 10,
+        "n_races": 20
+      },
+      "STR": {
+        "min": 1,
+        "q1": 5.1,
+        "median": 7.3,
+        "q3": 9.5,
+        "max": 14,
+        "n_races": 22
+      },
+      "GAS": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 23
+      },
+      "COL": "unknown",
+      "LAW": {
+        "min": 1,
+        "q1": 4.7,
+        "median": 6.8,
+        "q3": 8.9,
+        "max": 14,
+        "n_races": 21
+      },
+      "LIN": "unknown",
+      "OCO": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 21
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "min": 1,
+        "q1": 4.0,
+        "median": 6.0,
+        "q3": 8.0,
+        "max": 13,
+        "n_races": 22
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 23
+      },
+      "SAI": {
+        "min": 1,
+        "q1": 3.2,
+        "median": 5.2,
+        "q3": 7.2,
+        "max": 12,
+        "n_races": 23
+      },
+      "PER": {
+        "min": 1,
+        "q1": 3.5,
+        "median": 5.4,
+        "q3": 7.4,
+        "max": 12,
+        "n_races": 24
+      },
+      "BOT": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 20
+      }
+    },
+    "race_pace": {
+      "VER": 0.085,
+      "HAD": "unknown",
+      "LEC": 0.32,
+      "HAM": 0.264,
+      "RUS": 0.179,
+      "ANT": "unknown",
+      "NOR": 0.191,
+      "PIA": 0.302,
+      "ALO": 0.072,
+      "STR": 0.606,
+      "GAS": 0.246,
+      "COL": "unknown",
+      "LAW": 0.537,
+      "LIN": "unknown",
+      "OCO": 0.469,
+      "BEA": "unknown",
+      "HUL": 0.499,
+      "BOR": "unknown",
+      "ALB": 0.491,
+      "SAI": 0.351,
+      "PER": 0.436,
+      "BOT": 0.288
+    },
+    "tyre_degradation": {
+      "VER": {
+        "SOFT": 0.016,
+        "MEDIUM": 0.016,
+        "HARD": 0.014
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.023,
+        "HARD": 0.007
+      },
+      "HAM": {
+        "SOFT": 0.024,
+        "MEDIUM": 0.012,
+        "HARD": 0.013
+      },
+      "RUS": {
+        "SOFT": 0.023,
+        "MEDIUM": 0.016,
+        "HARD": 0.013
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "SOFT": 0.018,
+        "MEDIUM": 0.009,
+        "HARD": 0.007
+      },
+      "PIA": {
+        "SOFT": 0.025,
+        "MEDIUM": 0.022,
+        "HARD": 0.012
+      },
+      "ALO": {
+        "SOFT": 0.019,
+        "MEDIUM": 0.016,
+        "HARD": 0.007
+      },
+      "STR": {
+        "SOFT": 0.03,
+        "MEDIUM": 0.022,
+        "HARD": 0.014
+      },
+      "GAS": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.021,
+        "HARD": 0.006
+      },
+      "COL": "unknown",
+      "LAW": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.024,
+        "HARD": 0.016
+      },
+      "LIN": "unknown",
+      "OCO": {
+        "SOFT": 0.021,
+        "MEDIUM": 0.013,
+        "HARD": 0.016
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "SOFT": 0.035,
+        "MEDIUM": 0.012,
+        "HARD": 0.014
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.019,
+        "HARD": 0.004
+      },
+      "SAI": {
+        "SOFT": 0.029,
+        "MEDIUM": 0.024,
+        "HARD": 0.009
+      },
+      "PER": {
+        "SOFT": 0.019,
+        "MEDIUM": 0.013,
+        "HARD": 0.01
+      },
+      "BOT": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.012,
+        "HARD": 0.015
+      }
+    },
+    "quali_race_delta": {
+      "VER": 1.211,
+      "HAD": "unknown",
+      "LEC": -0.054,
+      "HAM": 1.226,
+      "RUS": -0.18,
+      "ANT": "unknown",
+      "NOR": -0.025,
+      "PIA": 0.059,
+      "ALO": 0.392,
+      "STR": -0.754,
+      "GAS": 0.772,
+      "COL": "unknown",
+      "LAW": -0.167,
+      "LIN": "unknown",
+      "OCO": -0.666,
+      "BEA": "unknown",
+      "HUL": 0.888,
+      "BOR": "unknown",
+      "ALB": 0.629,
+      "SAI": 0.835,
+      "PER": 0.632,
+      "BOT": -0.084
+    },
+    "source": "seed"
+  },
+  "2024": {
+    "consistency": {
+      "VER": {
+        "min": 1,
+        "q1": 1.2,
+        "median": 2.8,
+        "q3": 4.4,
+        "max": 9,
+        "n_races": 21
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "min": 1,
+        "q1": 2.5,
+        "median": 4.3,
+        "q3": 6.1,
+        "max": 10,
+        "n_races": 19
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 2.1,
+        "median": 3.9,
+        "q3": 5.7,
+        "max": 10,
+        "n_races": 18
+      },
+      "RUS": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 18
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "min": 1,
+        "q1": 2.6,
+        "median": 4.5,
+        "q3": 6.3,
+        "max": 11,
+        "n_races": 22
+      },
+      "PIA": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 18
+      },
+      "ALO": {
+        "min": 1,
+        "q1": 2.3,
+        "median": 4.1,
+        "q3": 5.8,
+        "max": 10,
+        "n_races": 22
+      },
+      "STR": {
+        "min": 1,
+        "q1": 5.1,
+        "median": 7.3,
+        "q3": 9.5,
+        "max": 14,
+        "n_races": 19
+      },
+      "GAS": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 19
+      },
+      "COL": {
+        "min": 1,
+        "q1": 5.5,
+        "median": 7.7,
+        "q3": 9.9,
+        "max": 15,
+        "n_races": 19
+      },
+      "LAW": {
+        "min": 1,
+        "q1": 4.7,
+        "median": 6.8,
+        "q3": 8.9,
+        "max": 14,
+        "n_races": 23
+      },
+      "LIN": "unknown",
+      "OCO": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 23
+      },
+      "BEA": {
+        "min": 1,
+        "q1": 5.5,
+        "median": 7.7,
+        "q3": 9.9,
+        "max": 15,
+        "n_races": 19
+      },
+      "HUL": {
+        "min": 1,
+        "q1": 4.0,
+        "median": 6.0,
+        "q3": 8.0,
+        "max": 13,
+        "n_races": 18
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 20
+      },
+      "SAI": {
+        "min": 1,
+        "q1": 3.2,
+        "median": 5.2,
+        "q3": 7.2,
+        "max": 12,
+        "n_races": 19
+      },
+      "PER": {
+        "min": 1,
+        "q1": 3.5,
+        "median": 5.4,
+        "q3": 7.4,
+        "max": 12,
+        "n_races": 20
+      },
+      "BOT": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 21
+      }
+    },
+    "race_pace": {
+      "VER": 0.121,
+      "HAD": "unknown",
+      "LEC": 0.226,
+      "HAM": 0.263,
+      "RUS": 0.218,
+      "ANT": "unknown",
+      "NOR": 0.101,
+      "PIA": 0.348,
+      "ALO": 0.108,
+      "STR": 0.564,
+      "GAS": 0.462,
+      "COL": 0.519,
+      "LAW": 0.493,
+      "LIN": "unknown",
+      "OCO": 0.532,
+      "BEA": 0.602,
+      "HUL": 0.445,
+      "BOR": "unknown",
+      "ALB": 0.365,
+      "SAI": 0.448,
+      "PER": 0.401,
+      "BOT": 0.255
+    },
+    "tyre_degradation": {
+      "VER": {
+        "SOFT": 0.032,
+        "MEDIUM": 0.016,
+        "HARD": 0.012
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.009,
+        "HARD": 0.008
+      },
+      "HAM": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.011,
+        "HARD": 0.01
+      },
+      "RUS": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.018,
+        "HARD": 0.013
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "SOFT": 0.021,
+        "MEDIUM": 0.01,
+        "HARD": 0.004
+      },
+      "PIA": {
+        "SOFT": 0.036,
+        "MEDIUM": 0.016,
+        "HARD": 0.011
+      },
+      "ALO": {
+        "SOFT": 0.023,
+        "MEDIUM": 0.017,
+        "HARD": 0.013
+      },
+      "STR": {
+        "SOFT": 0.038,
+        "MEDIUM": 0.026,
+        "HARD": 0.008
+      },
+      "GAS": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.012,
+        "HARD": 0.009
+      },
+      "COL": {
+        "SOFT": 0.025,
+        "MEDIUM": 0.016,
+        "HARD": 0.006
+      },
+      "LAW": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.015,
+        "HARD": 0.006
+      },
+      "LIN": "unknown",
+      "OCO": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.018,
+        "HARD": 0.016
+      },
+      "BEA": {
+        "SOFT": 0.041,
+        "MEDIUM": 0.018,
+        "HARD": 0.01
+      },
+      "HUL": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.019,
+        "HARD": 0.009
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "SOFT": 0.025,
+        "MEDIUM": 0.025,
+        "HARD": 0.005
+      },
+      "SAI": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.014,
+        "HARD": 0.004
+      },
+      "PER": {
+        "SOFT": 0.035,
+        "MEDIUM": 0.023,
+        "HARD": 0.012
+      },
+      "BOT": {
+        "SOFT": 0.037,
+        "MEDIUM": 0.019,
+        "HARD": 0.012
+      }
+    },
+    "quali_race_delta": {
+      "VER": 1.235,
+      "HAD": "unknown",
+      "LEC": -0.117,
+      "HAM": -0.157,
+      "RUS": -0.33,
+      "ANT": "unknown",
+      "NOR": 0.283,
+      "PIA": 0.309,
+      "ALO": 0.432,
+      "STR": 0.005,
+      "GAS": -0.534,
+      "COL": 0.293,
+      "LAW": -0.052,
+      "LIN": "unknown",
+      "OCO": 0.622,
+      "BEA": -0.379,
+      "HUL": -0.651,
+      "BOR": "unknown",
+      "ALB": 0.82,
+      "SAI": 0.686,
+      "PER": 0.924,
+      "BOT": -0.507
+    },
+    "source": "seed"
+  },
+  "2025": {
+    "consistency": {
+      "VER": {
+        "min": 1,
+        "q1": 1.2,
+        "median": 2.8,
+        "q3": 4.4,
+        "max": 9,
+        "n_races": 18
+      },
+      "HAD": {
+        "min": 1,
+        "q1": 4.8,
+        "median": 6.9,
+        "q3": 9.1,
+        "max": 14,
+        "n_races": 18
+      },
+      "LEC": {
+        "min": 1,
+        "q1": 2.5,
+        "median": 4.3,
+        "q3": 6.1,
+        "max": 10,
+        "n_races": 21
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 2.1,
+        "median": 3.9,
+        "q3": 5.7,
+        "max": 10,
+        "n_races": 18
+      },
+      "RUS": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 19
+      },
+      "ANT": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 23
+      },
+      "NOR": {
+        "min": 1,
+        "q1": 2.6,
+        "median": 4.5,
+        "q3": 6.3,
+        "max": 11,
+        "n_races": 23
+      },
+      "PIA": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 23
+      },
+      "ALO": {
+        "min": 1,
+        "q1": 2.3,
+        "median": 4.1,
+        "q3": 5.8,
+        "max": 10,
+        "n_races": 22
+      },
+      "STR": {
+        "min": 1,
+        "q1": 5.1,
+        "median": 7.3,
+        "q3": 9.5,
+        "max": 14,
+        "n_races": 23
+      },
+      "GAS": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 18
+      },
+      "COL": {
+        "min": 1,
+        "q1": 5.5,
+        "median": 7.7,
+        "q3": 9.9,
+        "max": 15,
+        "n_races": 21
+      },
+      "LAW": {
+        "min": 1,
+        "q1": 4.7,
+        "median": 6.8,
+        "q3": 8.9,
+        "max": 14,
+        "n_races": 21
+      },
+      "LIN": "unknown",
+      "OCO": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 22
+      },
+      "BEA": {
+        "min": 1,
+        "q1": 5.5,
+        "median": 7.7,
+        "q3": 9.9,
+        "max": 15,
+        "n_races": 20
+      },
+      "HUL": {
+        "min": 1,
+        "q1": 4.0,
+        "median": 6.0,
+        "q3": 8.0,
+        "max": 13,
+        "n_races": 18
+      },
+      "BOR": {
+        "min": 1,
+        "q1": 5.8,
+        "median": 8.1,
+        "q3": 10.4,
+        "max": 15,
+        "n_races": 20
+      },
+      "ALB": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 23
+      },
+      "SAI": {
+        "min": 1,
+        "q1": 3.2,
+        "median": 5.2,
+        "q3": 7.2,
+        "max": 12,
+        "n_races": 21
+      },
+      "PER": {
+        "min": 1,
+        "q1": 3.5,
+        "median": 5.4,
+        "q3": 7.4,
+        "max": 12,
+        "n_races": 22
+      },
+      "BOT": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 22
+      }
+    },
+    "race_pace": {
+      "VER": 0.162,
+      "HAD": 0.558,
+      "LEC": 0.069,
+      "HAM": 0.188,
+      "RUS": 0.4,
+      "ANT": 0.299,
+      "NOR": 0.236,
+      "PIA": 0.366,
+      "ALO": 0.14,
+      "STR": 0.545,
+      "GAS": 0.398,
+      "COL": 0.651,
+      "LAW": 0.356,
+      "LIN": "unknown",
+      "OCO": 0.343,
+      "BEA": 0.504,
+      "HUL": 0.255,
+      "BOR": 0.517,
+      "ALB": 0.478,
+      "SAI": 0.201,
+      "PER": 0.362,
+      "BOT": 0.381
+    },
+    "tyre_degradation": {
+      "VER": {
+        "SOFT": 0.019,
+        "MEDIUM": 0.022,
+        "HARD": 0.006
+      },
+      "HAD": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.025,
+        "HARD": 0.005
+      },
+      "LEC": {
+        "SOFT": 0.037,
+        "MEDIUM": 0.015,
+        "HARD": 0.014
+      },
+      "HAM": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.01,
+        "HARD": 0.005
+      },
+      "RUS": {
+        "SOFT": 0.031,
+        "MEDIUM": 0.018,
+        "HARD": 0.006
+      },
+      "ANT": {
+        "SOFT": 0.026,
+        "MEDIUM": 0.011,
+        "HARD": 0.007
+      },
+      "NOR": {
+        "SOFT": 0.037,
+        "MEDIUM": 0.017,
+        "HARD": 0.006
+      },
+      "PIA": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.017,
+        "HARD": 0.014
+      },
+      "ALO": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.012,
+        "HARD": 0.005
+      },
+      "STR": {
+        "SOFT": 0.029,
+        "MEDIUM": 0.017,
+        "HARD": 0.005
+      },
+      "GAS": {
+        "SOFT": 0.037,
+        "MEDIUM": 0.017,
+        "HARD": 0.005
+      },
+      "COL": {
+        "SOFT": 0.034,
+        "MEDIUM": 0.016,
+        "HARD": 0.008
+      },
+      "LAW": {
+        "SOFT": 0.025,
+        "MEDIUM": 0.011,
+        "HARD": 0.009
+      },
+      "LIN": "unknown",
+      "OCO": {
+        "SOFT": 0.02,
+        "MEDIUM": 0.024,
+        "HARD": 0.007
+      },
+      "BEA": {
+        "SOFT": 0.03,
+        "MEDIUM": 0.02,
+        "HARD": 0.007
+      },
+      "HUL": {
+        "SOFT": 0.036,
+        "MEDIUM": 0.012,
+        "HARD": 0.011
+      },
+      "BOR": {
+        "SOFT": 0.026,
+        "MEDIUM": 0.021,
+        "HARD": 0.012
+      },
+      "ALB": {
+        "SOFT": 0.035,
+        "MEDIUM": 0.02,
+        "HARD": 0.013
+      },
+      "SAI": {
+        "SOFT": 0.033,
+        "MEDIUM": 0.02,
+        "HARD": 0.004
+      },
+      "PER": {
+        "SOFT": 0.033,
+        "MEDIUM": 0.023,
+        "HARD": 0.005
+      },
+      "BOT": {
+        "SOFT": 0.035,
+        "MEDIUM": 0.01,
+        "HARD": 0.012
+      }
+    },
+    "quali_race_delta": {
+      "VER": -0.143,
+      "HAD": 0.55,
+      "LEC": 0.585,
+      "HAM": -0.269,
+      "RUS": 0.213,
+      "ANT": -0.685,
+      "NOR": 0.275,
+      "PIA": 0.129,
+      "ALO": 1.031,
+      "STR": -0.682,
+      "GAS": 0.414,
+      "COL": -0.481,
+      "LAW": -0.274,
+      "LIN": "unknown",
+      "OCO": -0.417,
+      "BEA": -0.142,
+      "HUL": -0.05,
+      "BOR": 0.191,
+      "ALB": 0.503,
+      "SAI": 0.776,
+      "PER": 0.248,
+      "BOT": 0.627
+    },
+    "source": "seed"
+  },
+  "2026": {
+    "consistency": {
+      "VER": {
+        "min": 1,
+        "q1": 1.2,
+        "median": 2.8,
+        "q3": 4.4,
+        "max": 9,
+        "n_races": 23
+      },
+      "HAD": {
+        "min": 1,
+        "q1": 4.8,
+        "median": 6.9,
+        "q3": 9.1,
+        "max": 14,
+        "n_races": 20
+      },
+      "LEC": {
+        "min": 1,
+        "q1": 2.5,
+        "median": 4.3,
+        "q3": 6.1,
+        "max": 10,
+        "n_races": 22
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 2.1,
+        "median": 3.9,
+        "q3": 5.7,
+        "max": 10,
+        "n_races": 22
+      },
+      "RUS": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 24
+      },
+      "ANT": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 21
+      },
+      "NOR": {
+        "min": 1,
+        "q1": 2.6,
+        "median": 4.5,
+        "q3": 6.3,
+        "max": 11,
+        "n_races": 22
+      },
+      "PIA": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.9,
+        "q3": 6.8,
+        "max": 11,
+        "n_races": 23
+      },
+      "ALO": {
+        "min": 1,
+        "q1": 2.3,
+        "median": 4.1,
+        "q3": 5.8,
+        "max": 10,
+        "n_races": 23
+      },
+      "STR": {
+        "min": 1,
+        "q1": 5.1,
+        "median": 7.3,
+        "q3": 9.5,
+        "max": 14,
+        "n_races": 21
+      },
+      "GAS": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 21
+      },
+      "COL": {
+        "min": 1,
+        "q1": 5.5,
+        "median": 7.7,
+        "q3": 9.9,
+        "max": 15,
+        "n_races": 20
+      },
+      "LAW": {
+        "min": 1,
+        "q1": 4.7,
+        "median": 6.8,
+        "q3": 8.9,
+        "max": 14,
+        "n_races": 23
+      },
+      "LIN": {
+        "min": 1,
+        "q1": 6.3,
+        "median": 8.7,
+        "q3": 11.1,
+        "max": 16,
+        "n_races": 18
+      },
+      "OCO": {
+        "min": 1,
+        "q1": 4.2,
+        "median": 6.2,
+        "q3": 8.2,
+        "max": 13,
+        "n_races": 18
+      },
+      "BEA": {
+        "min": 1,
+        "q1": 5.5,
+        "median": 7.7,
+        "q3": 9.9,
+        "max": 15,
+        "n_races": 21
+      },
+      "HUL": {
+        "min": 1,
+        "q1": 4.0,
+        "median": 6.0,
+        "q3": 8.0,
+        "max": 13,
+        "n_races": 18
+      },
+      "BOR": {
+        "min": 1,
+        "q1": 5.8,
+        "median": 8.1,
+        "q3": 10.4,
+        "max": 15,
+        "n_races": 18
+      },
+      "ALB": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 20
+      },
+      "SAI": {
+        "min": 1,
+        "q1": 3.2,
+        "median": 5.2,
+        "q3": 7.2,
+        "max": 12,
+        "n_races": 19
+      },
+      "PER": {
+        "min": 1,
+        "q1": 3.5,
+        "median": 5.4,
+        "q3": 7.4,
+        "max": 12,
+        "n_races": 21
+      },
+      "BOT": {
+        "min": 1,
+        "q1": 3.8,
+        "median": 5.8,
+        "q3": 7.8,
+        "max": 12,
+        "n_races": 22
+      }
+    },
+    "race_pace": {
+      "VER": 0.127,
+      "HAD": 0.606,
+      "LEC": 0.27,
+      "HAM": 0.299,
+      "RUS": 0.142,
+      "ANT": 0.394,
+      "NOR": 0.274,
+      "PIA": 0.211,
+      "ALO": 0.078,
+      "STR": 0.494,
+      "GAS": 0.215,
+      "COL": 0.506,
+      "LAW": 0.457,
+      "LIN": 0.691,
+      "OCO": 0.531,
+      "BEA": 0.485,
+      "HUL": 0.51,
+      "BOR": 0.544,
+      "ALB": 0.466,
+      "SAI": 0.231,
+      "PER": 0.439,
+      "BOT": 0.271
+    },
+    "tyre_degradation": {
+      "VER": {
+        "SOFT": 0.03,
+        "MEDIUM": 0.011,
+        "HARD": 0.003
+      },
+      "HAD": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.018,
+        "HARD": 0.005
+      },
+      "LEC": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.009,
+        "HARD": 0.013
+      },
+      "HAM": {
+        "SOFT": 0.019,
+        "MEDIUM": 0.017,
+        "HARD": 0.012
+      },
+      "RUS": {
+        "SOFT": 0.023,
+        "MEDIUM": 0.021,
+        "HARD": 0.006
+      },
+      "ANT": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.018,
+        "HARD": 0.012
+      },
+      "NOR": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.019,
+        "HARD": 0.007
+      },
+      "PIA": {
+        "SOFT": 0.029,
+        "MEDIUM": 0.009,
+        "HARD": 0.004
+      },
+      "ALO": {
+        "SOFT": 0.022,
+        "MEDIUM": 0.016,
+        "HARD": 0.012
+      },
+      "STR": {
+        "SOFT": 0.023,
+        "MEDIUM": 0.025,
+        "HARD": 0.007
+      },
+      "GAS": {
+        "SOFT": 0.028,
+        "MEDIUM": 0.023,
+        "HARD": 0.016
+      },
+      "COL": {
+        "SOFT": 0.039,
+        "MEDIUM": 0.026,
+        "HARD": 0.006
+      },
+      "LAW": {
+        "SOFT": 0.039,
+        "MEDIUM": 0.013,
+        "HARD": 0.014
+      },
+      "LIN": {
+        "SOFT": 0.027,
+        "MEDIUM": 0.027,
+        "HARD": 0.011
+      },
+      "OCO": {
+        "SOFT": 0.033,
+        "MEDIUM": 0.017,
+        "HARD": 0.013
+      },
+      "BEA": {
+        "SOFT": 0.038,
+        "MEDIUM": 0.012,
+        "HARD": 0.014
+      },
+      "HUL": {
+        "SOFT": 0.023,
+        "MEDIUM": 0.01,
+        "HARD": 0.013
+      },
+      "BOR": {
+        "SOFT": 0.041,
+        "MEDIUM": 0.021,
+        "HARD": 0.01
+      },
+      "ALB": {
+        "SOFT": 0.025,
+        "MEDIUM": 0.011,
+        "HARD": 0.012
+      },
+      "SAI": {
+        "SOFT": 0.024,
+        "MEDIUM": 0.018,
+        "HARD": 0.006
+      },
+      "PER": {
+        "SOFT": 0.035,
+        "MEDIUM": 0.02,
+        "HARD": 0.015
+      },
+      "BOT": {
+        "SOFT": 0.021,
+        "MEDIUM": 0.025,
+        "HARD": 0.009
+      }
+    },
+    "quali_race_delta": {
+      "VER": 0.043,
+      "HAD": -0.8,
+      "LEC": 0.787,
+      "HAM": 0.408,
+      "RUS": 0.684,
+      "ANT": 0.517,
+      "NOR": 0.602,
+      "PIA": -0.07,
+      "ALO": 0.077,
+      "STR": 0.675,
+      "GAS": 0.069,
+      "COL": -0.806,
+      "LAW": 0.014,
+      "LIN": -1.06,
+      "OCO": -0.044,
+      "BEA": 0.393,
+      "HUL": -0.275,
+      "BOR": -0.325,
+      "ALB": 0.366,
+      "SAI": 0.037,
+      "PER": 0.915,
+      "BOT": 0.334
+    },
+    "source": "seed"
+  }
+}

@@ -1,0 +1,222 @@
+================================================================================
+ML PIPELINE TROUBLESHOOTING & REFACTORING LOG
+System: pulseconnect_v2 (Backend ML Pipeline)
+Files Modified: app/ml/predict.py, pipeline/build_dataset.py
+================================================================================
+
+[ISSUE 0] Model Output Collapsing / Flat Compatibility Predictions
+--------------------------------------------------------------------------------
+Symptom:
+  The compatibility model returned identical score and predicted delta for all 
+  driver and circuit combinations (e.g., score: 53, predicted_delta_s: -0.178).
+
+Root Cause:
+  1. Circuit-only features: `_circuit_features()` in `predict.py` generated 
+     features strictly from circuit traits (track type, length, corners). Driver 
+     traits (race pace, degradation, cluster IDs) were omitted from feature array X.
+  2. Target duplication: Training rows paired season-wide average race pace with 
+     circuits without track-level variance.
+  3. Sparse/unpopulated data for recent drivers defaulting to global targets.
+
+Fix Applied:
+  - Redesigned feature extraction into `_driver_circuit_features()` combining:
+    * Circuit features (one-hot track type, normalized length & corner count)
+    * Driver features (historical average race pace, tyre degradation, qualifying delta)
+    * Cluster assignment feature (numerical cluster ID)
+  - Updated model fitting and prediction logic to pass unified feature vector.
+
+================================================================================
+
+[ISSUE 1] ValueError: too many values to unpack (expected 2)
+--------------------------------------------------------------------------------
+Error Stack Trace:
+  File "C:\Users\bida22-038\pulseconnect_v2\backend\pipeline\build_dataset.py", line 267, in main
+    model, feature_cols = fit_compatibility_model(all_seasons, DRIVERS, CIRCUITS, clusters)
+  ValueError: too many values to unpack (expected 2)
+
+Root Cause:
+  `build_dataset.py` expected a tuple `(model, feature_cols)`, but 
+  `fit_compatibility_model()` in `predict.py` returned only `model`.
+
+Fix Applied:
+  - Defined explicit `FEATURE_COLS` array in `predict.py`:
+    [
+      "type_Power", "type_Street", "type_Technical", "type_Balanced", 
+      "type_High-Speed", "type_Mixed", "norm_length", "norm_corners", 
+      "mean_pace", "mean_deg", "mean_qr", "cluster_id"
+    ]
+  - Updated `fit_compatibility_model()` return signature to return `model, FEATURE_COLS`.
+
+================================================================================
+
+[ISSUE 2] TypeError: string indices must be integers, not 'str'
+--------------------------------------------------------------------------------
+Error Stack Trace:
+  File "C:\Users\bida22-038\pulseconnect_v2\backend\pipeline\..\app\ml\predict.py", line 74, in predict_compatibility
+    out[d["id"]] = {}
+  TypeError: string indices must be integers, not 'str'
+
+Root Cause:
+  `DRIVERS` and `CIRCUITS` were passed into `predict_compatibility` as lists 
+  of string IDs (e.g., ["VER", "HAM"]) rather than lists of dicts (e.g., [{"id": "VER"}]). 
+  Indexing `d["id"]` on a string `d = "VER"` triggered a string indexing TypeError.
+
+Fix Applied:
+  - Added type-checking guards in `predict_compatibility`:
+    * `driver_id = d["id"] if isinstance(d, dict) else d`
+    * `circuit_id = c["id"] if isinstance(c, dict) else c`
+  - Ensured safe dictionary lookups across both data representations.
+
+================================================================================
+
+[ISSUE 3] AttributeError: 'NoneType' object has no attribute 'items'
+--------------------------------------------------------------------------------
+Error Stack Trace:
+  File "C:\Users\bida22-038\pulseconnect_v2\backend\pipeline\..\app\ml\predict.py", line 13, in _driver_circuit_features
+    for season, kpis in all_seasons.items():
+  AttributeError: 'NoneType' object has no attribute 'items'
+
+Root Cause:
+  `all_seasons` was passed as `None` or omitted during the call to 
+  `predict_compatibility` inside `build_dataset.py`, causing `all_seasons.items()` 
+  to fail inside feature extraction.
+
+Fix Applied:
+  1. Updated call in `build_dataset.py`:
+     `predictions = predict_compatibility(model, feature_cols, DRIVERS, CIRCUITS, clusters, all_seasons)`
+  2. Added defensive fallback guards at the top of `_driver_circuit_features`:
+     `if all_seasons is None: all_seasons = {}`
+     `if clusters is None: clusters = {}`
+
+================================================================================
+
+[ISSUE 4] Compatibility Predictions Still Flat Per-Circuit (post Issue 0 "fix")
+--------------------------------------------------------------------------------
+Symptom:
+  Even after Issue 0's feature-vector fix, every circuit for a given driver
+  returned the same score/predicted_delta_s (e.g. VER: score 67 at Monaco,
+  Monza, AND Spa). Circuit-derived features varied, but predictions didn't.
+
+Root Cause:
+  `_training_rows()` in `predict.py` paired each driver's SEASON-AVERAGED
+  `race_pace` value against every circuit, indiscriminately:
+    for c in circuits:
+        feats = _driver_circuit_features(d["id"], c, all_seasons, clusters)
+        X.append(feats)
+        y.append(val)   # val = season average, identical for all 23 circuits
+  The circuit-level fields the pipeline actually computed per-race
+  (`kpis_from_race_session`'s `pace_deltas` list) were being averaged away
+  in `finalize_season_kpis()` before ever reaching storage — so by training
+  time there was no circuit-conditioned signal in y for the model to learn,
+  regardless of how rich the feature vector was. GradientBoostingRegressor
+  correctly learned to ignore the circuit features since they carried no
+  information about the (constant-per-driver) target.
+
+Fix Applied:
+  - `build_dataset.py`:
+    * `_blank_accum()` now also tracks `pace_deltas_by_circuit` (dict of
+      circuit_id -> list of deltas), alongside the existing flat list.
+    * `kpis_from_race_session()` takes a new `circuit_id` param and tags
+      each pace delta with the circuit it was set at.
+    * `build_season()` resolves `circuit_id_for_event(event_name)` (existing
+      helper in `config.py`, previously unused outside `track_dna.py`'s
+      docstring) once per round and passes it through. Unmatched event
+      names are now printed as warnings instead of silently dropped.
+    * `finalize_season_kpis()` emits a new `race_pace_by_circuit:
+      {driver_id: {circuit_id: avg_delta}}` field in `season_kpis.json`,
+      alongside the existing season-wide `race_pace` (kept as-is; driving
+      style clustering legitimately wants a season-level average, not a
+      per-circuit one).
+  - `predict.py`:
+    * `_training_rows()` rewritten to pull `race_pace_by_circuit` and pair
+      each driver+circuit row with the delta the driver actually posted AT
+      that circuit, only for circuits they actually raced (skips missing
+      combinations instead of fabricating them).
+  - `build_seed.py`:
+    * Added matching `race_pace_by_circuit` synthetic field (with a small
+      per-driver, per-track-type bias table) so seed data keeps the same
+      shape the real pipeline now produces.
+  - Verified with a synthetic driver/circuit bias test: predictions now
+    correctly track injected per-circuit variation (see chat/test_fix.py),
+    confirming the collapse is resolved rather than just less visible.
+
+Note: any `data/generated/season_kpis.json` built before this fix predates
+`race_pace_by_circuit` and must be rebuilt (`--force`, or clear
+`_progress.json`) — the "already built, skipping" fast path will otherwise
+silently keep serving pre-fix data with no per-circuit signal.
+
+================================================================================
+
+[ISSUE 5] fastf1.exceptions.DataNotLoadedError crashing build_season() mid-run
+--------------------------------------------------------------------------------
+Error Stack Trace:
+  File "...\pipeline\build_dataset.py", line 232, in build_season
+    kpis_from_race_session(race, driver_kpis, circuit_id=circuit_id)
+  File "...\pipeline\build_dataset.py", line 121, in kpis_from_race_session
+    laps = race.laps
+  File "...\fastf1\core.py", line 1272, in laps
+    return self._get_property_warn_not_loaded('_laps')
+  fastf1.exceptions.DataNotLoadedError: The data you are trying to access has
+  not been loaded yet. See `Session.load`
+
+Root Cause:
+  `load_session()`'s try/except wraps `fastf1.get_session()` and
+  `session.load()`, but FastF1's `.load()` can return successfully even when
+  one data category (here: laps) failed to populate internally — it logs a
+  warning rather than raising, leaving that property unset. `race` was
+  therefore a valid, non-None Session object, so `if race is None: return`
+  in `kpis_from_race_session` never caught it. The failure only surfaced
+  later, on first access to `race.laps`, far from any try/except, and
+  crashed the entire multi-hour run over a single flaky round.
+
+Fix Applied:
+  - `load_session()` now eagerly touches `session.laps` and
+    `session.results` immediately after `.load()` returns, inside the same
+    try/except. A partial load now fails at the same single point every
+    other load failure does (caught, printed, returns None, round skipped)
+    instead of leaking a half-loaded session downstream.
+  - Tradeoff accepted: this does not add a dedicated retry for this specific
+    failure mode (silent partial load vs. an exception `with_retry` can see
+    and back off on). It's treated like any other failed round: skipped,
+    logged, and picked up on a later re-run via the existing per-season
+    `_progress.json` checkpointing. Flag if per-round retry is wanted here
+    too.
+
+================================================================================
+
+[OPEN / FOLLOW-UP] Suspicious tyre_degradation values post-fix — RESOLVED
+--------------------------------------------------------------------------------
+Observed (frontend, driver profile card, tyre degradation avg s/lap):
+  HARD           0.0903
+  MEDIUM        -0.353
+  INTERMEDIATE  -1.6427
+  WET           -1.2921
+  None           0.072
+  SOFT          -0.6639
+
+Root Causes:
+  1. `"None"` key: `kpis_from_race_session` only fell back to `"UNKNOWN"` when
+     the `Compound` column was entirely absent
+     (`grp["Compound"].iloc[0] if "Compound" in grp else "UNKNOWN"`) — an
+     individual stint whose Compound value was NaN/None (column present,
+     row missing) passed straight through as a literal None key.
+  2. Oversized WET/INTERMEDIATE/MEDIUM/SOFT slopes: the stint-slicing (first
+     and last lap dropped) did not account for safety car / VSC / red flag
+     laps, which can appear mid-stint and produce lap times far outside
+     normal degradation, dominating a short stint's regression.
+
+Fix Applied (`kpis_from_race_session`, tyre-slope block):
+  - Filter each stint to `TrackStatus == "1"` (FastF1's all-green-flag code)
+    before the length/slice checks, when the column is present, so SC/VSC/
+    red-flag laps don't corrupt the regression.
+  - Normalize the per-row Compound value to `"UNKNOWN"` whenever it's
+    None/NaN, not just when the column itself is missing.
+  - Added a threshold check (0.5s/lap dry compounds, 1.0s/lap wet/inter)
+    that prints a warning for any stint slope outside plausible range —
+    flagged for manual review, not silently dropped, since a genuinely
+    extreme degradation event is possible and shouldn't be discarded
+    without a human look.
+
+Not yet re-verified against a fresh real pipeline run (this environment
+can't reach FastF1's servers) — re-run `build_dataset.py --force` and
+check the tyre_degradation card again before trusting it fully.

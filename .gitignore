@@ -1,0 +1,7 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.env
+backend/data/cache/
+backend/data/generated/_progress.json

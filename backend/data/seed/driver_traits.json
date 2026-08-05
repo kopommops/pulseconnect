@@ -1,0 +1,178 @@
+{
+  "VER": {
+    "braking": 89,
+    "traction": 90,
+    "apexSpeed": 98,
+    "tyreMgmt": 90,
+    "aero": 99,
+    "technical": 99
+  },
+  "HAD": {
+    "braking": 66,
+    "traction": 79,
+    "apexSpeed": 80,
+    "tyreMgmt": 73,
+    "aero": 75,
+    "technical": 76
+  },
+  "LEC": {
+    "braking": 88,
+    "traction": 87,
+    "apexSpeed": 82,
+    "tyreMgmt": 78,
+    "aero": 80,
+    "technical": 82
+  },
+  "HAM": {
+    "braking": 84,
+    "traction": 84,
+    "apexSpeed": 96,
+    "tyreMgmt": 81,
+    "aero": 91,
+    "technical": 93
+  },
+  "RUS": {
+    "braking": 80,
+    "traction": 83,
+    "apexSpeed": 85,
+    "tyreMgmt": 85,
+    "aero": 87,
+    "technical": 84
+  },
+  "ANT": {
+    "braking": 79,
+    "traction": 78,
+    "apexSpeed": 71,
+    "tyreMgmt": 78,
+    "aero": 85,
+    "technical": 82
+  },
+  "NOR": {
+    "braking": 86,
+    "traction": 87,
+    "apexSpeed": 85,
+    "tyreMgmt": 83,
+    "aero": 93,
+    "technical": 82
+  },
+  "PIA": {
+    "braking": 87,
+    "traction": 79,
+    "apexSpeed": 92,
+    "tyreMgmt": 79,
+    "aero": 87,
+    "technical": 80
+  },
+  "ALO": {
+    "braking": 95,
+    "traction": 95,
+    "apexSpeed": 96,
+    "tyreMgmt": 83,
+    "aero": 81,
+    "technical": 91
+  },
+  "STR": {
+    "braking": 74,
+    "traction": 74,
+    "apexSpeed": 78,
+    "tyreMgmt": 77,
+    "aero": 68,
+    "technical": 78
+  },
+  "GAS": {
+    "braking": 86,
+    "traction": 73,
+    "apexSpeed": 80,
+    "tyreMgmt": 72,
+    "aero": 86,
+    "technical": 85
+  },
+  "COL": {
+    "braking": 65,
+    "traction": 64,
+    "apexSpeed": 76,
+    "tyreMgmt": 63,
+    "aero": 68,
+    "technical": 72
+  },
+  "LAW": {
+    "braking": 73,
+    "traction": 80,
+    "apexSpeed": 81,
+    "tyreMgmt": 80,
+    "aero": 80,
+    "technical": 76
+  },
+  "LIN": {
+    "braking": 64,
+    "traction": 65,
+    "apexSpeed": 57,
+    "tyreMgmt": 55,
+    "aero": 72,
+    "technical": 62
+  },
+  "OCO": {
+    "braking": 84,
+    "traction": 82,
+    "apexSpeed": 76,
+    "tyreMgmt": 77,
+    "aero": 79,
+    "technical": 74
+  },
+  "BEA": {
+    "braking": 62,
+    "traction": 63,
+    "apexSpeed": 71,
+    "tyreMgmt": 62,
+    "aero": 77,
+    "technical": 73
+  },
+  "HUL": {
+    "braking": 71,
+    "traction": 73,
+    "apexSpeed": 81,
+    "tyreMgmt": 69,
+    "aero": 72,
+    "technical": 73
+  },
+  "BOR": {
+    "braking": 73,
+    "traction": 72,
+    "apexSpeed": 63,
+    "tyreMgmt": 73,
+    "aero": 68,
+    "technical": 71
+  },
+  "ALB": {
+    "braking": 86,
+    "traction": 84,
+    "apexSpeed": 83,
+    "tyreMgmt": 76,
+    "aero": 75,
+    "technical": 76
+  },
+  "SAI": {
+    "braking": 75,
+    "traction": 90,
+    "apexSpeed": 89,
+    "tyreMgmt": 85,
+    "aero": 76,
+    "technical": 87
+  },
+  "PER": {
+    "braking": 84,
+    "traction": 81,
+    "apexSpeed": 76,
+    "tyreMgmt": 84,
+    "aero": 84,
+    "technical": 80
+  },
+  "BOT": {
+    "braking": 77,
+    "traction": 76,
+    "apexSpeed": 77,
+    "tyreMgmt": 84,
+    "aero": 72,
+    "technical": 84
+  }
+}
