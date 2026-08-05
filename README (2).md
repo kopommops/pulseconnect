@@ -103,3 +103,4 @@ Driver photos, team logos, car cutouts and circuit SVGs are **placeholders**
 by design — see `frontend/public/assets/README.md` for the exact file
 naming convention. Drop files in and the UI picks them up automatically,
 falling back to hand-drawn crests/avatars/line-art for anything missing.
+
