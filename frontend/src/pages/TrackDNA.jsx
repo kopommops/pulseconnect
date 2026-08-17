@@ -34,7 +34,7 @@ export default function TrackDNA() {
         </div>
       </div>
 
-      <div className="glass rounded-2xl p-6">
+      {/*<div className="glass rounded-2xl p-6">
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-display font-semibold text-lg">Best Recorded Sectors</h3>
           
@@ -51,7 +51,7 @@ export default function TrackDNA() {
             );
           })}
         </div>
-      </div>
+      </div>*/}
 
       <div className="glass rounded-2xl p-6">
         <h3 className="font-display font-semibold text-lg mb-1">Technical Demand Profile</h3>
