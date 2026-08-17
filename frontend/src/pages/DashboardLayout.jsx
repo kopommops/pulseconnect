@@ -9,7 +9,7 @@ export default function DashboardLayout() {
   if (f.loading) {
     return (
       <div className="max-w-6xl mx-auto px-5 pt-24 text-center font-mono text-sm" style={{ color: 'var(--ink-muted)' }}>
-        Loading grid data — is the backend running on :8000?
+        Loading grid data...
       </div>
     );
   }
