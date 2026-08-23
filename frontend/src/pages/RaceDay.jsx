@@ -380,7 +380,7 @@ function StrategyTab({ nextRace, drivers, driverTeamMap }) {
                 </div>
               ))}
             </div>
-            {/*<p className="text-xs" style={{ color: 'var(--ink-faint)' }}>{result.basis}</p>*/}
+            <p className="text-xs" style={{ color: 'var(--ink-faint)' }}>Results are heuristic. This is purely for demonstration</p>
           </div>
         )}
       </div>
