@@ -8,6 +8,7 @@ import Compatibility from './pages/Compatibility';
 import Consistency from './pages/Consistency';
 import TrackDNA from './pages/TrackDNA';
 import HeadToHead from './pages/HeadToHead';
+import RaceDay from './pages/RaceDay';
 import { FiltersProvider } from './lib/FiltersContext';
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="track-dna" element={<TrackDNA />} />
           <Route path="head-to-head" element={<HeadToHead />} />
         </Route>
+        <Route path="/race-day" element={<RaceDay />} />
       </Routes>
     </FiltersProvider>
   );

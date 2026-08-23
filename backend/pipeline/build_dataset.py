@@ -16,6 +16,13 @@ per season, so a rate-limit partway through doesn't lose earlier progress
 — re-running the script skips seasons that already have a generated file
 unless --force is passed.
 
+Race Day update: each round's real per-round result (driver, team,
+position, points, status — both quali and race) is now ALSO persisted to
+race_results.json, and each season's real event dates to race_calendar.json.
+Previously only the season-long KPI aggregate was kept and per-round detail
+was discarded; standings, the Race Day predictions-vs-actual comparison,
+and the /race-day/next resolver all need that per-round granularity.
+
 Usage:
     cd backend
     pip install -r requirements.txt
@@ -47,6 +54,37 @@ BACKOFF_SECONDS = 90  # FastF1/Jolpica's limit resets on a rolling hourly window
                        # a short backoff handles transient/burst limiting, a real
                        # hourly ban just fails that season and moves on.
 
+# FastF1's TeamName string varies by season (rebrands, sponsor-name churn —
+# e.g. "AlphaTauri" -> "RB" -> "Racing Bulls", "Alfa Romeo"/"Sauber" -> "Audi").
+# Best-effort keyword match to our stable internal team_id; unresolved names
+# are stored as None rather than guessed, so a stale/new name never silently
+# gets misattributed to the wrong constructor.
+TEAM_NAME_ALIASES = {
+    "redbull": ["red bull"],
+    "ferrari": ["ferrari"],
+    "mercedes": ["mercedes"],
+    "mclaren": ["mclaren"],
+    "astonmartin": ["aston martin"],
+    "alpine": ["alpine"],
+    "racingbulls": ["racing bulls", "alphatauri", "toro rosso"],
+    "haas": ["haas"],
+    "audi": ["audi", "sauber", "alfa romeo"],
+    "williams": ["williams"],
+    "cadillac": ["cadillac"],
+}
+
+
+def team_id_from_name(name):
+    if not isinstance(name, str):
+        return None
+    n = name.strip().lower()
+    if n == "rb":
+        return "racingbulls"
+    for team_id, keywords in TEAM_NAME_ALIASES.items():
+        if any(k in n for k in keywords):
+            return team_id
+    return None
+
 
 def with_retry(fn, *args, label="", **kwargs):
     """Retries a FastF1 call on rate-limit errors with backoff. Any other
@@ -72,10 +110,23 @@ def driver_has_history(driver, season):
     return season >= driver["debut_season"]
 
 
-def fetch_season_races(season):
+def fetch_season_events(season):
+    """Returns [{round, event_name, date, format}], real dates/format from
+    FastF1's schedule — this is what race_calendar.json is built from."""
     try:
         schedule = with_retry(fastf1.get_event_schedule, season, label=f"schedule {season}")
-        return [(int(r.RoundNumber), r.EventName) for _, r in schedule.iterrows() if r.RoundNumber > 0]
+        out = []
+        for _, r in schedule.iterrows():
+            if r.RoundNumber <= 0:
+                continue
+            date = r.EventDate
+            out.append({
+                "round": int(r.RoundNumber),
+                "event_name": r.EventName,
+                "race_date": date.strftime("%Y-%m-%d") if hasattr(date, "strftime") else str(date),
+                "format": getattr(r, "EventFormat", "conventional") or "conventional",
+            })
+        return out
     except Exception as e:
         print(f"  ! could not fetch schedule for {season}: {e}")
         return []
@@ -86,7 +137,7 @@ def load_session(season, rnd, kind, **load_kwargs):
     try:
         session = with_retry(fastf1.get_session, season, rnd, kind, label=f"{kind}{rnd}")
         with_retry(session.load, label=f"load {kind}{rnd}", **load_kwargs)
-        
+
         session.laps
         session.results
         return session
@@ -151,7 +202,6 @@ def kpis_from_race_session(race, driver_kpis, circuit_id=None):
         compound = grp["Compound"].iloc[0] if "Compound" in grp else "UNKNOWN"
         driver_kpis.setdefault(drv, _blank_accum())["tyre_slopes"].setdefault(compound, []).append(slope)
 
-    
     for sector_col, key in [("Sector1Time", "s1"), ("Sector2Time", "s2"), ("Sector3Time", "s3")]:
         if sector_col not in laps.columns:
             continue
@@ -172,6 +222,39 @@ def kpis_from_quali_race_pair(quali, race, driver_kpis):
         if drv in qpos and not pd.isna(qpos[drv]) and not pd.isna(row.get("Position")):
             driver_kpis.setdefault(drv, _blank_accum())["quali_race_diffs"].append(
                 float(qpos[drv]) - float(row["Position"]))
+
+
+def round_result_from_sessions(quali, race, circuit_id):
+    """Real per-round result — driver, team (resolved from FastF1's own
+    TeamName, so a mid-season or single-weekend driver swap is captured
+    correctly with no manual bookkeeping), position, points, status.
+    This is the new artifact standings/predictions-vs-actual read from."""
+    result = {"circuit_id": circuit_id, "quali": [], "race": [], "source": "real"}
+
+    if quali is not None and quali.results is not None and not quali.results.empty:
+        for _, row in quali.results.iterrows():
+            drv, pos = row.get("Abbreviation"), row.get("Position")
+            if drv and not pd.isna(pos):
+                result["quali"].append({"driver": drv, "position": int(pos)})
+
+    if race is not None and race.results is not None and not race.results.empty:
+        for _, row in race.results.iterrows():
+            drv = row.get("Abbreviation")
+            if not drv:
+                continue
+            pos = row.get("Position")
+            points = row.get("Points")
+            status = row.get("Status")
+            result["race"].append({
+                "driver": drv,
+                "team": team_id_from_name(row.get("TeamName")),
+                "position": int(pos) if not pd.isna(pos) else None,
+                "points": float(points) if points is not None and not pd.isna(points) else 0.0,
+                "status": status if isinstance(status, str) else "Unknown",
+                "fastest_lap": bool(row.get("Position") == 1 and float(points or 0) % 1 != 0) if points is not None else False,
+            })
+
+    return result
 
 
 def finalize_season_kpis(driver_kpis, season):
@@ -217,11 +300,13 @@ def finalize_season_kpis(driver_kpis, season):
 
 def build_season(season):
     print(f"\n== Season {season} ==")
-    races = fetch_season_races(season)
-    print(f"  {len(races)} events found")
+    events = fetch_season_events(season)
+    print(f"  {len(events)} events found")
 
     driver_kpis = {}
-    for rnd, event_name in races:
+    round_results = {}
+    for ev in events:
+        rnd, event_name = ev["round"], ev["event_name"]
         circuit_id = circuit_id_for_event(event_name)
         if circuit_id is None:
             print(f"  round {rnd}: {event_name}  ! no circuit_id match — pace won't be tagged per-circuit for this round")
@@ -232,7 +317,12 @@ def build_season(season):
         quali = load_session(season, rnd, "Q", telemetry=False, weather=False, messages=False)
         kpis_from_quali_race_pair(quali, race, driver_kpis)
 
-    return finalize_season_kpis(driver_kpis, season)
+        round_result = round_result_from_sessions(quali, race, circuit_id)
+        if round_result["race"] or round_result["quali"]:
+            round_results[str(rnd)] = round_result
+
+    season_kpis = finalize_season_kpis(driver_kpis, season)
+    return season_kpis, round_results, events
 
 
 def load_progress():
@@ -242,9 +332,13 @@ def load_progress():
     return {}
 
 
-def save_progress(all_seasons):
+def save_progress(all_seasons, all_round_results, all_calendars):
     with open(os.path.join(GENERATED_DIR, "season_kpis.json"), "w") as f:
         json.dump(all_seasons, f, indent=2, default=str)
+    with open(os.path.join(GENERATED_DIR, "race_results.json"), "w") as f:
+        json.dump(all_round_results, f, indent=2, default=str)
+    with open(os.path.join(GENERATED_DIR, "race_calendar.json"), "w") as f:
+        json.dump({**all_calendars, "source": "real"}, f, indent=2, default=str)
     with open(PROGRESS_FILE, "w") as f:
         json.dump({"completed_seasons": list(all_seasons.keys())}, f)
 
@@ -261,23 +355,38 @@ def main():
     progress = load_progress() if not args.force else {}
     already_done = set(progress.get("completed_seasons", []))
 
-    existing = {}
-    existing_path = os.path.join(GENERATED_DIR, "season_kpis.json")
-    if os.path.exists(existing_path) and not args.force:
-        with open(existing_path) as f:
-            existing = json.load(f)
+    existing, existing_round_results, existing_calendars = {}, {}, {}
+    existing_kpis_path = os.path.join(GENERATED_DIR, "season_kpis.json")
+    existing_results_path = os.path.join(GENERATED_DIR, "race_results.json")
+    existing_calendar_path = os.path.join(GENERATED_DIR, "race_calendar.json")
+    if not args.force:
+        if os.path.exists(existing_kpis_path):
+            with open(existing_kpis_path) as f:
+                existing = json.load(f)
+        if os.path.exists(existing_results_path):
+            with open(existing_results_path) as f:
+                existing_round_results = json.load(f)
+        if os.path.exists(existing_calendar_path):
+            with open(existing_calendar_path) as f:
+                existing_calendars = {k: v for k, v in json.load(f).items() if k != "source"}
 
     seasons_to_build = [args.season] if args.season else SEASONS
     all_seasons = dict(existing)
+    all_round_results = dict(existing_round_results)
+    all_calendars = dict(existing_calendars)
 
     for season in seasons_to_build:
         if str(season) in already_done and not args.force:
             print(f"\n== Season {season} == already built, skipping (use --force to rebuild)")
             continue
-        all_seasons[str(season)] = build_season(season)
-        save_progress(all_seasons)  # save after every season, not just at the end
+        season_kpis, round_results, events = build_season(season)
+        all_seasons[str(season)] = season_kpis
+        all_round_results[str(season)] = round_results
+        all_calendars[str(season)] = events
+        save_progress(all_seasons, all_round_results, all_calendars)  # save after every season
 
     print(f"\nWrote {GENERATED_DIR}/season_kpis.json ({len(all_seasons)} seasons)")
+    print(f"Wrote {GENERATED_DIR}/race_results.json, {GENERATED_DIR}/race_calendar.json")
 
     print("\n== ML: clustering driver styles ==")
     clusters = cluster_driver_styles(all_seasons, DRIVERS)
@@ -286,7 +395,7 @@ def main():
     print(f"Wrote {GENERATED_DIR}/driver_clusters.json")
 
     print("\n== ML: fitting compatibility model ==")
-   
+
     model, feature_cols = fit_compatibility_model(all_seasons, DRIVERS, CIRCUITS, clusters)
     predictions = predict_compatibility(model, feature_cols, DRIVERS, CIRCUITS, clusters, all_seasons)
     with open(os.path.join(GENERATED_DIR, "compatibility_predictions.json"), "w") as f:

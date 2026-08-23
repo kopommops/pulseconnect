@@ -3,14 +3,16 @@ import { Link, useLocation } from 'react-router-dom';
 export default function TopBar({ theme, toggleTheme }) {
   const { pathname } = useLocation();
   const onDashboard = pathname.startsWith('/dashboard');
+  const onRaceDay = pathname.startsWith('/race-day');
+  const onHome = !onDashboard && !onRaceDay;
   return (
     <div className="sticky top-0 z-40 px-6 pt-6">
       <nav className="max-w-6xl mx-auto flex items-center justify-end gap-8">
         <div className="flex items-center gap-6">
           <Link to="/" className="font-mono text-xs uppercase tracking-wider pb-0.5 transition-colors"
             style={{
-              color: !onDashboard ? 'var(--red)' : 'var(--ink-muted)',
-              borderBottom: !onDashboard ? '1px solid var(--red)' : '1px solid transparent',
+              color: onHome ? 'var(--red)' : 'var(--ink-muted)',
+              borderBottom: onHome ? '1px solid var(--red)' : '1px solid transparent',
             }}>
             Home
           </Link>
@@ -20,6 +22,13 @@ export default function TopBar({ theme, toggleTheme }) {
               borderBottom: onDashboard ? '1px solid var(--red)' : '1px solid transparent',
             }}>
             Dashboard
+          </Link>
+          <Link to="/race-day" className="font-mono text-xs uppercase tracking-wider pb-0.5 transition-colors"
+            style={{
+              color: onRaceDay ? 'var(--red)' : 'var(--ink-muted)',
+              borderBottom: onRaceDay ? '1px solid var(--red)' : '1px solid transparent',
+            }}>
+            Race Day
           </Link>
         </div>
         <button onClick={toggleTheme} aria-label="Toggle theme"

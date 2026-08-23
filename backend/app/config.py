@@ -20,6 +20,21 @@ SEED_DIR = "data/seed"
 
 UNKNOWN = "unknown"  # sentinel used throughout instead of fabricating a number
 
+POINTS_SYSTEM = {1: 25, 2: 18, 3: 15, 4: 12, 5: 10, 6: 8, 7: 6, 8: 4, 9: 2, 10: 1}
+SPRINT_POINTS_SYSTEM = {1: 8, 2: 7, 3: 6, 4: 5, 5: 4, 6: 3, 7: 2, 8: 1}
+
+PIT_LOSS_HEURISTIC_BY_TYPE = {
+    "Street": 24.0, "Technical": 22.0, "Balanced": 21.0,
+    "Mixed": 20.5, "Power": 19.0, "High-Speed": 19.5,
+}
+
+EVENT_ROSTER_OVERRIDES = {
+    "2026-zandvoort": {
+        "redbull": ["VER", "LAW"],
+        "racingbulls": ["TSU", "LIN"],
+    },
+}
+
 TEAMS = [
     {"id": "redbull", "name": "Oracle Red Bull Racing", "short": "RBR", "accent": "#2C5CC5",
      "founded_season": None, "engine": "Red Bull Ford", "drivers": ["VER", "HAD"]},
@@ -68,33 +83,61 @@ DRIVERS = [
     {"id": "SAI", "name": "Carlos Sainz", "num": 55, "country": "ES", "debut_season": 2015},
     {"id": "PER", "name": "Sergio Perez", "num": 11, "country": "MX", "debut_season": 2011},
     {"id": "BOT", "name": "Valtteri Bottas", "num": 77, "country": "FI", "debut_season": 2013},
+
+    {"id": "TSU", "name": "Yuki Tsunoda", "num": 22, "country": "JP", "debut_season": 2021},
+    {"id": "IWA", "name": "Ayumu Iwasa", "num": None, "country": "JP", "debut_season": None},
+    {"id": "VES", "name": "Frederik Vesti", "num": None, "country": "DK", "debut_season": None},
+    {"id": "GIO", "name": "Antonio Giovinazzi", "num": None, "country": "IT", "debut_season": 2019},
+    {"id": "OWA", "name": "Pato O'Ward", "num": None, "country": "MX", "debut_season": None},
+    {"id": "FOR", "name": "Leonardo Fornaroli", "num": None, "country": "IT", "debut_season": None},
+    {"id": "CRA", "name": "Jak Crawford", "num": None, "country": "US", "debut_season": None},
+    {"id": "ARO", "name": "Paul Aron", "num": None, "country": "EE", "debut_season": None},
+    {"id": "MAI", "name": "Kush Maini", "num": None, "country": "IN", "debut_season": None},
+    {"id": "BRO", "name": "Luke Browning", "num": None, "country": "GB", "debut_season": None},
+    {"id": "DOO", "name": "Jack Doohan", "num": None, "country": "AU", "debut_season": 2024},
+    {"id": "HIR", "name": "Ryo Hirakawa", "num": None, "country": "JP", "debut_season": None},
+    {"id": "ZHO", "name": "Guanyu Zhou", "num": None, "country": "CN", "debut_season": 2022},
 ]
 
+RESERVE_DRIVERS = {
+    "redbull": ["TSU", "IWA"],
+    "racingbulls": ["TSU", "IWA"],
+    "mercedes": ["VES"],
+    "ferrari": ["GIO"],
+    "mclaren": ["OWA", "FOR"],
+    "astonmartin": ["CRA"],
+    "alpine": ["ARO", "MAI"],
+    "williams": ["BRO"],
+    "haas": ["DOO", "HIR"],
+    "cadillac": ["ZHO"],
+}
+
 CIRCUITS = [
-    {"id": "bahrain", "name": "Bahrain International Circuit", "country": "Bahrain", "type": "Balanced", "length_km": 5.41, "corners": 15},
-    {"id": "jeddah", "name": "Jeddah Corniche Circuit", "country": "Saudi Arabia", "type": "Street", "length_km": 6.17, "corners": 27},
-    {"id": "melbourne", "name": "Albert Park Circuit", "country": "Australia", "type": "Balanced", "length_km": 5.28, "corners": 14},
-    {"id": "baku", "name": "Baku City Circuit", "country": "Azerbaijan", "type": "Street", "length_km": 6.00, "corners": 20},
-    {"id": "miami", "name": "Miami International Autodrome", "country": "USA", "type": "Balanced", "length_km": 5.41, "corners": 19},
-    {"id": "monaco", "name": "Circuit de Monaco", "country": "Monaco", "type": "Street", "length_km": 3.34, "corners": 19},
-    {"id": "catalunya", "name": "Circuit de Barcelona-Catalunya", "country": "Spain", "type": "Technical", "length_km": 4.66, "corners": 14},
-    {"id": "montreal", "name": "Circuit Gilles Villeneuve", "country": "Canada", "type": "Mixed", "length_km": 4.36, "corners": 14},
-    {"id": "spielberg", "name": "Red Bull Ring", "country": "Austria", "type": "Power", "length_km": 4.32, "corners": 10},
-    {"id": "silverstone", "name": "Silverstone Circuit", "country": "United Kingdom", "type": "Balanced", "length_km": 5.89, "corners": 18},
-    {"id": "hungaroring", "name": "Hungaroring", "country": "Hungary", "type": "Technical", "length_km": 4.38, "corners": 14},
-    {"id": "spa-francorchamps", "name": "Circuit de Spa-Francorchamps", "country": "Belgium", "type": "High-Speed", "length_km": 7.00, "corners": 19},
-    {"id": "zandvoort", "name": "Circuit Zandvoort", "country": "Netherlands", "type": "Technical", "length_km": 4.26, "corners": 14},
-    {"id": "monza", "name": "Autodromo Nazionale Monza", "country": "Italy", "type": "Power", "length_km": 5.79, "corners": 11},
-    {"id": "madring", "name": "Madrid In-Motion Ring", "country": "Spain", "type": "Balanced", "length_km": 5.47, "corners": 20},
-    {"id": "baku", "name": "Baku City Circuit", "country": "Azerbaijan", "type": "Street", "length_km": 6.00, "corners": 20},
-    {"id": "marina-bay", "name": "Marina Bay Street Circuit", "country": "Singapore", "type": "Street", "length_km": 4.94, "corners": 19},
-    {"id": "suzuka", "name": "Suzuka International Racing Course", "country": "Japan", "type": "Technical", "length_km": 5.81, "corners": 18},
-    {"id": "lusail", "name": "Lusail International Circuit", "country": "Qatar", "type": "High-Speed", "length_km": 5.38, "corners": 16},
-    {"id": "austin", "name": "Circuit of the Americas", "country": "USA", "type": "Mixed", "length_km": 5.51, "corners": 20},
-    {"id": "mexico-city", "name": "Autodromo Hermanos Rodriguez", "country": "Mexico", "type": "Balanced", "length_km": 4.30, "corners": 17},
-    {"id": "interlagos", "name": "Autodromo Jose Carlos Pace", "country": "Brazil", "type": "Mixed", "length_km": 4.31, "corners": 15},
-    {"id": "las-vegas", "name": "Las Vegas Strip Circuit", "country": "USA", "type": "Power", "length_km": 6.20, "corners": 17},
-    {"id": "yas-marina", "name": "Yas Marina Circuit", "country": "Abu Dhabi", "type": "Balanced", "length_km": 5.28, "corners": 16},
+    {"id": "shanghai", "name": "Shanghai International Circuit", "country": "China", "type": "Balanced", "length_km": 5.45, "corners": 16, "lat": 31.3389, "lon": 121.22},
+    {"id": "bahrain", "name": "Bahrain International Circuit", "country": "Bahrain", "type": "Balanced", "length_km": 5.41, "corners": 15, "lat": 26.0325, "lon": 50.5106},
+    {"id": "jeddah", "name": "Jeddah Corniche Circuit", "country": "Saudi Arabia", "type": "Street", "length_km": 6.17, "corners": 27, "lat": 21.6319, "lon": 39.1044},
+    {"id": "melbourne", "name": "Albert Park Circuit", "country": "Australia", "type": "Balanced", "length_km": 5.28, "corners": 14, "lat": -37.8497, "lon": 144.968},
+    {"id": "baku", "name": "Baku City Circuit", "country": "Azerbaijan", "type": "Street", "length_km": 6.00, "corners": 20, "lat": 40.3725, "lon": 49.8533},
+    {"id": "miami", "name": "Miami International Autodrome", "country": "USA", "type": "Balanced", "length_km": 5.41, "corners": 19, "lat": 25.9581, "lon": -80.2389},
+    {"id": "monaco", "name": "Circuit de Monaco", "country": "Monaco", "type": "Street", "length_km": 3.34, "corners": 19, "lat": 43.7347, "lon": 7.4206},
+    {"id": "catalunya", "name": "Circuit de Barcelona-Catalunya", "country": "Spain", "type": "Technical", "length_km": 4.66, "corners": 14, "lat": 41.57, "lon": 2.2611},
+    {"id": "montreal", "name": "Circuit Gilles Villeneuve", "country": "Canada", "type": "Mixed", "length_km": 4.36, "corners": 14, "lat": 45.5, "lon": -73.5228},
+    {"id": "spielberg", "name": "Red Bull Ring", "country": "Austria", "type": "Power", "length_km": 4.32, "corners": 10, "lat": 47.2197, "lon": 14.7647},
+    {"id": "silverstone", "name": "Silverstone Circuit", "country": "United Kingdom", "type": "Balanced", "length_km": 5.89, "corners": 18, "lat": 52.0786, "lon": -1.0169},
+    {"id": "hungaroring", "name": "Hungaroring", "country": "Hungary", "type": "Technical", "length_km": 4.38, "corners": 14, "lat": 47.5789, "lon": 19.2486},
+    {"id": "spa-francorchamps", "name": "Circuit de Spa-Francorchamps", "country": "Belgium", "type": "High-Speed", "length_km": 7.00, "corners": 19, "lat": 50.4372, "lon": 5.9714},
+    {"id": "zandvoort", "name": "Circuit Zandvoort", "country": "Netherlands", "type": "Technical", "length_km": 4.26, "corners": 14, "lat": 52.3888, "lon": 4.5409},
+    {"id": "monza", "name": "Autodromo Nazionale Monza", "country": "Italy", "type": "Power", "length_km": 5.79, "corners": 11, "lat": 45.6156, "lon": 9.2811},
+    {"id": "madring", "name": "Madrid In-Motion Ring", "country": "Spain", "type": "Balanced", "length_km": 5.47, "corners": 20, "lat": 40.4239, "lon": -3.59},
+    {"id": "baku", "name": "Baku City Circuit", "country": "Azerbaijan", "type": "Street", "length_km": 6.00, "corners": 20, "lat": 40.3725, "lon": 49.8533},
+    {"id": "marina-bay", "name": "Marina Bay Street Circuit", "country": "Singapore", "type": "Street", "length_km": 4.94, "corners": 19, "lat": 1.2914, "lon": 103.864},
+    {"id": "suzuka", "name": "Suzuka International Racing Course", "country": "Japan", "type": "Technical", "length_km": 5.81, "corners": 18, "lat": 34.8431, "lon": 136.5407},
+    {"id": "lusail", "name": "Lusail International Circuit", "country": "Qatar", "type": "High-Speed", "length_km": 5.38, "corners": 16, "lat": 25.49, "lon": 51.4542},
+    {"id": "austin", "name": "Circuit of the Americas", "country": "USA", "type": "Mixed", "length_km": 5.51, "corners": 20, "lat": 30.1328, "lon": -97.6411},
+    {"id": "mexico-city", "name": "Autodromo Hermanos Rodriguez", "country": "Mexico", "type": "Balanced", "length_km": 4.30, "corners": 17, "lat": 19.4042, "lon": -99.0907},
+    {"id": "interlagos", "name": "Autodromo Jose Carlos Pace", "country": "Brazil", "type": "Mixed", "length_km": 4.31, "corners": 15, "lat": -23.7036, "lon": -46.6997},
+    {"id": "las-vegas", "name": "Las Vegas Strip Circuit", "country": "USA", "type": "Power", "length_km": 6.20, "corners": 17, "lat": 36.1147, "lon": -115.1728},
+    {"id": "yas-marina", "name": "Yas Marina Circuit", "country": "Abu Dhabi", "type": "Balanced", "length_km": 5.28, "corners": 16, "lat": 24.4672, "lon": 54.6031},
 ]
 
 _seen = set()
@@ -104,6 +147,7 @@ CIRCUITS = [c for c in CIRCUITS if not (c["id"] in _seen or _seen.add(c["id"]))]
 EVENT_NAME_TO_CIRCUIT = {
     "bahrain": "bahrain",
     "saudi arabian": "jeddah",
+    "chinese": "shanghai",
     "australian": "melbourne",
     "azerbaijan": "baku",
     "miami": "miami",

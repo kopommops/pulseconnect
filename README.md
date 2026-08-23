@@ -130,12 +130,6 @@ of a fabricated number, all the way through the API and into the UI
 (gauges, radars, and box-plot bars all render an explicit "unknown" state
 rather than a fake zero).
 
-## Assets
-
-Driver photos, team logos, car cutouts and circuit SVGs are **placeholders**
-by design — see `frontend/public/assets/README.md` for the exact file
-naming convention. Drop files in and the UI picks them up automatically,
-falling back to hand-drawn crests/avatars/line-art for anything missing.
 
 ## Known limitations / open items
 

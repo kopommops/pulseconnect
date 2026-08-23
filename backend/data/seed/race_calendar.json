@@ -1,0 +1,28 @@
+{
+  "2026": [
+    {"round": 1,  "circuit_id": "melbourne",         "event_name": "Australian Grand Prix",     "race_date": "2026-03-08", "format": "conventional"},
+    {"round": 2,  "circuit_id": "shanghai",           "event_name": "Chinese Grand Prix",        "race_date": "2026-03-15", "format": "sprint"},
+    {"round": 3,  "circuit_id": "suzuka",              "event_name": "Japanese Grand Prix",       "race_date": "2026-03-29", "format": "conventional"},
+    {"round": 4,  "circuit_id": "miami",               "event_name": "Miami Grand Prix",          "race_date": "2026-05-03", "format": "sprint"},
+    {"round": 5,  "circuit_id": "montreal",            "event_name": "Canadian Grand Prix",       "race_date": "2026-05-24", "format": "conventional"},
+    {"round": 6,  "circuit_id": "monaco",              "event_name": "Monaco Grand Prix",         "race_date": "2026-06-07", "format": "conventional"},
+    {"round": 7,  "circuit_id": "catalunya",           "event_name": "Spanish Grand Prix",        "race_date": "2026-06-14", "format": "conventional"},
+    {"round": 8,  "circuit_id": "spielberg",           "event_name": "Austrian Grand Prix",       "race_date": "2026-06-28", "format": "sprint"},
+    {"round": 9,  "circuit_id": "silverstone",         "event_name": "British Grand Prix",        "race_date": "2026-07-05", "format": "conventional"},
+    {"round": 10, "circuit_id": "spa-francorchamps",   "event_name": "Belgian Grand Prix",        "race_date": "2026-07-19", "format": "sprint"},
+    {"round": 11, "circuit_id": "hungaroring",         "event_name": "Hungarian Grand Prix",      "race_date": "2026-07-26", "format": "conventional"},
+    {"round": 12, "circuit_id": "zandvoort",           "event_name": "Dutch Grand Prix",          "race_date": "2026-08-23", "format": "sprint"},
+    {"round": 13, "circuit_id": "monza",               "event_name": "Italian Grand Prix",        "race_date": "2026-09-06", "format": "conventional"},
+    {"round": 14, "circuit_id": "madring",             "event_name": "Spanish Grand Prix (Madrid)","race_date": "2026-09-13", "format": "conventional"},
+    {"round": 15, "circuit_id": "baku",                "event_name": "Azerbaijan Grand Prix",     "race_date": "2026-09-26", "format": "conventional"},
+    {"round": 16, "circuit_id": "marina-bay",          "event_name": "Singapore Grand Prix",      "race_date": "2026-10-11", "format": "conventional"},
+    {"round": 17, "circuit_id": "austin",              "event_name": "United States Grand Prix",  "race_date": "2026-10-25", "format": "sprint"},
+    {"round": 18, "circuit_id": "mexico-city",         "event_name": "Mexico City Grand Prix",    "race_date": "2026-11-01", "format": "conventional"},
+    {"round": 19, "circuit_id": "interlagos",          "event_name": "Sao Paulo Grand Prix",      "race_date": "2026-11-08", "format": "sprint"},
+    {"round": 20, "circuit_id": "las-vegas",           "event_name": "Las Vegas Grand Prix",      "race_date": "2026-11-21", "format": "conventional"},
+    {"round": 21, "circuit_id": "lusail",              "event_name": "Qatar Grand Prix",          "race_date": "2026-11-29", "format": "sprint"},
+    {"round": 22, "circuit_id": "yas-marina",          "event_name": "Abu Dhabi Grand Prix",      "race_date": "2026-12-06", "format": "conventional"}
+  ],
+  "source": "seed",
+  "note": "Manually compiled from public 2026 calendar announcements (post Bahrain/Saudi cancellation). Round 21 (Qatar) date is an estimate."
+}

@@ -13,7 +13,8 @@ import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import drivers, teams, circuits, compatibility, consistency, track_dna, head_to_head
+from app.routers import drivers, teams, circuits, compatibility, consistency, track_dna, head_to_head, \
+    standings, race_day, strategy
 
 app = FastAPI(title="PulseConnect v2 API", version="2.0.0")
 _origins_env = os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173")
@@ -33,6 +34,9 @@ app.include_router(compatibility.router, prefix="/api/compatibility", tags=["com
 app.include_router(consistency.router, prefix="/api/consistency", tags=["consistency"])
 app.include_router(track_dna.router, prefix="/api/track-dna", tags=["track-dna"])
 app.include_router(head_to_head.router, prefix="/api/head-to-head", tags=["head-to-head"])
+app.include_router(standings.router, prefix="/api/standings", tags=["standings"])
+app.include_router(race_day.router, prefix="/api/race-day", tags=["race-day"])
+app.include_router(strategy.router, prefix="/api/strategy", tags=["strategy"])
 
 
 @app.get("/api/health")
