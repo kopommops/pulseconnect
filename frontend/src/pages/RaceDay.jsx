@@ -1,9 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useFilters } from '../lib/FiltersContext';
 import { api } from '../lib/api';
 import { DriverAvatar, TeamCrest, CircuitArt } from '../components/Identity';
 import { Gauge } from '../components/Viz';
 import Media from '../components/Media';
+import ScrambleValue from '../components/ScrambleValue';
+import { FadeIn, SPRING, Stagger, StaggerItem } from '../components/Motion';
 
 const TABS = ['Predictions', 'Standings', 'Car Performance', 'Strategy Sim'];
 const RED = 'var(--red)';
@@ -49,7 +52,7 @@ export default function RaceDay() {
 
   return (
     <div className="max-w-6xl mx-auto px-5 pb-24">
-      <div className="glass-strong rounded-2xl p-6 md:p-8 mt-8 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
+      <FadeIn className="glass-strong rounded-lg p-6 md:p-8 mt-8 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="font-mono text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>
             Round {nextRace.round}
@@ -64,37 +67,48 @@ export default function RaceDay() {
           </div>
           {nextRace.source === 'seed' && (
             <div className="font-mono text-[10px] mt-2" style={{ color: 'var(--ink-faint)' }}>
-        
+              seed calendar — run the pipeline for FastF1-confirmed dates
             </div>
           )}
         </div>
         {circuit && <CircuitArt circuit={circuit} accent={RED} size={140} />}
-      </div>
+      </FadeIn>
 
-      <div className="flex gap-2 mb-6 flex-wrap">
+      <Stagger delay={0.12} className="flex gap-2 mb-6 flex-wrap">
         {TABS.map((t) => (
-          <button
-            key={t}
-            onClick={() => setTab(t)}
-            className="font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-colors"
-            style={{
-              background: tab === t ? RED : 'var(--glass)',
-              color: tab === t ? '#fff' : 'var(--ink-muted)',
-            }}
-          >
-            {t}
-          </button>
+          <StaggerItem key={t}>
+            <button
+              onClick={() => setTab(t)}
+              className="font-mono text-xs uppercase tracking-wider px-4 py-2 rounded-full transition-colors"
+              style={{
+                background: tab === t ? RED : 'var(--glass)',
+                color: tab === t ? '#fff' : 'var(--ink-muted)',
+              }}
+            >
+              {t}
+            </button>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
 
-      {tab === 'Predictions' && (
-        <PredictionsTab predictions={predictions} actual={actual} driverTeamMap={driverTeamMap} />
-      )}
-      {tab === 'Standings' && <StandingsTab standings={standings} teams={f.teams} />}
-      {tab === 'Car Performance' && <CarPerformanceTab roster={roster} predictions={predictions} />}
-      {tab === 'Strategy Sim' && (
-        <StrategyTab nextRace={nextRace} drivers={f.drivers} driverTeamMap={driverTeamMap} />
-      )}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={tab}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -6 }}
+          transition={SPRING}
+        >
+          {tab === 'Predictions' && (
+            <PredictionsTab predictions={predictions} actual={actual} driverTeamMap={driverTeamMap} />
+          )}
+          {tab === 'Standings' && <StandingsTab standings={standings} teams={f.teams} />}
+          {tab === 'Car Performance' && <CarPerformanceTab roster={roster} predictions={predictions} />}
+          {tab === 'Strategy Sim' && (
+            <StrategyTab nextRace={nextRace} drivers={f.drivers} driverTeamMap={driverTeamMap} />
+          )}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
@@ -113,13 +127,17 @@ function Unknown({ children = 'unknown — no data for this yet' }) {
 
 // ---------------------------------------------------------------- Predictions
 
+// Reveal in ceremony order — third place announced first, winner last —
+// with the winner getting a slightly bigger pop on lock-in.
+const PODIUM_DELAY = { 1: 0.5, 2: 0.25, 3: 0 };
+
 function PredictionsTab({ predictions, actual, driverTeamMap }) {
   if (!predictions) return <Unknown>Loading predictions...</Unknown>;
   if (predictions.error) return <Unknown>{predictions.error}</Unknown>;
 
   return (
     <div className="space-y-4">
-      <div className="glass rounded-2xl p-6">
+      <div className="glass rounded-lg p-6">
         <div className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: RED }}>
           Predicted Podium · Compatibility model + driver clusters
         </div>
@@ -131,7 +149,7 @@ function PredictionsTab({ predictions, actual, driverTeamMap }) {
       </div>
 
       <div className="grid md:grid-cols-2 gap-4">
-        <div className="glass rounded-2xl p-6">
+        <div className="glass rounded-lg p-6">
           <div className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: RED }}>
             Pulse Pick — one to watch
           </div>
@@ -148,19 +166,11 @@ function PredictionsTab({ predictions, actual, driverTeamMap }) {
           ) : <Unknown />}
         </div>
 
-        <div className="glass rounded-2xl p-6 flex items-center justify-between">
-          <div>
-            <div className="font-mono text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>Chaos Index</div>
-            <p className="text-xs max-w-[220px]" style={{ color: 'var(--ink-muted)' }}>
-              How bunched the top compatibility scores are — tighter spread, harder to call.
-            </p>
-          </div>
-          <Gauge value={predictions.chaos_index} accent={RED} size={120} label="Chaos" />
-        </div>
+        <ChaosIndexCard predictions={predictions} />
       </div>
 
       {actual && actual.status === 'complete' && (
-        <div className="glass-strong rounded-2xl p-6">
+        <div className="glass-strong rounded-lg p-6">
           <div className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: RED }}>
             Predicted vs. Actual — {actual.podium_accuracy_pct}% podium accuracy ({actual.podium_hits}/3)
           </div>
@@ -183,7 +193,13 @@ function PredictionsTab({ predictions, actual, driverTeamMap }) {
 function PodiumCard({ rank, row, team }) {
   const accent = team?.accent || RED;
   return (
-    <div className="rounded-xl p-4" style={{ background: 'var(--glass-strong)', border: `1px solid ${accent}33` }}>
+    <motion.div
+      className="rounded-md p-4"
+      style={{ background: 'var(--glass-strong)', border: `1px solid ${accent}33` }}
+      initial={{ opacity: 0, y: 24, scale: rank === 1 ? 0.85 : 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ ...SPRING, delay: PODIUM_DELAY[rank] ?? 0 }}
+    >
       <div className="flex items-center gap-3 mb-3">
         <div className="font-display font-bold text-2xl w-8" style={{ color: accent }}>P{rank}</div>
         <DriverAvatar driver={row.driver} team={team || { accent: RED }} size={48} active />
@@ -195,6 +211,37 @@ function PodiumCard({ rank, row, team }) {
       <div className="font-mono text-xs" style={{ color: 'var(--ink-muted)' }}>
         {row.score}/100 · {row.predicted_delta_s >= 0 ? '+' : ''}{row.predicted_delta_s}s predicted delta
       </div>
+    </motion.div>
+  );
+}
+
+// Chaos index gets an actual explanation, not just a number under a gauge —
+// same "score" and "score_basis" the API already computes, just surfaced.
+function ChaosIndexCard({ predictions }) {
+  const scored = [...(predictions.podium || []), ...(predictions.top5 || [])]
+    .filter((r, i, arr) => arr.findIndex((x) => x.driver_id === r.driver_id) === i)
+    .sort((a, b) => b.score - a.score);
+  const top = scored[0]?.score;
+  const bottom = scored[scored.length - 1]?.score;
+  const spread = top != null && bottom != null ? top - bottom : null;
+
+  return (
+    <div className="glass rounded-lg p-6">
+      <div className="flex items-start justify-between gap-4 mb-2">
+        <div>
+          <div className="font-mono text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>Chaos Index</div>
+          <p className="text-xs max-w-[220px]" style={{ color: 'var(--ink-muted)' }}>
+            How bunched the top compatibility scores are — tighter spread, harder to call.
+          </p>
+        </div>
+        <Gauge value={predictions.chaos_index} accent={RED} size={110} label="Chaos" />
+      </div>
+      {spread != null && (
+        <div className="mt-3 pt-3 font-mono text-[11px] space-y-1" style={{ borderTop: '1px solid var(--border)', color: 'var(--ink-muted)' }}>
+          <div>Top-8 score spread: <span style={{ color: 'var(--ink)' }}>{spread} pts</span> ({top} → {bottom})</div>
+          <div style={{ color: 'var(--ink-faint)' }}>{predictions.chaos_index_basis}</div>
+        </div>
+      )}
     </div>
   );
 }
@@ -207,10 +254,12 @@ function StandingsTab({ standings, teams }) {
   if (standings.error) return <Unknown>{standings.error}</Unknown>;
 
   const rows = view === 'drivers' ? standings.drivers : standings.constructors;
+  const top3 = rows.slice(0, 3);
+  const rest = rows.slice(3);
 
   return (
-    <div className="glass rounded-2xl p-6">
-      <div className="flex items-center justify-between mb-4">
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
         <div className="font-mono text-[10px] uppercase tracking-wider" style={{ color: RED }}>
           {standings.season} Standings · {standings.rounds_counted} rounds counted
         </div>
@@ -224,23 +273,73 @@ function StandingsTab({ standings, teams }) {
           ))}
         </div>
       </div>
-      <div className="space-y-1">
-        {rows.map((r) => {
-          const team = view === 'constructors' ? teams.find((t) => t.id === r.team_id) : null;
+
+      <Stagger key={view} className="grid md:grid-cols-3 gap-4">
+        {top3.map((r, i) => {
+          const team = view === 'constructors' ? teams.find((t) => t.id === r.team_id) : teams.find((t) => t.drivers?.includes(r.driver_id));
           return (
-            <div key={r.driver_id || r.team_id} className="flex items-center gap-3 px-3 py-2.5 rounded-lg" style={{ background: 'var(--glass-strong)' }}>
-              <div className="font-mono text-xs w-6" style={{ color: 'var(--ink-faint)' }}>{r.position}</div>
-              {team && <TeamCrest team={team} size={24} />}
-              <div className="flex-1 font-display font-bold text-sm truncate">{r.name}</div>
-              {view === 'drivers' && (
-                <div className="font-mono text-[10px]" style={{ color: 'var(--ink-muted)' }}>
-                  {r.wins}W · {r.podiums}P
-                </div>
-              )}
-              <div className="font-mono text-sm font-bold w-16 text-right">{r.points}</div>
-            </div>
+            <StaggerItem key={r.driver_id || r.team_id}>
+              <TopThreeCard rank={i + 1} row={r} team={team} view={view} />
+            </StaggerItem>
           );
         })}
+      </Stagger>
+
+      <div className="glass rounded-lg p-4">
+        <div className="space-y-1">
+          {rest.map((r) => {
+            const team = view === 'constructors' ? teams.find((t) => t.id === r.team_id) : null;
+            return (
+              <div key={r.driver_id || r.team_id} className="flex items-center gap-3 px-3 py-2.5 rounded-md" style={{ background: 'var(--glass-strong)' }}>
+                <div className="font-mono text-xs w-6" style={{ color: 'var(--ink-faint)' }}>{r.position}</div>
+                {team && <TeamCrest team={team} size={24} />}
+                <div className="flex-1 font-display font-bold text-sm truncate">{r.name}</div>
+                {view === 'drivers' && (
+                  <div className="font-mono text-[10px]" style={{ color: 'var(--ink-muted)' }}>
+                    {r.wins}W · {r.podiums}P
+                  </div>
+                )}
+                <div className="font-mono text-sm font-bold w-16 text-right">{r.points}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const RANK_COLOR = { 1: '#FFD447', 2: '#C7CDD6', 3: '#D0894F' };
+
+function TopThreeCard({ rank, row, team, view }) {
+  const accent = team?.accent || RED;
+  const rankColor = RANK_COLOR[rank];
+  return (
+    <div
+      className="rounded-md p-5 relative overflow-hidden"
+      style={{ background: 'var(--glass-strong)', border: `1px solid ${rankColor}55` }}
+    >
+      <div
+        className="absolute -top-6 -right-6 w-24 h-24 rounded-full"
+        style={{ background: `radial-gradient(circle, ${rankColor}33, transparent 70%)` }}
+      />
+      <div className="relative flex items-center justify-between mb-3">
+        <div className="font-display font-bold text-3xl" style={{ color: rankColor }}>#{rank}</div>
+        {team && <TeamCrest team={team} size={30} />}
+      </div>
+      {view === 'drivers' ? (
+        <div className="relative flex items-center gap-3">
+          <DriverAvatar driver={{ id: row.driver_id, name: row.name, num: '' }} team={team || { accent }} size={44} active />
+          <div className="min-w-0">
+            <div className="font-display font-bold truncate">{row.name}</div>
+            <div className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>{row.wins}W · {row.podiums}P</div>
+          </div>
+        </div>
+      ) : (
+        <div className="relative font-display font-bold truncate">{row.name}</div>
+      )}
+      <div className="relative font-mono text-2xl font-bold mt-3" style={{ color: 'var(--ink)' }}>
+        {row.points}<span className="text-xs" style={{ color: 'var(--ink-faint)' }}> pts</span>
       </div>
     </div>
   );
@@ -249,6 +348,7 @@ function StandingsTab({ standings, teams }) {
 // -------------------------------------------------------------- Car Performance
 
 function CarPerformanceTab({ roster, predictions }) {
+  const [selected, setSelected] = useState(null);
   if (!roster) return <Unknown>Loading lineup...</Unknown>;
 
   const scoreByDriver = {};
@@ -256,44 +356,105 @@ function CarPerformanceTab({ roster, predictions }) {
     scoreByDriver[r.driver_id] = r.score;
   });
 
+  const teamScores = roster.teams.map(({ team, drivers }) => {
+    const scores = drivers.map((d) => scoreByDriver[d.id]).filter((s) => s != null);
+    const avg = scores.length ? scores.reduce((a, b) => a + b, 0) / scores.length : null;
+    return { team, avg };
+  });
+  const maxAvg = Math.max(...teamScores.map((t) => t.avg || 0), 1);
+
   return (
-    <div className="grid md:grid-cols-2 gap-4">
-      {roster.teams.map(({ team, drivers, source }) => (
-        <div key={team.id} className="glass rounded-2xl p-5" style={{ borderTop: `2px solid ${team.accent}` }}>
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <TeamCrest team={team} size={28} />
-              <div className="font-display font-bold text-sm">{team.name}</div>
-            </div>
-            {source !== 'default' && (
-              <span className="font-mono text-[9px] uppercase px-2 py-0.5 rounded-full" style={{ background: `${team.accent}22`, color: team.accent }}>
-                {source === 'override' ? 'Swap this weekend' : source}
-              </span>
-            )}
-          </div>
-          <div className="rounded-xl overflow-hidden mb-3" style={{ background: '#0a0a0b' }}>
-            <Media
-              src={`/assets/cars/${team.id}.avif`}
-              alt={`${team.name} car`}
-              className="w-full h-28 object-contain p-2"
-              fallback={<div className="w-full h-28 flex items-center justify-center font-mono text-xs" style={{ color: 'var(--ink-faint)' }}>{team.short}</div>}
-            />
-          </div>
-          <div className="flex gap-4">
-            {drivers.map((d) => (
-              <div key={d.id} className="flex items-center gap-2">
-                <DriverAvatar driver={d} team={team} size={36} />
-                <div>
-                  <div className="font-mono text-xs">{d.name}</div>
-                  <div className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>
-                    {scoreByDriver[d.id] != null ? `${scoreByDriver[d.id]}/100 fit` : '—'}
+    <div>
+      <p className="font-mono text-[11px] mb-4" style={{ color: 'var(--ink-faint)' }}>
+        Click a car to compare its predicted this-weekend fit against the rest of the grid.
+      </p>
+      <Stagger className="grid md:grid-cols-2 gap-4" staggerMs={0.06}>
+        {roster.teams.map(({ team, drivers, source }) => {
+          const isSelected = selected === team.id;
+          const avg = teamScores.find((t) => t.team.id === team.id)?.avg;
+          return (
+            <StaggerItem key={team.id}>
+              <motion.div
+                layout
+                onClick={() => setSelected(isSelected ? null : team.id)}
+                className="glass rounded-md p-5 cursor-pointer"
+                style={{ borderTop: `2px solid ${team.accent}`, outline: isSelected ? `2px solid ${team.accent}` : 'none' }}
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.98 }}
+                transition={SPRING}
+              >
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <TeamCrest team={team} size={28} />
+                    <div className="font-display font-bold text-sm">{team.name}</div>
                   </div>
+                  {source !== 'default' && (
+                    <span className="font-mono text-[9px] uppercase px-2 py-0.5 rounded-full" style={{ background: `${team.accent}22`, color: team.accent }}>
+                      {source === 'override' ? 'Swap this weekend' : source}
+                    </span>
+                  )}
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
+                <div className="rounded-md overflow-hidden mb-3" style={{ background: '#0a0a0b' }}>
+                  <Media
+                    src={`/assets/cars/${team.id}.avif`}
+                    alt={`${team.name} car`}
+                    className="w-full h-28 object-contain p-2"
+                    fallback={<div className="w-full h-28 flex items-center justify-center font-mono text-xs" style={{ color: 'var(--ink-faint)' }}>{team.short}</div>}
+                  />
+                </div>
+
+                {avg != null && (
+                  <div className="mb-3">
+                    <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'var(--border)' }}>
+                      <motion.div
+                        className="h-full rounded-full"
+                        style={{ background: team.accent }}
+                        initial={{ width: 0 }}
+                        animate={{ width: `${(avg / maxAvg) * 100}%` }}
+                        transition={SPRING}
+                      />
+                    </div>
+                    <div className="font-mono text-[10px] mt-1" style={{ color: 'var(--ink-faint)' }}>
+                      avg predicted fit this weekend: {avg.toFixed(0)}/100
+                    </div>
+                  </div>
+                )}
+
+                <div className="flex gap-4">
+                  {drivers.map((d) => (
+                    <div key={d.id} className="flex items-center gap-2">
+                      <DriverAvatar driver={d} team={team} size={36} />
+                      <div>
+                        <div className="font-mono text-xs">{d.name}</div>
+                        <div className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>
+                          {scoreByDriver[d.id] != null ? `${scoreByDriver[d.id]}/100 fit` : '—'}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <AnimatePresence>
+                  {isSelected && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={SPRING}
+                      className="mt-3 pt-3 font-mono text-[11px]"
+                      style={{ borderTop: '1px solid var(--border)', color: 'var(--ink-muted)' }}
+                    >
+                      Engine: {team.engine} · {avg != null
+                        ? `ranked ${teamScores.filter((t) => (t.avg || 0) > avg).length + 1} of ${teamScores.length} on predicted fit this weekend`
+                        : 'no scored driver for this weekend yet'}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            </StaggerItem>
+          );
+        })}
+      </Stagger>
     </div>
   );
 }
@@ -316,6 +477,7 @@ function StrategyTab({ nextRace, drivers, driverTeamMap }) {
 
   const run = () => {
     setLoading(true);
+    setResult(null);
     api.simulateStrategy(nextRace.season, nextRace.round, {
       driver_id: driverId, circuit_id: nextRace.circuit.id, season: nextRace.season, stints,
     }).then(setResult).catch((e) => setResult({ error: e.message })).finally(() => setLoading(false));
@@ -325,24 +487,24 @@ function StrategyTab({ nextRace, drivers, driverTeamMap }) {
 
   return (
     <div className="grid lg:grid-cols-2 gap-4">
-      <div className="glass rounded-2xl p-6">
+      <div className="glass rounded-lg p-6">
         <div className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: RED }}>
           Tyre / Pit Strategy — What If
         </div>
         <label className="font-mono text-xs block mb-1" style={{ color: 'var(--ink-muted)' }}>Driver</label>
         <select value={driverId} onChange={(e) => setDriverId(e.target.value)}
-          className="w-full mb-4 px-3 py-2 rounded-lg font-mono text-sm" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }}>
+          className="w-full mb-4 px-3 py-2 rounded-md font-mono text-sm" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }}>
           {drivers.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
         </select>
 
         {stints.map((s, i) => (
           <div key={i} className="flex gap-2 mb-2 items-center">
             <select value={s.compound} onChange={(e) => updateStint(i, 'compound', e.target.value)}
-              className="flex-1 px-3 py-2 rounded-lg font-mono text-xs" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }}>
+              className="flex-1 px-3 py-2 rounded-md font-mono text-xs" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }}>
               {COMPOUNDS.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
             <input type="number" min="1" value={s.laps} onChange={(e) => updateStint(i, 'laps', Number(e.target.value))}
-              className="w-20 px-3 py-2 rounded-lg font-mono text-xs" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }} />
+              className="w-20 px-3 py-2 rounded-md font-mono text-xs" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }} />
             <span className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>laps</span>
             {stints.length > 1 && (
               <button onClick={() => removeStint(i)} className="font-mono text-xs px-2" style={{ color: 'var(--ink-faint)' }}>✕</button>
@@ -353,35 +515,36 @@ function StrategyTab({ nextRace, drivers, driverTeamMap }) {
           <button onClick={addStint} className="font-mono text-[10px] uppercase px-3 py-1.5 rounded-full" style={{ background: 'var(--glass-strong)', color: 'var(--ink-muted)' }}>
             + Add stint
           </button>
-          <button onClick={run} disabled={loading} className="font-mono text-[10px] uppercase px-4 py-1.5 rounded-full" style={{ background: RED, color: '#fff' }}>
+          <motion.button onClick={run} disabled={loading} whileTap={{ scale: 0.95 }}
+            className="font-mono text-[10px] uppercase px-4 py-1.5 rounded-full" style={{ background: RED, color: '#fff' }}>
             {loading ? 'Simulating...' : 'Run simulation'}
-          </button>
+          </motion.button>
         </div>
       </div>
 
-      <div className="glass rounded-2xl p-6">
+      <div className="glass rounded-lg p-6">
         <div className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: RED }}>Result</div>
         {!result && <Unknown>Run a simulation to see predicted race-time delta.</Unknown>}
         {result?.error && <Unknown>{result.error}</Unknown>}
         {result && !result.error && (
-          <div>
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
             <div className="flex items-center gap-3 mb-4">
               {team && <DriverAvatar driver={{ id: driverId, name: driverId, num: '' }} team={team} size={36} />}
               <div className="font-display font-bold text-2xl">
-                {result.total_predicted_delta_vs_field_s >= 0 ? '+' : ''}{result.total_predicted_delta_vs_field_s}s
+                <ScrambleValue value={`${result.total_predicted_delta_vs_field_s >= 0 ? '+' : ''}${result.total_predicted_delta_vs_field_s}s`} />
               </div>
               <div className="font-mono text-xs" style={{ color: 'var(--ink-muted)' }}>vs. field, {result.num_stops} stop(s)</div>
             </div>
             <div className="space-y-2 mb-4">
               {result.stints.map((s, i) => (
-                <div key={i} className="flex justify-between font-mono text-xs px-3 py-2 rounded-lg" style={{ background: 'var(--glass-strong)' }}>
+                <div key={i} className="flex justify-between font-mono text-xs px-3 py-2 rounded-md" style={{ background: 'var(--glass-strong)' }}>
                   <span>{s.compound} × {s.laps} laps {!s.degradation_known && '(no real deg. data)'}</span>
-                  <span>{s.stint_delta_s >= 0 ? '+' : ''}{s.stint_delta_s}s</span>
+                  <ScrambleValue value={`${s.stint_delta_s >= 0 ? '+' : ''}${s.stint_delta_s}s`} duration={350} />
                 </div>
               ))}
             </div>
-            <p className="text-xs" style={{ color: 'var(--ink-faint)' }}>Results are heuristic. This is purely for demonstration</p>
-          </div>
+            <p className="text-xs" style={{ color: 'var(--ink-faint)' }}>{result.basis}</p>
+          </motion.div>
         )}
       </div>
     </div>

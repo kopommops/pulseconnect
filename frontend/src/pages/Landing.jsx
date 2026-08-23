@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../lib/api';
 import { LogoChip } from '../components/Identity';
+import GroundPlane from '../components/GroundPlane';
+import { FadeIn, Stagger, StaggerItem } from '../components/Motion';
 
 const NEXT_RACE = { name: 'Dutch GP', circuit: 'Circuit Zandvoort', date: 'AUG 21–23', round: 'Round 12' };
 
@@ -28,48 +30,59 @@ export default function Landing() {
           </div>*/}
 
           {/* giant headline, behind/around the car */}
-          <div className="absolute inset-x-0 top-16 md:top-10 z-0 text-center select-none pointer-events-none">
+          <FadeIn y={-14} className="absolute inset-x-0 top-16 md:top-10 z-0 text-center select-none pointer-events-none">
             <div
               className="font-display font-bold tracking-tight"
               style={{ fontSize: 'clamp(3.5rem, 11vw, 8.5rem)', lineHeight: 0.92, color: 'var(--ink)' }}
             >
               PULSE<span style={{ color: 'var(--red)' }}>CONNECT</span>
             </div>
+          </FadeIn>
+
+          {/* ground plane, sits under the car so it reads as standing on something */}
+          <div className="absolute inset-x-0 top-[430px] md:top-[480px] z-[5] flex justify-center">
+            <GroundPlane accent="var(--red)" width={620} />
           </div>
 
           {/* car render, layered above the headline */}
-          <div className="absolute inset-x-0 top-32 md:top-24 z-10 flex justify-center pointer-events-none">
+          <FadeIn delay={0.08} scale={0.94} className="absolute inset-x-0 top-32 md:top-24 z-10 flex justify-center pointer-events-none">
             <img
               src="/assets/hero/landing-car.png"
               alt="Formula 1 car, front view"
               className="w-[85%] max-w-2xl drop-shadow-[0_30px_60px_rgba(226,16,28,0.25)]"
             />
-          </div>
+          </FadeIn>
 
           {/* next race card, bottom-right */}
-          <div className="absolute bottom-0 right-0 z-20 w-64 glass-strong rounded-2xl p-4">
-            <div className="flex items-center justify-between mb-2">
-              <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color: 'var(--red)' }}>Next on the grid</span>
-              <span className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>{NEXT_RACE.round}</span>
-            </div>
-            <div className="font-display font-bold text-lg leading-tight">{NEXT_RACE.name}</div>
-            <div className="font-mono text-xs mt-0.5" style={{ color: 'var(--ink-muted)' }}>{NEXT_RACE.circuit}</div>
-            <div className="font-mono text-xs mt-3" style={{ color: 'var(--ink)' }}>{NEXT_RACE.date}</div>
-          </div>
+          <Stagger delay={0.32} className="absolute bottom-0 right-0 z-20 w-64">
+            <StaggerItem className="glass-strong rounded-lg p-4">
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-mono text-[10px] uppercase tracking-wider" style={{ color: 'var(--red)' }}>Next on the grid</span>
+                <span className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>{NEXT_RACE.round}</span>
+              </div>
+              <div className="font-display font-bold text-lg leading-tight">{NEXT_RACE.name}</div>
+              <div className="font-mono text-xs mt-0.5" style={{ color: 'var(--ink-muted)' }}>{NEXT_RACE.circuit}</div>
+              <div className="font-mono text-xs mt-3" style={{ color: 'var(--ink)' }}>{NEXT_RACE.date}</div>
+            </StaggerItem>
+          </Stagger>
 
           {/* two small preview cards, bottom-left */}
-          <div className="absolute bottom-0 left-0 z-20 flex gap-3">
-            <Link to="/dashboard/compatibility" className="glass rounded-2xl p-4 w-40 hover:-translate-y-0.5 transition-transform">
-              <div className="font-mono text-[9px] uppercase tracking-wider mb-2" style={{ color: 'var(--ink-faint)' }}>Compatibility</div>
-              <div className="font-display font-bold text-sm">Score any driver, any circuit</div>
-              <div className="font-mono text-[10px] mt-2" style={{ color: 'var(--red)' }}>Open →</div>
-            </Link>
-            <Link to="/dashboard/consistency" className="glass rounded-2xl p-4 w-40 hover:-translate-y-0.5 transition-transform hidden sm:block">
-              <div className="font-mono text-[9px] uppercase tracking-wider mb-2" style={{ color: 'var(--ink-faint)' }}>Consistency</div>
-              <div className="font-display font-bold text-sm">Season-long finish spread</div>
-              <div className="font-mono text-[10px] mt-2" style={{ color: 'var(--red)' }}>Open →</div>
-            </Link>
-          </div>
+          <Stagger delay={0.32} className="absolute bottom-0 left-0 z-20 flex gap-3">
+            <StaggerItem>
+              <Link to="/dashboard/compatibility" className="block glass rounded-lg p-4 w-40 hover:-translate-y-0.5 transition-transform">
+                <div className="font-mono text-[9px] uppercase tracking-wider mb-2" style={{ color: 'var(--ink-faint)' }}>Compatibility</div>
+                <div className="font-display font-bold text-sm">Score any driver, any circuit</div>
+                <div className="font-mono text-[10px] mt-2" style={{ color: 'var(--red)' }}>Open →</div>
+              </Link>
+            </StaggerItem>
+            <StaggerItem className="hidden sm:block">
+              <Link to="/dashboard/consistency" className="block glass rounded-lg p-4 w-40 hover:-translate-y-0.5 transition-transform">
+                <div className="font-mono text-[9px] uppercase tracking-wider mb-2" style={{ color: 'var(--ink-faint)' }}>Consistency</div>
+                <div className="font-display font-bold text-sm">Season-long finish spread</div>
+                <div className="font-mono text-[10px] mt-2" style={{ color: 'var(--red)' }}>Open →</div>
+              </Link>
+            </StaggerItem>
+          </Stagger>
         </div>
 
         <div className="flex justify-center mt-6">

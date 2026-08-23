@@ -3,6 +3,8 @@ import { useFilters } from '../lib/FiltersContext';
 import { api } from '../lib/api';
 import { DriverFullBody, TeamCrest } from '../components/Identity';
 import { AXES } from '../components/Viz';
+import GroundPlane from '../components/GroundPlane';
+import { FadeIn, Stagger, StaggerItem } from '../components/Motion';
 
 export default function DriverProfile() {
   const f = useFilters();
@@ -18,29 +20,30 @@ export default function DriverProfile() {
     : null;
 
   return (
-    <div>
+    <div key={f.driver.id}>
       <div className="relative min-h-[560px] mb-8">
- 
-        <div className="absolute inset-x-0 top-10 z-0 text-center select-none pointer-events-none px-4">
+
+        <FadeIn y={-10} className="absolute inset-x-0 top-10 z-0 text-center select-none pointer-events-none px-4">
           <div
             className="font-display font-bold tracking-tight uppercase"
             style={{ fontSize: 'clamp(2.5rem, 9vw, 6.5rem)', lineHeight: 0.9, color: 'var(--ink)' }}
           >
             {f.driver.name}
           </div>
-        </div>
+        </FadeIn>
 
-        
+        {/* ground plane, under the driver's feet */}
+        <div className="absolute inset-x-0 bottom-10 z-[5] flex justify-center">
+          <GroundPlane accent={accent} width={340} />
+        </div>
 
         {/* full body photo */}
-        <div className="absolute inset-x-0 top-24 bottom-0 z-10 flex justify-center pointer-events-none">
+        <FadeIn delay={0.08} scale={0.94} className="absolute inset-x-0 top-24 bottom-0 z-10 flex justify-center pointer-events-none">
           <DriverFullBody driver={f.driver} team={f.team} className="max-h-full" />
-        </div>
-
-        
+        </FadeIn>
 
         {/* best track card, bottom-right */}
-        <div className="absolute bottom-0 right-0 z-20 w-64 glass-strong rounded-2xl p-4">
+        <FadeIn delay={0.3} className="absolute bottom-0 right-0 z-20 w-64 glass-strong rounded-lg p-4">
           <div className="font-mono text-[10px] uppercase tracking-wider mb-2" style={{ color: accent }}>Best predicted track</div>
           {insights && insights.best_track !== 'unknown' ? (
             <>
@@ -51,21 +54,21 @@ export default function DriverProfile() {
           ) : (
             <div className="font-mono text-xs" style={{ color: 'var(--ink-faint)' }}>unknown — no prediction yet</div>
           )}
-        </div>
+        </FadeIn>
 
         {/* team badge, bottom-left */}
-        <div className="absolute bottom-0 left-0 z-20 flex items-center gap-3 glass rounded-2xl p-3 pr-5">
+        <FadeIn delay={0.36} className="absolute bottom-0 left-0 z-20 flex items-center gap-3 glass rounded-lg p-3 pr-5">
           <TeamCrest team={f.team} size={44} />
           <div>
             <div className="font-display font-semibold text-sm">{f.team.name}</div>
             <div className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>#{f.driver.num} · {f.driver.country}</div>
           </div>
-        </div>
+        </FadeIn>
       </div>
 
       {/* ============ KPI BAND ============ */}
-      <div className="grid md:grid-cols-3 gap-4">
-        <div className="glass rounded-2xl p-6">
+      <Stagger delay={0.45} className="grid md:grid-cols-3 gap-4">
+        <StaggerItem className="glass rounded-lg p-6">
           <div className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: 'var(--ink-faint)' }}>
             Consistency {insights?.latest_consistency_season ? `· ${insights.latest_consistency_season}` : ''}
           </div>
@@ -77,9 +80,9 @@ export default function DriverProfile() {
               </div>
             </>
           ) : <div className="font-mono text-xs" style={{ color: 'var(--ink-faint)' }}>unknown</div>}
-        </div>
+        </StaggerItem>
 
-        <div className="glass rounded-2xl p-6">
+        <StaggerItem className="glass rounded-lg p-6">
           <div className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: 'var(--ink-faint)' }}>Tyre Degradation (avg, s/lap)</div>
           {insights && insights.avg_tyre_degradation !== 'unknown' ? (
             <div className="space-y-1.5">
@@ -91,16 +94,16 @@ export default function DriverProfile() {
               ))}
             </div>
           ) : <div className="font-mono text-xs" style={{ color: 'var(--ink-faint)' }}>unknown</div>}
-        </div>
+        </StaggerItem>
 
-        <div className="glass rounded-2xl p-6">
+        <StaggerItem className="glass rounded-lg p-6">
           <div className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: 'var(--ink-faint)' }}>Style Cluster</div>
           <div className="font-display font-bold text-lg">
             {typeof f.driver.style_cluster === 'number' ? `Cluster ${f.driver.style_cluster}` : 'unknown'}
           </div>
           <div className="font-mono text-xs mt-1" style={{ color: 'var(--ink-muted)' }}>from KMeans on real KPI vectors</div>
-        </div>
-      </div>
+        </StaggerItem>
+      </Stagger>
     </div>
   );
 }
