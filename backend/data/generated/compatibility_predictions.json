@@ -1,5 +1,9 @@
 {
   "VER": {
+    "shanghai": {
+      "score": 66,
+      "predicted_delta_s": -0.917
+    },
     "bahrain": {
       "score": 63,
       "predicted_delta_s": -0.766
@@ -94,6 +98,10 @@
     }
   },
   "HAD": {
+    "shanghai": {
+      "score": 45,
+      "predicted_delta_s": 0.257
+    },
     "bahrain": {
       "score": 45,
       "predicted_delta_s": 0.257
@@ -188,6 +196,10 @@
     }
   },
   "LEC": {
+    "shanghai": {
+      "score": 61,
+      "predicted_delta_s": -0.648
+    },
     "bahrain": {
       "score": 59,
       "predicted_delta_s": -0.548
@@ -282,6 +294,10 @@
     }
   },
   "HAM": {
+    "shanghai": {
+      "score": 60,
+      "predicted_delta_s": -0.562
+    },
     "bahrain": {
       "score": 58,
       "predicted_delta_s": -0.484
@@ -376,6 +392,10 @@
     }
   },
   "RUS": {
+    "shanghai": {
+      "score": 56,
+      "predicted_delta_s": -0.348
+    },
     "bahrain": {
       "score": 55,
       "predicted_delta_s": -0.287
@@ -470,6 +490,10 @@
     }
   },
   "ANT": {
+    "shanghai": {
+      "score": 59,
+      "predicted_delta_s": -0.513
+    },
     "bahrain": {
       "score": 58,
       "predicted_delta_s": -0.446
@@ -564,6 +588,10 @@
     }
   },
   "NOR": {
+    "shanghai": {
+      "score": 60,
+      "predicted_delta_s": -0.566
+    },
     "bahrain": {
       "score": 58,
       "predicted_delta_s": -0.446
@@ -658,6 +686,10 @@
     }
   },
   "PIA": {
+    "shanghai": {
+      "score": 59,
+      "predicted_delta_s": -0.513
+    },
     "bahrain": {
       "score": 58,
       "predicted_delta_s": -0.452
@@ -752,6 +784,10 @@
     }
   },
   "ALO": {
+    "shanghai": {
+      "score": 45,
+      "predicted_delta_s": 0.224
+    },
     "bahrain": {
       "score": 45,
       "predicted_delta_s": 0.259
@@ -846,6 +882,10 @@
     }
   },
   "STR": {
+    "shanghai": {
+      "score": 44,
+      "predicted_delta_s": 0.314
+    },
     "bahrain": {
       "score": 43,
       "predicted_delta_s": 0.336
@@ -940,6 +980,10 @@
     }
   },
   "GAS": {
+    "shanghai": {
+      "score": 46,
+      "predicted_delta_s": 0.219
+    },
     "bahrain": {
       "score": 45,
       "predicted_delta_s": 0.241
@@ -1034,6 +1078,10 @@
     }
   },
   "COL": {
+    "shanghai": {
+      "score": 44,
+      "predicted_delta_s": 0.316
+    },
     "bahrain": {
       "score": 43,
       "predicted_delta_s": 0.35
@@ -1128,6 +1176,10 @@
     }
   },
   "LAW": {
+    "shanghai": {
+      "score": 44,
+      "predicted_delta_s": 0.326
+    },
     "bahrain": {
       "score": 44,
       "predicted_delta_s": 0.328
@@ -1222,6 +1274,10 @@
     }
   },
   "LIN": {
+    "shanghai": {
+      "score": 45,
+      "predicted_delta_s": 0.274
+    },
     "bahrain": {
       "score": 44,
       "predicted_delta_s": 0.289
@@ -1316,6 +1372,10 @@
     }
   },
   "OCO": {
+    "shanghai": {
+      "score": 44,
+      "predicted_delta_s": 0.315
+    },
     "bahrain": {
       "score": 43,
       "predicted_delta_s": 0.349
@@ -1410,6 +1470,10 @@
     }
   },
   "BEA": {
+    "shanghai": {
+      "score": 41,
+      "predicted_delta_s": 0.493
+    },
     "bahrain": {
       "score": 40,
       "predicted_delta_s": 0.506
@@ -1504,6 +1568,10 @@
     }
   },
   "HUL": {
+    "shanghai": {
+      "score": 44,
+      "predicted_delta_s": 0.293
+    },
     "bahrain": {
       "score": 44,
       "predicted_delta_s": 0.327
@@ -1598,6 +1666,10 @@
     }
   },
   "BOR": {
+    "shanghai": {
+      "score": 44,
+      "predicted_delta_s": 0.299
+    },
     "bahrain": {
       "score": 44,
       "predicted_delta_s": 0.302
@@ -1692,6 +1764,10 @@
     }
   },
   "ALB": {
+    "shanghai": {
+      "score": 43,
+      "predicted_delta_s": 0.338
+    },
     "bahrain": {
       "score": 43,
       "predicted_delta_s": 0.36
@@ -1786,6 +1862,10 @@
     }
   },
   "SAI": {
+    "shanghai": {
+      "score": 55,
+      "predicted_delta_s": -0.302
+    },
     "bahrain": {
       "score": 54,
       "predicted_delta_s": -0.249
@@ -1880,6 +1960,10 @@
     }
   },
   "PER": {
+    "shanghai": {
+      "score": 56,
+      "predicted_delta_s": -0.36
+    },
     "bahrain": {
       "score": 56,
       "predicted_delta_s": -0.338
@@ -1974,6 +2058,10 @@
     }
   },
   "BOT": {
+    "shanghai": {
+      "score": 43,
+      "predicted_delta_s": 0.368
+    },
     "bahrain": {
       "score": 42,
       "predicted_delta_s": 0.403
@@ -2066,5 +2154,343 @@
       "score": 42,
       "predicted_delta_s": 0.413
     }
+  },
+  "TSU": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "IWA": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "VES": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "GIO": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "OWA": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "FOR": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "CRA": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "ARO": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "MAI": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "BRO": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "DOO": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "HIR": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
+  },
+  "ZHO": {
+    "shanghai": "unknown",
+    "bahrain": "unknown",
+    "jeddah": "unknown",
+    "melbourne": "unknown",
+    "baku": "unknown",
+    "miami": "unknown",
+    "monaco": "unknown",
+    "catalunya": "unknown",
+    "montreal": "unknown",
+    "spielberg": "unknown",
+    "silverstone": "unknown",
+    "hungaroring": "unknown",
+    "spa-francorchamps": "unknown",
+    "zandvoort": "unknown",
+    "monza": "unknown",
+    "madring": "unknown",
+    "marina-bay": "unknown",
+    "suzuka": "unknown",
+    "lusail": "unknown",
+    "austin": "unknown",
+    "mexico-city": "unknown",
+    "interlagos": "unknown",
+    "las-vegas": "unknown",
+    "yas-marina": "unknown"
   }
 }

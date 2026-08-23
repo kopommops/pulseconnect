@@ -27,7 +27,20 @@
     "ALB": 3,
     "SAI": 2,
     "PER": 3,
-    "BOT": 3
+    "BOT": 3,
+    "TSU": "unknown",
+    "IWA": "unknown",
+    "VES": "unknown",
+    "GIO": "unknown",
+    "OWA": "unknown",
+    "FOR": "unknown",
+    "CRA": "unknown",
+    "ARO": "unknown",
+    "MAI": "unknown",
+    "BRO": "unknown",
+    "DOO": "unknown",
+    "HIR": "unknown",
+    "ZHO": "unknown"
   },
   "centroids": {
     "0": [

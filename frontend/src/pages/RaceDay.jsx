@@ -64,7 +64,7 @@ export default function RaceDay() {
           </div>
           {nextRace.source === 'seed' && (
             <div className="font-mono text-[10px] mt-2" style={{ color: 'var(--ink-faint)' }}>
-              seed calendar — run the pipeline for FastF1-confirmed dates
+        
             </div>
           )}
         </div>
