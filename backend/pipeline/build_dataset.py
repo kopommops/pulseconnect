@@ -107,7 +107,10 @@ def setup_cache():
 
 
 def driver_has_history(driver, season):
-    return season >= driver["debut_season"]
+    debut = driver.get("debut_season")
+    if debut is None:
+        return False
+    return season >= debut
 
 
 def fetch_season_events(season):
