@@ -311,6 +311,7 @@ def build_season(season):
     for ev in events:
         rnd, event_name = ev["round"], ev["event_name"]
         circuit_id = circuit_id_for_event(event_name)
+        ev["circuit_id"] = circuit_id
         if circuit_id is None:
             print(f"  round {rnd}: {event_name}  ! no circuit_id match — pace won't be tagged per-circuit for this round")
         else:
