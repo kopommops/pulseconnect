@@ -12,7 +12,7 @@ with FastF1 able to reach the network (this scaffold ships with a seed
 dataset of the same shape so the frontend has something to render).
 """
 
-SEASONS = [2021, 2022, 2023, 2024, 2025, 2026]
+SEASONS = [2020,2021, 2022, 2023, 2024, 2025, 2026]
 CURRENT_SEASON = 2026
 CACHE_DIR = "data/cache"
 GENERATED_DIR = "data/generated"
