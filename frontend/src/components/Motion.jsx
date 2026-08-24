@@ -32,6 +32,33 @@ export function StaggerItem({ children, className, style }) {
     </motion.div>
   );
 }
+export function SuitReveal({ children, triggerKey, delay = 0, className }) {
+  const reduce = useReducedMotion();
+  if (reduce) return <div className={className}>{children}</div>;
+  const EASE = [0.16, 1, 0.3, 1];
+  return (
+    <motion.div key={triggerKey} className={`relative overflow-hidden ${className || ''}`}>
+      <motion.div
+        initial={{ clipPath: 'inset(0 100% 0 0)' }}
+        animate={{ clipPath: 'inset(0 0% 0 0)' }}
+        transition={{ duration: 0.55, ease: EASE, delay }}
+      >
+        {children}
+      </motion.div>
+      <motion.div
+        className="pointer-events-none absolute inset-y-0"
+        style={{
+          width: '18%',
+          background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent)',
+          mixBlendMode: 'overlay',
+        }}
+        initial={{ left: '-20%' }}
+        animate={{ left: '105%' }}
+        transition={{ duration: 0.55, ease: EASE, delay }}
+      />
+    </motion.div>
+  );
+}
 
 export function FadeIn({ children, className, style, delay = 0, y = 20, scale }) {
   const reduce = useReducedMotion();

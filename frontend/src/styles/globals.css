@@ -59,4 +59,42 @@ select { appearance: none; -webkit-appearance: none; }
 button:focus-visible, select:focus-visible, a:focus-visible {
   outline: 2px solid var(--red); outline-offset: 2px;
 }
+
+/* Pit Wall — a third theme state, opt-in on the Race Day tab only, layered
+   on top of whichever light/dark theme is active. Deeper black, tighter
+   contrast, faint scanline — meant to feel like live telemetry rather than
+   a report. Team/tyre-compound colors carry the "neon" accents rather than
+   introducing an off-brand hue. */
+.pit-wall {
+  --bg: #000000;
+  --bg-2: #030303;
+  --glass: rgba(255, 255, 255, 0.035);
+  --glass-strong: rgba(255, 255, 255, 0.07);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --ink: #f5f5f7;
+  --ink-muted: #8a8a90;
+  --ink-faint: #45454a;
+  background: var(--bg);
+  position: relative;
+}
+.pit-wall::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(226, 16, 28, 0.025) 0px, rgba(226, 16, 28, 0.025) 1px,
+    transparent 1px, transparent 3px
+  );
+}
+
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+@keyframes flagWave {
+  0%, 100% { transform: skewY(0deg) scaleY(1); }
+  50% { transform: skewY(-2deg) scaleY(1.015); }
+}
+.flag-wave { animation: flagWave 3.4s ease-in-out infinite; transform-origin: left center; }

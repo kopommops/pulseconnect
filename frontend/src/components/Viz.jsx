@@ -38,7 +38,7 @@ export function Gauge({ value, accent, size = 168, label, sub }) {
   );
 }
 
-export function RadarChart({ driverTraits, circuitDemand, accent, focusKey, size = 280 }) {
+export function RadarChart({ driverTraits, driverTraitsB, circuitDemand, accent, accentB, focusKey, size = 280 }) {
   if (driverTraits === 'unknown') {
     return (
       <div className="flex items-center justify-center font-mono text-xs" style={{ width: size, height: size, color: 'var(--ink-faint)' }}>
@@ -54,6 +54,7 @@ export function RadarChart({ driverTraits, circuitDemand, accent, focusKey, size
   };
   const ring = (frac) => AXES.map((_, i) => pt(i, maxR * frac).join(',')).join(' ');
   const poly = (getVal) => AXES.map((a, i) => pt(i, maxR * (getVal(a.key) / 100)).join(',')).join(' ');
+  const hasB = driverTraitsB && driverTraitsB !== 'unknown';
 
   return (
     <svg viewBox={`0 0 ${size} ${size}`} width="100%" height={size}>
@@ -67,7 +68,17 @@ export function RadarChart({ driverTraits, circuitDemand, accent, focusKey, size
       {circuitDemand && (
         <polygon points={poly(k => circuitDemand[k])} fill="none" stroke="var(--ink-muted)" strokeWidth="1.75" strokeDasharray="5,4" />
       )}
-      <polygon points={poly(k => driverTraits[k])} fill={accent} fillOpacity="0.16" stroke={accent} strokeWidth="2.25" />
+      {/* B drawn first so A's stroke reads on top where they overlap */}
+      {hasB && (
+        <>
+          <polygon points={poly(k => driverTraitsB[k])} fill={accentB} fillOpacity="0.2" stroke={accentB} strokeWidth="2" />
+          {AXES.map((a, i) => {
+            const [x, y] = pt(i, maxR * (driverTraitsB[a.key] / 100));
+            return <circle key={`b-${a.key}`} cx={x} cy={y} r="2.75" fill={accentB} />;
+          })}
+        </>
+      )}
+      <polygon points={poly(k => driverTraits[k])} fill={accent} fillOpacity="0.2" stroke={accent} strokeWidth="2.25" />
       {AXES.map((a, i) => {
         const [x, y] = pt(i, maxR * (driverTraits[a.key] / 100));
         return <circle key={a.key} cx={x} cy={y} r={a.key === focusKey ? 4.5 : 2.75} fill={accent} />;
@@ -100,10 +111,11 @@ export function BoxPlot({ data, accentFor, maxScale = 22, height = 420 }) {
   return (
     <div className="overflow-x-auto">
       <svg width={width} height={height} className="font-mono">
+        <line x1={40} y1={20} x2={40} y2={height - 20} stroke="var(--border-strong)" strokeWidth="1.5" />
         {Array.from({ length: maxScale }, (_, i) => i + 1).filter(p => p % 2 === 1).map(p => (
           <g key={p}>
-            <line x1={40} y1={y(p)} x2={width} y2={y(p)} stroke="var(--border)" strokeWidth="1" />
-            <text x={10} y={y(p) + 3} fontSize="9" fill="var(--ink-faint)">{p}</text>
+            <line x1={40} y1={y(p)} x2={width} y2={y(p)} stroke="var(--border-strong)" strokeWidth="1" />
+            <text x={8} y={y(p) + 3} fontSize="10" fontWeight="600" fill="var(--ink-muted)">{p}</text>
           </g>
         ))}
         {sorted.map(([driverId, v], i) => {
@@ -113,8 +125,8 @@ export function BoxPlot({ data, accentFor, maxScale = 22, height = 420 }) {
             <g key={driverId}>
               <line x1={x} y1={y(v.min)} x2={x} y2={y(v.max)} stroke={accent} strokeWidth="1.5" />
               <rect x={x - 8} y={y(v.q3)} width="16" height={Math.max(2, y(v.q1) - y(v.q3))} fill={accent} fillOpacity="0.75" rx="2" />
-              <line x1={x - 8} y1={y(v.median)} x2={x + 8} y2={y(v.median)} stroke="var(--bg)" strokeWidth="2" />
-              <text x={x} y={height - 8} fontSize="9.5" textAnchor="middle" fill="var(--ink-muted)">{driverId}</text>
+              <line x1={x - 8} y1={y(v.median)} x2={x + 8} y2={y(v.median)} stroke="var(--bg)" strokeWidth="2.5" />
+              <text x={x} y={height - 8} fontSize="10.5" fontWeight="600" textAnchor="middle" fill="var(--ink)">{driverId}</text>
             </g>
           );
         })}

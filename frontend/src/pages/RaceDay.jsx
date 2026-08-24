@@ -6,10 +6,14 @@ import { DriverAvatar, TeamCrest, CircuitArt } from '../components/Identity';
 import { Gauge } from '../components/Viz';
 import Media from '../components/Media';
 import ScrambleValue from '../components/ScrambleValue';
-import { FadeIn, SPRING, Stagger, StaggerItem } from '../components/Motion';
+import FlagBand from '../components/FlagBand';
+import PodiumStage from '../components/PodiumStage';
+import MyPrediction from '../components/MyPrediction';
+import { FadeIn, SPRING, Stagger, StaggerItem, SuitReveal } from '../components/Motion';
 
 const TABS = ['Predictions', 'Standings', 'Car Performance', 'Strategy Sim'];
 const RED = 'var(--red)';
+const COMPOUND_COLORS = { SOFT: '#FF3333', MEDIUM: '#FFD400', HARD: '#EEEEEE', INTERMEDIATE: '#43B02A', WET: '#2E86D6' };
 
 export default function RaceDay() {
   const f = useFilters();
@@ -41,6 +45,11 @@ export default function RaceDay() {
     return map;
   }, [roster]);
 
+  const activeDrivers = useMemo(
+    () => (roster?.teams || []).flatMap(({ drivers }) => drivers),
+    [roster]
+  );
+
   if (!nextRace) {
     return <Centered>Loading race weekend...</Centered>;
   }
@@ -54,12 +63,15 @@ export default function RaceDay() {
     <div className="max-w-6xl mx-auto px-5 pb-24">
       <FadeIn className="glass-strong rounded-lg p-6 md:p-8 mt-8 mb-6 flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <div className="font-mono text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>
-            Round {nextRace.round}
-            {nextRace.status === 'race_weekend' && ' · This weekend'}
-            {nextRace.status === 'upcoming' && ' · Upcoming'}
-            {nextRace.status === 'season_complete' && ' · Season complete'}
-            {nextRace.format === 'sprint' && ' · Sprint format'}
+          <div className="flex items-center gap-2 mb-1">
+            {circuit?.country && <FlagBand country={circuit.country} width={32} height={20} />}
+            <div className="font-mono text-[10px] uppercase tracking-wider" style={{ color: RED }}>
+              Round {nextRace.round}
+              {nextRace.status === 'race_weekend' && ' · This weekend'}
+              {nextRace.status === 'upcoming' && ' · Upcoming'}
+              {nextRace.status === 'season_complete' && ' · Season complete'}
+              {nextRace.format === 'sprint' && ' · Sprint format'}
+            </div>
           </div>
           <h1 className="font-display font-bold text-3xl">{nextRace.event_name}</h1>
           <div className="font-mono text-xs mt-1" style={{ color: 'var(--ink-muted)' }}>
@@ -100,7 +112,13 @@ export default function RaceDay() {
           transition={SPRING}
         >
           {tab === 'Predictions' && (
-            <PredictionsTab predictions={predictions} actual={actual} driverTeamMap={driverTeamMap} />
+            <PredictionsTab
+              nextRace={nextRace}
+              predictions={predictions}
+              actual={actual}
+              driverTeamMap={driverTeamMap}
+              activeDrivers={activeDrivers}
+            />
           )}
           {tab === 'Standings' && <StandingsTab standings={standings} teams={f.teams} />}
           {tab === 'Car Performance' && <CarPerformanceTab roster={roster} predictions={predictions} />}
@@ -127,47 +145,61 @@ function Unknown({ children = 'unknown — no data for this yet' }) {
 
 // ---------------------------------------------------------------- Predictions
 
-// Reveal in ceremony order — third place announced first, winner last —
-// with the winner getting a slightly bigger pop on lock-in.
-const PODIUM_DELAY = { 1: 0.5, 2: 0.25, 3: 0 };
+function PredictionsTab({ nextRace, predictions, actual, driverTeamMap, activeDrivers }) {
+  const [showModel, setShowModel] = useState(false);
 
-function PredictionsTab({ predictions, actual, driverTeamMap }) {
-  if (!predictions) return <Unknown>Loading predictions...</Unknown>;
-  if (predictions.error) return <Unknown>{predictions.error}</Unknown>;
+  useEffect(() => {
+    if (actual?.status === 'complete') setShowModel(true);
+  }, [actual?.status]);
+
+  if (!activeDrivers.length) return <Unknown>Loading roster...</Unknown>;
 
   return (
     <div className="space-y-4">
-      <div className="glass rounded-lg p-6">
-        <div className="font-mono text-[10px] uppercase tracking-wider mb-4" style={{ color: RED }}>
-          Predicted Podium · Compatibility model + driver clusters
-        </div>
-        <div className="grid md:grid-cols-3 gap-4">
-          {predictions.podium.map((row, i) => (
-            <PodiumCard key={row.driver_id} rank={i + 1} row={row} team={driverTeamMap[row.driver_id]} />
-          ))}
-        </div>
-      </div>
+      <MyPrediction
+        season={nextRace.season}
+        round={nextRace.round}
+        activeDrivers={activeDrivers}
+        driverTeamMap={driverTeamMap}
+        actual={actual}
+        onResolved={() => setShowModel(true)}
+      />
 
-      <div className="grid md:grid-cols-2 gap-4">
-        <div className="glass rounded-lg p-6">
-          <div className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: RED }}>
-            Pulse Pick — one to watch
-          </div>
-          {predictions.pulse_pick ? (
-            <div className="flex items-center gap-4">
-              <DriverAvatar driver={predictions.pulse_pick.driver} team={driverTeamMap[predictions.pulse_pick.driver_id] || { accent: RED }} size={56} active />
-              <div>
-                <div className="font-display font-bold text-lg">{predictions.pulse_pick.driver.name}</div>
-                <div className="font-mono text-xs" style={{ color: 'var(--ink-muted)' }}>
-                  {predictions.pulse_pick.score}/100 compatibility · style cluster {predictions.pulse_pick.style_cluster}
-                </div>
-              </div>
+      {showModel && (!predictions ? (
+        <Unknown>Loading predictions...</Unknown>
+      ) : predictions.error ? (
+        <Unknown>{predictions.error}</Unknown>
+      ) : (
+        <SuitReveal triggerKey={`${nextRace.season}-${nextRace.round}`} className="space-y-4">
+          <div className="glass rounded-lg p-6">
+            <div className="font-mono text-[10px] uppercase tracking-wider mb-2" style={{ color: RED }}>
+              Predicted Podium · Compatibility model + driver clusters
             </div>
-          ) : <Unknown />}
-        </div>
+            <PodiumStage podium={predictions.podium} driverTeamMap={driverTeamMap} />
+          </div>
 
-        <ChaosIndexCard predictions={predictions} />
-      </div>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="glass rounded-lg p-6">
+              <div className="font-mono text-[10px] uppercase tracking-wider mb-3" style={{ color: RED }}>
+                Pulse Pick — one to watch
+              </div>
+              {predictions.pulse_pick ? (
+                <div className="flex items-center gap-4">
+                  <DriverAvatar driver={predictions.pulse_pick.driver} team={driverTeamMap[predictions.pulse_pick.driver_id] || { accent: RED }} size={56} active />
+                  <div>
+                    <div className="font-display font-bold text-lg">{predictions.pulse_pick.driver.name}</div>
+                    <div className="font-mono text-xs" style={{ color: 'var(--ink-muted)' }}>
+                      {predictions.pulse_pick.score}/100 compatibility · style cluster {predictions.pulse_pick.style_cluster}
+                    </div>
+                  </div>
+                </div>
+              ) : <Unknown />}
+            </div>
+
+            <ChaosIndexCard predictions={predictions} />
+          </div>
+        </SuitReveal>
+      ))}
 
       {actual && actual.status === 'complete' && (
         <div className="glass-strong rounded-lg p-6">
@@ -190,33 +222,7 @@ function PredictionsTab({ predictions, actual, driverTeamMap }) {
   );
 }
 
-function PodiumCard({ rank, row, team }) {
-  const accent = team?.accent || RED;
-  return (
-    <motion.div
-      className="rounded-md p-4"
-      style={{ background: 'var(--glass-strong)', border: `1px solid ${accent}33` }}
-      initial={{ opacity: 0, y: 24, scale: rank === 1 ? 0.85 : 0.95 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ ...SPRING, delay: PODIUM_DELAY[rank] ?? 0 }}
-    >
-      <div className="flex items-center gap-3 mb-3">
-        <div className="font-display font-bold text-2xl w-8" style={{ color: accent }}>P{rank}</div>
-        <DriverAvatar driver={row.driver} team={team || { accent: RED }} size={48} active />
-        <div className="min-w-0">
-          <div className="font-display font-bold truncate">{row.driver.name}</div>
-          {team && <div className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>{team.short}</div>}
-        </div>
-      </div>
-      <div className="font-mono text-xs" style={{ color: 'var(--ink-muted)' }}>
-        {row.score}/100 · {row.predicted_delta_s >= 0 ? '+' : ''}{row.predicted_delta_s}s predicted delta
-      </div>
-    </motion.div>
-  );
-}
-
-// Chaos index gets an actual explanation, not just a number under a gauge —
-// same "score" and "score_basis" the API already computes, just surfaced.
+// Chaos index gets an actual explanation, not just a number under a gauge.
 function ChaosIndexCard({ predictions }) {
   const scored = [...(predictions.podium || []), ...(predictions.top5 || [])]
     .filter((r, i, arr) => arr.findIndex((x) => x.driver_id === r.driver_id) === i)
@@ -463,6 +469,16 @@ function CarPerformanceTab({ roster, predictions }) {
 
 const COMPOUNDS = ['SOFT', 'MEDIUM', 'HARD', 'INTERMEDIATE', 'WET'];
 
+function CompoundDot({ compound, glow }) {
+  const c = COMPOUND_COLORS[compound] || '#888';
+  return (
+    <span
+      className="inline-block rounded-full mr-1.5"
+      style={{ width: 8, height: 8, background: c, boxShadow: glow ? `0 0 6px ${c}` : 'none' }}
+    />
+  );
+}
+
 function StrategyTab({ nextRace, drivers, driverTeamMap }) {
   const [driverId, setDriverId] = useState('VER');
   const [stints, setStints] = useState([{ compound: 'MEDIUM', laps: 25 }, { compound: 'HARD', laps: 30 }]);
@@ -499,10 +515,13 @@ function StrategyTab({ nextRace, drivers, driverTeamMap }) {
 
         {stints.map((s, i) => (
           <div key={i} className="flex gap-2 mb-2 items-center">
-            <select value={s.compound} onChange={(e) => updateStint(i, 'compound', e.target.value)}
-              className="flex-1 px-3 py-2 rounded-md font-mono text-xs" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }}>
-              {COMPOUNDS.map((c) => <option key={c} value={c}>{c}</option>)}
-            </select>
+            <div className="flex-1 flex items-center px-3 py-2 rounded-md" style={{ background: 'var(--glass-strong)' }}>
+              <CompoundDot compound={s.compound} />
+              <select value={s.compound} onChange={(e) => updateStint(i, 'compound', e.target.value)}
+                className="flex-1 bg-transparent font-mono text-xs" style={{ color: 'var(--ink)' }}>
+                {COMPOUNDS.map((c) => <option key={c} value={c}>{c}</option>)}
+              </select>
+            </div>
             <input type="number" min="1" value={s.laps} onChange={(e) => updateStint(i, 'laps', Number(e.target.value))}
               className="w-20 px-3 py-2 rounded-md font-mono text-xs" style={{ background: 'var(--glass-strong)', color: 'var(--ink)' }} />
             <span className="font-mono text-[10px]" style={{ color: 'var(--ink-faint)' }}>laps</span>
@@ -527,7 +546,7 @@ function StrategyTab({ nextRace, drivers, driverTeamMap }) {
         {!result && <Unknown>Run a simulation to see predicted race-time delta.</Unknown>}
         {result?.error && <Unknown>{result.error}</Unknown>}
         {result && !result.error && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <SuitReveal triggerKey={result.total_predicted_delta_vs_field_s + '-' + Date.now()}>
             <div className="flex items-center gap-3 mb-4">
               {team && <DriverAvatar driver={{ id: driverId, name: driverId, num: '' }} team={team} size={36} />}
               <div className="font-display font-bold text-2xl">
@@ -537,14 +556,14 @@ function StrategyTab({ nextRace, drivers, driverTeamMap }) {
             </div>
             <div className="space-y-2 mb-4">
               {result.stints.map((s, i) => (
-                <div key={i} className="flex justify-between font-mono text-xs px-3 py-2 rounded-md" style={{ background: 'var(--glass-strong)' }}>
-                  <span>{s.compound} × {s.laps} laps {!s.degradation_known && '(no real deg. data)'}</span>
+                <div key={i} className="flex justify-between items-center font-mono text-xs px-3 py-2 rounded-md" style={{ background: 'var(--glass-strong)' }}>
+                  <span className="flex items-center"><CompoundDot compound={s.compound} glow />{s.compound} × {s.laps} laps {!s.degradation_known && '(no real deg. data)'}</span>
                   <ScrambleValue value={`${s.stint_delta_s >= 0 ? '+' : ''}${s.stint_delta_s}s`} duration={350} />
                 </div>
               ))}
             </div>
             <p className="text-xs" style={{ color: 'var(--ink-faint)' }}>{result.basis}</p>
-          </motion.div>
+          </SuitReveal>
         )}
       </div>
     </div>
