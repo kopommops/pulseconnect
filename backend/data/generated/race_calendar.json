@@ -970,5 +970,126 @@
       "circuit_id": "yas-marina"
     }
   ],
+  "2020": [
+    {
+      "round": 1,
+      "event_name": "Austrian Grand Prix",
+      "race_date": "2020-07-05",
+      "format": "conventional",
+      "circuit_id": "spielberg"
+    },
+    {
+      "round": 2,
+      "event_name": "Styrian Grand Prix",
+      "race_date": "2020-07-12",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 3,
+      "event_name": "Hungarian Grand Prix",
+      "race_date": "2020-07-19",
+      "format": "conventional",
+      "circuit_id": "hungaroring"
+    },
+    {
+      "round": 4,
+      "event_name": "British Grand Prix",
+      "race_date": "2020-08-02",
+      "format": "conventional",
+      "circuit_id": "silverstone"
+    },
+    {
+      "round": 5,
+      "event_name": "70th Anniversary Grand Prix",
+      "race_date": "2020-08-09",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 6,
+      "event_name": "Spanish Grand Prix",
+      "race_date": "2020-08-16",
+      "format": "conventional",
+      "circuit_id": "catalunya"
+    },
+    {
+      "round": 7,
+      "event_name": "Belgian Grand Prix",
+      "race_date": "2020-08-30",
+      "format": "conventional",
+      "circuit_id": "spa-francorchamps"
+    },
+    {
+      "round": 8,
+      "event_name": "Italian Grand Prix",
+      "race_date": "2020-09-06",
+      "format": "conventional",
+      "circuit_id": "monza"
+    },
+    {
+      "round": 9,
+      "event_name": "Tuscan Grand Prix",
+      "race_date": "2020-09-13",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 10,
+      "event_name": "Russian Grand Prix",
+      "race_date": "2020-09-27",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 11,
+      "event_name": "Eifel Grand Prix",
+      "race_date": "2020-10-11",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 12,
+      "event_name": "Portuguese Grand Prix",
+      "race_date": "2020-10-25",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 13,
+      "event_name": "Emilia Romagna Grand Prix",
+      "race_date": "2020-11-01",
+      "format": "conventional",
+      "circuit_id": "monza"
+    },
+    {
+      "round": 14,
+      "event_name": "Turkish Grand Prix",
+      "race_date": "2020-11-15",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 15,
+      "event_name": "Bahrain Grand Prix",
+      "race_date": "2020-11-29",
+      "format": "conventional",
+      "circuit_id": "bahrain"
+    },
+    {
+      "round": 16,
+      "event_name": "Sakhir Grand Prix",
+      "race_date": "2020-12-06",
+      "format": "conventional",
+      "circuit_id": null
+    },
+    {
+      "round": 17,
+      "event_name": "Abu Dhabi Grand Prix",
+      "race_date": "2020-12-13",
+      "format": "conventional",
+      "circuit_id": "yas-marina"
+    }
+  ],
   "source": "real"
 }

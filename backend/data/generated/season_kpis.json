@@ -4505,5 +4505,482 @@
       "HIR": "unknown",
       "ZHO": "unknown"
     }
+  },
+  "2020": {
+    "consistency": {
+      "VER": {
+        "min": 1,
+        "q1": 2.0,
+        "median": 3.0,
+        "q3": 17.0,
+        "max": 20,
+        "n_races": 17
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "min": 2,
+        "q1": 4.0,
+        "median": 8.0,
+        "q3": 14.0,
+        "max": 20,
+        "n_races": 17
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 1.0,
+        "median": 1.0,
+        "q3": 2.25,
+        "max": 7,
+        "n_races": 16
+      },
+      "RUS": {
+        "min": 9,
+        "q1": 14.0,
+        "median": 16.0,
+        "q3": 18.0,
+        "max": 20,
+        "n_races": 17
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "min": 3,
+        "q1": 5.0,
+        "median": 8.0,
+        "q3": 10.0,
+        "max": 16,
+        "n_races": 17
+      },
+      "PIA": "unknown",
+      "ALO": "unknown",
+      "STR": {
+        "min": 3,
+        "q1": 5.5,
+        "median": 9.0,
+        "q3": 14.25,
+        "max": 20,
+        "n_races": 16
+      },
+      "GAS": {
+        "min": 1,
+        "q1": 7.0,
+        "median": 9.0,
+        "q3": 13.0,
+        "max": 20,
+        "n_races": 17
+      },
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": {
+        "min": 2,
+        "q1": 8.0,
+        "median": 9.0,
+        "q3": 14.0,
+        "max": 19,
+        "n_races": 17
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "min": 7,
+        "q1": 7.5,
+        "median": 8.0,
+        "q3": 14.0,
+        "max": 20,
+        "n_races": 3
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "min": 3,
+        "q1": 5.0,
+        "median": 7.0,
+        "q3": 12.0,
+        "max": 17,
+        "n_races": 17
+      },
+      "SAI": {
+        "min": 2,
+        "q1": 5.0,
+        "median": 6.0,
+        "q3": 13.0,
+        "max": 20,
+        "n_races": 17
+      },
+      "PER": {
+        "min": 1,
+        "q1": 4.5,
+        "median": 6.0,
+        "q3": 8.5,
+        "max": 20,
+        "n_races": 15
+      },
+      "BOT": {
+        "min": 1,
+        "q1": 2.0,
+        "median": 3.0,
+        "q3": 8.0,
+        "max": 19,
+        "n_races": 17
+      },
+      "TSU": "unknown",
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": {
+        "min": 9,
+        "q1": 13.0,
+        "median": 16.0,
+        "q3": 17.0,
+        "max": 20,
+        "n_races": 17
+      },
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "race_pace": {
+      "VER": -0.88,
+      "HAD": "unknown",
+      "LEC": -0.014,
+      "HAM": -1.119,
+      "RUS": 0.57,
+      "ANT": "unknown",
+      "NOR": -0.092,
+      "PIA": "unknown",
+      "ALO": "unknown",
+      "STR": 0.099,
+      "GAS": -0.016,
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": 0.217,
+      "BEA": "unknown",
+      "HUL": -0.258,
+      "BOR": "unknown",
+      "ALB": -0.255,
+      "SAI": -0.327,
+      "PER": -0.23,
+      "BOT": -0.809,
+      "TSU": "unknown",
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": 0.595,
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "race_pace_by_circuit": {
+      "VER": {
+        "spielberg": -0.587,
+        "hungaroring": -0.602,
+        "silverstone": -0.859,
+        "catalunya": -0.106,
+        "spa-francorchamps": -1.318,
+        "monza": -0.097,
+        "bahrain": -1.752,
+        "yas-marina": -1.804
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "spielberg": -0.543,
+        "hungaroring": 0.653,
+        "silverstone": 0.119,
+        "spa-francorchamps": 0.365,
+        "monza": 0.387,
+        "bahrain": 0.512,
+        "yas-marina": -0.098
+      },
+      "HAM": {
+        "spielberg": -1.46,
+        "hungaroring": -0.51,
+        "silverstone": -1.197,
+        "catalunya": -0.63,
+        "spa-francorchamps": -1.817,
+        "monza": -1.005,
+        "bahrain": -1.559,
+        "yas-marina": -1.385
+      },
+      "RUS": {
+        "spielberg": 0.876,
+        "hungaroring": 0.207,
+        "silverstone": 0.406,
+        "catalunya": 0.155,
+        "spa-francorchamps": 2.256,
+        "monza": 0.44,
+        "bahrain": 1.115,
+        "yas-marina": 1.145
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "spielberg": -0.787,
+        "hungaroring": 0.243,
+        "silverstone": 0.051,
+        "catalunya": 0.269,
+        "spa-francorchamps": -0.118,
+        "monza": -0.385,
+        "bahrain": -0.431,
+        "yas-marina": -0.45
+      },
+      "PIA": "unknown",
+      "ALO": "unknown",
+      "STR": {
+        "spielberg": 0.578,
+        "hungaroring": -0.065,
+        "silverstone": 0.275,
+        "catalunya": -0.088,
+        "spa-francorchamps": 0.055,
+        "monza": -0.36,
+        "yas-marina": 0.511
+      },
+      "GAS": {
+        "spielberg": -0.082,
+        "silverstone": -0.059,
+        "catalunya": 0.162,
+        "spa-francorchamps": -0.045,
+        "monza": 0.065,
+        "bahrain": -0.16,
+        "yas-marina": 0.195
+      },
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": {
+        "spielberg": 0.174,
+        "hungaroring": 0.192,
+        "silverstone": 0.055,
+        "catalunya": 0.022,
+        "spa-francorchamps": -0.261,
+        "monza": 0.324,
+        "bahrain": 0.152,
+        "yas-marina": 0.34
+      },
+      "BEA": "unknown",
+      "HUL": "unknown",
+      "BOR": "unknown",
+      "ALB": {
+        "spielberg": -0.441,
+        "hungaroring": -0.305,
+        "silverstone": -1.135,
+        "catalunya": 0.122,
+        "spa-francorchamps": -0.204,
+        "monza": 0.172,
+        "bahrain": -0.858,
+        "yas-marina": -1.368
+      },
+      "SAI": {
+        "spielberg": -0.593,
+        "hungaroring": 0.024,
+        "silverstone": 0.011,
+        "catalunya": -0.001,
+        "monza": -0.433,
+        "bahrain": -0.581,
+        "yas-marina": -0.321
+      },
+      "PER": {
+        "spielberg": -0.683,
+        "hungaroring": -0.211,
+        "catalunya": 0.07,
+        "spa-francorchamps": -0.595,
+        "monza": -0.257,
+        "bahrain": -0.873,
+        "yas-marina": 1.398
+      },
+      "BOT": {
+        "spielberg": -1.555,
+        "hungaroring": -1.319,
+        "silverstone": -1.108,
+        "catalunya": -0.211,
+        "spa-francorchamps": -1.516,
+        "monza": -0.404,
+        "bahrain": -0.797,
+        "yas-marina": -1.494
+      },
+      "TSU": "unknown",
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": {
+        "spielberg": 0.274,
+        "hungaroring": -0.283,
+        "silverstone": 0.543,
+        "catalunya": 0.117,
+        "spa-francorchamps": 2.274,
+        "monza": 0.094,
+        "bahrain": 1.461,
+        "yas-marina": 1.553
+      },
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "tyre_degradation": {
+      "VER": {
+        "MEDIUM": -0.2554,
+        "SOFT": -0.4007,
+        "HARD": -0.0316,
+        "WET": -1.0119,
+        "INTERMEDIATE": -1.1173
+      },
+      "HAD": "unknown",
+      "LEC": {
+        "SOFT": -0.1247,
+        "HARD": 0.5563,
+        "MEDIUM": 0.0364,
+        "WET": -2.077,
+        "INTERMEDIATE": -0.326
+      },
+      "HAM": {
+        "SOFT": -1.3636,
+        "HARD": 0.203,
+        "MEDIUM": -1.012,
+        "WET": -1.3433,
+        "INTERMEDIATE": -0.2395
+      },
+      "RUS": {
+        "MEDIUM": -0.6546,
+        "HARD": -0.077,
+        "SOFT": -0.1506,
+        "INTERMEDIATE": -0.0292
+      },
+      "ANT": "unknown",
+      "NOR": {
+        "SOFT": -1.1071,
+        "HARD": 0.1327,
+        "MEDIUM": -0.607,
+        "WET": -1.3641,
+        "INTERMEDIATE": -0.3728
+      },
+      "PIA": "unknown",
+      "ALO": "unknown",
+      "STR": {
+        "SOFT": -0.4586,
+        "MEDIUM": -0.5065,
+        "HARD": -0.1095,
+        "WET": -0.1798,
+        "INTERMEDIATE": -0.3436
+      },
+      "GAS": {
+        "MEDIUM": -0.5854,
+        "HARD": -0.2477,
+        "SOFT": -0.4152,
+        "WET": -1.4197,
+        "INTERMEDIATE": -0.3633
+      },
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": {
+        "MEDIUM": -0.5151,
+        "HARD": 0.1064,
+        "SOFT": -0.9692,
+        "WET": -0.545,
+        "INTERMEDIATE": -0.223
+      },
+      "BEA": "unknown",
+      "HUL": {
+        "MEDIUM": -0.0435,
+        "HARD": -0.0072,
+        "SOFT": -0.5943
+      },
+      "BOR": "unknown",
+      "ALB": {
+        "SOFT": -0.2822,
+        "HARD": 0.1074,
+        "MEDIUM": -0.3751,
+        "WET": -0.8611,
+        "INTERMEDIATE": -0.2636
+      },
+      "SAI": {
+        "SOFT": -1.1761,
+        "HARD": 0.1919,
+        "MEDIUM": -0.1025,
+        "WET": -1.277,
+        "INTERMEDIATE": -0.3508
+      },
+      "PER": {
+        "SOFT": -0.725,
+        "MEDIUM": -0.2382,
+        "HARD": -0.0708,
+        "WET": -0.426,
+        "INTERMEDIATE": -0.1895
+      },
+      "BOT": {
+        "SOFT": -0.8778,
+        "HARD": -0.222,
+        "MEDIUM": 0.0889,
+        "WET": -1.2679,
+        "INTERMEDIATE": -0.2556
+      },
+      "TSU": "unknown",
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": {
+        "MEDIUM": -0.5842,
+        "HARD": 0.1327,
+        "SOFT": -0.4783,
+        "WET": -1.5599
+      },
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "quali_race_delta": {
+      "VER": -4.0,
+      "HAD": "unknown",
+      "LEC": -1.59,
+      "HAM": -0.19,
+      "RUS": -0.53,
+      "ANT": "unknown",
+      "NOR": -0.06,
+      "PIA": "unknown",
+      "ALO": "unknown",
+      "STR": -1.81,
+      "GAS": -0.24,
+      "COL": "unknown",
+      "LAW": "unknown",
+      "LIN": "unknown",
+      "OCO": -0.47,
+      "BEA": "unknown",
+      "HUL": 0.33,
+      "BOR": "unknown",
+      "ALB": -1.12,
+      "SAI": -0.65,
+      "PER": -0.33,
+      "BOT": -2.88,
+      "TSU": "unknown",
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": 2.24,
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    }
   }
 }

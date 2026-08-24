@@ -3,7 +3,7 @@ import { api } from './api';
 
 const FiltersContext = createContext(null);
 
-const SEASONS = [2021, 2022, 2023, 2024, 2025, 2026];
+const SEASONS = [2020, 2021, 2022, 2023, 2024, 2025, 2026];
 const METRIC_FOCUS = ['Overall', 'Braking', 'Traction', 'Apex Speed', 'Tyre Mgmt', 'Aero Sens.', 'Technical'];
 const SESSIONS = ['Qualifying', 'Race'];
 
