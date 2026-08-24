@@ -5,7 +5,7 @@ import { LogoChip } from '../components/Identity';
 import GroundPlane from '../components/GroundPlane';
 import { FadeIn, Stagger, StaggerItem } from '../components/Motion';
 
-const NEXT_RACE = { name: 'Dutch GP', circuit: 'Circuit Zandvoort', date: 'AUG 21–23', round: 'Round 12' };
+const NEXT_RACE = { name: 'Italian GP', circuit: 'Autodromo Nazionale Monza', date: 'SEP 4–6', round: 'Round 13' };
 
 
 export default function Landing() {
