@@ -49,10 +49,8 @@ from app.ml.predict import fit_compatibility_model, predict_compatibility
 warnings.filterwarnings("ignore")
 
 PROGRESS_FILE = os.path.join(GENERATED_DIR, "_progress.json")
-MAX_RETRIES = 3
-BACKOFF_SECONDS = 90  # FastF1/Jolpica's limit resets on a rolling hourly window;
-                       # a short backoff handles transient/burst limiting, a real
-                       # hourly ban just fails that season and moves on.
+MAX_RETRIES = 5
+BACKOFF_SECONDS = 1200
 
 # FastF1's TeamName string varies by season (rebrands, sponsor-name churn —
 # e.g. "AlphaTauri" -> "RB" -> "Racing Bulls", "Alfa Romeo"/"Sauber" -> "Audi").
