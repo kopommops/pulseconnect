@@ -77,11 +77,12 @@ def train_and_pick_best(X_train, y_train, X_test, test_rows, label_key, k):
     which would just average away whichever one was actually right."""
     candidates = {
         "random_forest": RandomForestClassifier(
-            n_estimators=300, max_depth=8, min_samples_leaf=3,
-            class_weight="balanced", random_state=42, n_jobs=-1,
+            n_estimators=500, max_depth=7, min_samples_leaf=3,
+            max_features=0.8, random_state=42, n_jobs=-1,
         ),
         "gradient_boosting": GradientBoostingClassifier(
-            n_estimators=200, max_depth=3, learning_rate=0.05, random_state=42,
+            n_estimators=400, max_depth=4, learning_rate=0.03,
+            max_features=0.8, subsample=0.8, random_state=42,
         ),
     }
     results = {}
@@ -149,14 +150,14 @@ def main():
     print("\nGATE PASSED. Refitting on ALL real data (train+test combined) for the deployed model...")
     X_all, y_all_podium, y_all_top5, _ = rows_to_matrix(rows)
 
-    final_podium = (RandomForestClassifier(n_estimators=300, max_depth=8, min_samples_leaf=3, class_weight="balanced", random_state=42, n_jobs=-1)
+    final_podium = (RandomForestClassifier(n_estimators=500, max_depth=7, min_samples_leaf=3, max_features=0.8, random_state=42, n_jobs=-1)
                      if podium_name == "random_forest" else
-                     GradientBoostingClassifier(n_estimators=200, max_depth=3, learning_rate=0.05, random_state=42))
+                     GradientBoostingClassifier(n_estimators=400, max_depth=4, learning_rate=0.03, max_features=0.8, subsample=0.8, random_state=42))
     final_podium.fit(X_all, y_all_podium)
 
-    final_top5 = (RandomForestClassifier(n_estimators=300, max_depth=8, min_samples_leaf=3, class_weight="balanced", random_state=42, n_jobs=-1)
+    final_top5 = (RandomForestClassifier(n_estimators=500, max_depth=7, min_samples_leaf=3, max_features=0.8, random_state=42, n_jobs=-1)
                   if top5_name == "random_forest" else
-                  GradientBoostingClassifier(n_estimators=200, max_depth=3, learning_rate=0.05, random_state=42))
+                  GradientBoostingClassifier(n_estimators=400, max_depth=4, learning_rate=0.03, max_features=0.8, subsample=0.8, random_state=42))
     final_top5.fit(X_all, y_all_top5)
 
     os.makedirs(MODELS_DIR, exist_ok=True)

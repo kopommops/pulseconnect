@@ -13,7 +13,7 @@ with open(path) as f:
 
 fixed, missing = 0, []
 for season, events in calendar.items():
-    if season == "source":
+    if not isinstance(events, list):  # Safely skips "source", "note", and any other non-list keys
         continue
     for ev in events:
         if not ev.get("circuit_id"):

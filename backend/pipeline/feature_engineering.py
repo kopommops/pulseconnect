@@ -105,7 +105,7 @@ class _HistoryAccumulator:
         team_points = self.team_points_history.get(team_id, [])
         constructor_recent_points = sum(p for (_, _, p) in team_points[-RECENT_FORM_WINDOW * 2:])
 
-        pit_hist = self.team_pit_history.get(team_id, [])
+        pit_hist = self.team_pit_history.get(team_id, [])[-20:]
         pit_stop_efficiency_known = len(pit_hist) > 0
         pit_stop_efficiency_s = (sum(pit_hist) / len(pit_hist)) if pit_hist else 23.0
 
