@@ -122,6 +122,7 @@ def fetch_season_events(season):
             out.append({
                 "round": int(r.RoundNumber),
                 "event_name": r.EventName,
+                "circuit_id": circuit_id_for_event(r.EventName),
                 "race_date": date.strftime("%Y-%m-%d") if hasattr(date, "strftime") else str(date),
                 "format": getattr(r, "EventFormat", "conventional") or "conventional",
             })
