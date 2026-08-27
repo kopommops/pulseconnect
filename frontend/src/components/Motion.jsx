@@ -1,5 +1,8 @@
 import { motion, useReducedMotion } from 'framer-motion';
 
+// Tight spring, not an ease curve — this is what gives the "snap into place"
+// feel instead of a soft CSS fade. Shared everywhere so the whole app moves
+// with one consistent tempo.
 export const SPRING = { type: 'spring', stiffness: 250, damping: 20, mass: 0.5 };
 
 const itemVariants = {
@@ -7,6 +10,8 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: SPRING },
 };
 
+/** Wrap a group of StaggerItem children — they cascade in with a rapid,
+ * rhythmic delay between each rather than all popping in at once. */
 export function Stagger({ children, className, style, delay = 0, staggerMs = 0.05 }) {
   const reduce = useReducedMotion();
   if (reduce) return <div className={className} style={style}>{children}</div>;
@@ -32,6 +37,12 @@ export function StaggerItem({ children, className, style }) {
     </motion.div>
   );
 }
+
+/** A stylized "assembling" reveal — a clip-path panel wipe with a light
+ * sweep passing across in sync. Not a literal panel-by-panel nanobot
+ * build (that's a lot of discrete pieces for the payoff); this reads as
+ * "locking into place" with two moving parts instead of dozens.
+ * `triggerKey` re-runs the animation when it changes (e.g. a new result). */
 export function SuitReveal({ children, triggerKey, delay = 0, className }) {
   const reduce = useReducedMotion();
   if (reduce) return <div className={className}>{children}</div>;

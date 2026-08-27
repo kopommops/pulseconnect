@@ -12,7 +12,7 @@ with FastF1 able to reach the network (this scaffold ships with a seed
 dataset of the same shape so the frontend has something to render).
 """
 
-SEASONS = [2020,2021, 2022, 2023, 2024, 2025, 2026]
+SEASONS = [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026]
 CURRENT_SEASON = 2026
 CACHE_DIR = "data/cache"
 GENERATED_DIR = "data/generated"
@@ -22,13 +22,17 @@ UNKNOWN = "unknown"  # sentinel used throughout instead of fabricating a number
 
 POINTS_SYSTEM = {1: 25, 2: 18, 3: 15, 4: 12, 5: 10, 6: 8, 7: 6, 8: 4, 9: 2, 10: 1}
 SPRINT_POINTS_SYSTEM = {1: 8, 2: 7, 3: 6, 4: 5, 5: 4, 6: 3, 7: 2, 8: 1}
-
+MIN_RACES_FOR_PREDICTION = 10
+PODIUM_PRECISION_TARGET = 0.75
+TOP5_PRECISION_TARGET = 0.75
+RECENT_FORM_WINDOW = 5
 PIT_LOSS_HEURISTIC_BY_TYPE = {
     "Street": 24.0, "Technical": 22.0, "Balanced": 21.0,
     "Mixed": 20.5, "Power": 19.0, "High-Speed": 19.5,
 }
-
 EVENT_ROSTER_OVERRIDES = {
+    # 2026 Dutch GP: Hadjar injured, Lawson (normally Racing Bulls) covers
+    # at Red Bull; Tsunoda + Lindblad race for Racing Bulls.
     "2026-zandvoort": {
         "redbull": ["VER", "LAW"],
         "racingbulls": ["TSU", "LIN"],
@@ -61,42 +65,42 @@ TEAMS = [
 ]
 
 DRIVERS = [
-    {"id": "VER", "name": "Max Verstappen", "num": 3, "country": "NL", "debut_season": 2015},
-    {"id": "HAD", "name": "Isack Hadjar", "num": 6, "country": "FR", "debut_season": 2025},
-    {"id": "LEC", "name": "Charles Leclerc", "num": 16, "country": "MC", "debut_season": 2018},
-    {"id": "HAM", "name": "Lewis Hamilton", "num": 44, "country": "GB", "debut_season": 2007},
-    {"id": "RUS", "name": "George Russell", "num": 63, "country": "GB", "debut_season": 2019},
-    {"id": "ANT", "name": "Kimi Antonelli", "num": 12, "country": "IT", "debut_season": 2025},
-    {"id": "NOR", "name": "Lando Norris", "num": 1, "country": "GB", "debut_season": 2019},
-    {"id": "PIA", "name": "Oscar Piastri", "num": 81, "country": "AU", "debut_season": 2023},
-    {"id": "ALO", "name": "Fernando Alonso", "num": 14, "country": "ES", "debut_season": 2001},
-    {"id": "STR", "name": "Lance Stroll", "num": 18, "country": "CA", "debut_season": 2017},
-    {"id": "GAS", "name": "Pierre Gasly", "num": 10, "country": "FR", "debut_season": 2017},
-    {"id": "COL", "name": "Franco Colapinto", "num": 43, "country": "AR", "debut_season": 2024},
-    {"id": "LAW", "name": "Liam Lawson", "num": 30, "country": "NZ", "debut_season": 2023},
-    {"id": "LIN", "name": "Arvid Lindblad", "num": 41, "country": "GB", "debut_season": 2026},
-    {"id": "OCO", "name": "Esteban Ocon", "num": 31, "country": "FR", "debut_season": 2016},
-    {"id": "BEA", "name": "Oliver Bearman", "num": 87, "country": "GB", "debut_season": 2024},
-    {"id": "HUL", "name": "Nico Hulkenberg", "num": 27, "country": "DE", "debut_season": 2010},
-    {"id": "BOR", "name": "Gabriel Bortoleto", "num": 5, "country": "BR", "debut_season": 2025},
-    {"id": "ALB", "name": "Alex Albon", "num": 23, "country": "TH", "debut_season": 2019},
-    {"id": "SAI", "name": "Carlos Sainz", "num": 55, "country": "ES", "debut_season": 2015},
-    {"id": "PER", "name": "Sergio Perez", "num": 11, "country": "MX", "debut_season": 2011},
-    {"id": "BOT", "name": "Valtteri Bottas", "num": 77, "country": "FI", "debut_season": 2013},
+    {"id": "VER", "name": "Max Verstappen", "num": 3, "country": "NL", "debut_season": 2015, "birth_date": "1997-09-30"},
+    {"id": "HAD", "name": "Isack Hadjar", "num": 6, "country": "FR", "debut_season": 2025, "birth_date": "2004-09-28"},
+    {"id": "LEC", "name": "Charles Leclerc", "num": 16, "country": "MC", "debut_season": 2018, "birth_date": "1997-10-16"},
+    {"id": "HAM", "name": "Lewis Hamilton", "num": 44, "country": "GB", "debut_season": 2007, "birth_date": "1985-01-07"},
+    {"id": "RUS", "name": "George Russell", "num": 63, "country": "GB", "debut_season": 2019, "birth_date": "1998-02-15"},
+    {"id": "ANT", "name": "Kimi Antonelli", "num": 12, "country": "IT", "debut_season": 2025, "birth_date": "2006-08-25"},
+    {"id": "NOR", "name": "Lando Norris", "num": 1, "country": "GB", "debut_season": 2019, "birth_date": "1999-11-13"},
+    {"id": "PIA", "name": "Oscar Piastri", "num": 81, "country": "AU", "debut_season": 2023, "birth_date": "2001-04-06"},
+    {"id": "ALO", "name": "Fernando Alonso", "num": 14, "country": "ES", "debut_season": 2001, "birth_date": "1981-07-29"},
+    {"id": "STR", "name": "Lance Stroll", "num": 18, "country": "CA", "debut_season": 2017, "birth_date": "1998-10-29"},
+    {"id": "GAS", "name": "Pierre Gasly", "num": 10, "country": "FR", "debut_season": 2017, "birth_date": "1996-02-07"},
+    {"id": "COL", "name": "Franco Colapinto", "num": 43, "country": "AR", "debut_season": 2024, "birth_date": "2003-05-27"},
+    {"id": "LAW", "name": "Liam Lawson", "num": 30, "country": "NZ", "debut_season": 2023, "birth_date": "2002-02-11"},
+    {"id": "LIN", "name": "Arvid Lindblad", "num": 41, "country": "GB", "debut_season": 2026, "birth_date": "2007-08-08"},
+    {"id": "OCO", "name": "Esteban Ocon", "num": 31, "country": "FR", "debut_season": 2016, "birth_date": "1996-09-17"},
+    {"id": "BEA", "name": "Oliver Bearman", "num": 87, "country": "GB", "debut_season": 2024, "birth_date": "2005-05-08"},
+    {"id": "HUL", "name": "Nico Hulkenberg", "num": 27, "country": "DE", "debut_season": 2010, "birth_date": "1987-08-19"},
+    {"id": "BOR", "name": "Gabriel Bortoleto", "num": 5, "country": "BR", "debut_season": 2025, "birth_date": "2004-10-14"},
+    {"id": "ALB", "name": "Alex Albon", "num": 23, "country": "TH", "debut_season": 2019, "birth_date": "1996-03-23"},
+    {"id": "SAI", "name": "Carlos Sainz", "num": 55, "country": "ES", "debut_season": 2015, "birth_date": "1994-09-01"},
+    {"id": "PER", "name": "Sergio Perez", "num": 11, "country": "MX", "debut_season": 2011, "birth_date": "1990-01-26"},
+    {"id": "BOT", "name": "Valtteri Bottas", "num": 77, "country": "FI", "debut_season": 2013, "birth_date": "1989-08-28"},
 
-    {"id": "TSU", "name": "Yuki Tsunoda", "num": 22, "country": "JP", "debut_season": 2021},
-    {"id": "IWA", "name": "Ayumu Iwasa", "num": None, "country": "JP", "debut_season": None},
-    {"id": "VES", "name": "Frederik Vesti", "num": None, "country": "DK", "debut_season": None},
-    {"id": "GIO", "name": "Antonio Giovinazzi", "num": None, "country": "IT", "debut_season": 2019},
-    {"id": "OWA", "name": "Pato O'Ward", "num": None, "country": "MX", "debut_season": None},
-    {"id": "FOR", "name": "Leonardo Fornaroli", "num": None, "country": "IT", "debut_season": None},
-    {"id": "CRA", "name": "Jak Crawford", "num": None, "country": "US", "debut_season": None},
-    {"id": "ARO", "name": "Paul Aron", "num": None, "country": "EE", "debut_season": None},
-    {"id": "MAI", "name": "Kush Maini", "num": None, "country": "IN", "debut_season": None},
-    {"id": "BRO", "name": "Luke Browning", "num": None, "country": "GB", "debut_season": None},
-    {"id": "DOO", "name": "Jack Doohan", "num": None, "country": "AU", "debut_season": 2024},
-    {"id": "HIR", "name": "Ryo Hirakawa", "num": None, "country": "JP", "debut_season": None},
-    {"id": "ZHO", "name": "Guanyu Zhou", "num": None, "country": "CN", "debut_season": 2022},
+    {"id": "TSU", "name": "Yuki Tsunoda", "num": 22, "country": "JP", "debut_season": 2021, "birth_date": "2000-05-11"},
+    {"id": "IWA", "name": "Ayumu Iwasa", "num": None, "country": "JP", "debut_season": None, "birth_date": "2001-09-22"},
+    {"id": "VES", "name": "Frederik Vesti", "num": None, "country": "DK", "debut_season": None, "birth_date": "2002-01-13"},
+    {"id": "GIO", "name": "Antonio Giovinazzi", "num": None, "country": "IT", "debut_season": 2019, "birth_date": "1993-12-14"},
+    {"id": "OWA", "name": "Pato O'Ward", "num": None, "country": "MX", "debut_season": None, "birth_date": "1999-05-06"},
+    {"id": "FOR", "name": "Leonardo Fornaroli", "num": None, "country": "IT", "debut_season": None, "birth_date": "2004-12-03"},
+    {"id": "CRA", "name": "Jak Crawford", "num": None, "country": "US", "debut_season": None, "birth_date": "2005-05-02"},
+    {"id": "ARO", "name": "Paul Aron", "num": None, "country": "EE", "debut_season": None, "birth_date": "2004-02-04"},
+    {"id": "MAI", "name": "Kush Maini", "num": None, "country": "IN", "debut_season": None, "birth_date": "2000-09-22"},
+    {"id": "BRO", "name": "Luke Browning", "num": None, "country": "GB", "debut_season": None, "birth_date": "2002-01-31"},
+    {"id": "DOO", "name": "Jack Doohan", "num": None, "country": "AU", "debut_season": 2024, "birth_date": "2003-01-20"},
+    {"id": "HIR", "name": "Ryo Hirakawa", "num": None, "country": "JP", "debut_season": None, "birth_date": "1994-03-07"},
+    {"id": "ZHO", "name": "Guanyu Zhou", "num": None, "country": "CN", "debut_season": 2022, "birth_date": "1999-05-30"},
 ]
 
 RESERVE_DRIVERS = {
@@ -110,6 +114,7 @@ RESERVE_DRIVERS = {
     "williams": ["BRO"],
     "haas": ["DOO", "HIR"],
     "cadillac": ["ZHO"],
+    # Audi: no reserve announced as of this config's last edit.
 }
 
 CIRCUITS = [

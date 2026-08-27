@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { DriverAvatar } from './Identity';
 
+// Local-only for now — no accounts yet. This is the stepping stone toward
+// Fantasy F1: prove the "make your call, compare later" loop works before
+// building the auth/persistence layer a real multi-device version needs.
 const storageKey = (season, round) => `pulseconnect:my-prediction:${season}-${round}`;
 
 export default function MyPrediction({ season, round, activeDrivers, driverTeamMap, actual, onResolved }) {

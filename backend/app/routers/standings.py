@@ -31,9 +31,14 @@ def get_standings(season: str):
 
     for _, round_data in sorted(season_data.items(), key=lambda kv: int(kv[0])):
         race_entries = round_data.get("race", [])
-        if not race_entries:
+        sprint_entries = round_data.get("sprint", [])
+        if not race_entries and not sprint_entries:
             continue
         rounds_counted += 1
+
+        # Race points feed wins/podiums (a sprint top-3 isn't a "podium" in
+        # the traditional standings sense); sprint points still count
+        # toward the championship total, just via their own entries.
         for entry in race_entries:
             did, pts, pos, team = entry["driver"], entry.get("points", 0) or 0, entry.get("position"), entry.get("team")
             driver_points[did] = driver_points.get(did, 0) + pts
@@ -43,6 +48,12 @@ def get_standings(season: str):
                 driver_wins[did] = driver_wins.get(did, 0) + 1
             if pos is not None and pos <= 3:
                 driver_podiums[did] = driver_podiums.get(did, 0) + 1
+
+        for entry in sprint_entries:
+            did, pts, team = entry["driver"], entry.get("points", 0) or 0, entry.get("team")
+            driver_points[did] = driver_points.get(did, 0) + pts
+            if team:
+                constructor_points[team] = constructor_points.get(team, 0) + pts
 
     drivers = sorted([
         {"driver_id": did, "name": _driver_name(did), "points": round(pts, 1),

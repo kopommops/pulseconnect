@@ -5,6 +5,7 @@ from fastapi import APIRouter
 from app.config import CIRCUITS, DRIVERS, TEAMS, CURRENT_SEASON
 from app.data.loader import load
 from app.data.event_roster import resolve_roster
+from app.ml.race_outcome import predict_race_outcome
 
 router = APIRouter()
 
@@ -99,6 +100,14 @@ def race_predictions(season: int, round_no: int):
     season_kpis = load("season_kpis.json") or {}
     consistency = season_kpis.get(str(season), {}).get("consistency", {})
 
+    # Real race-outcome model (podium/top-5 classifier) — entirely separate
+    # from the compatibility score by design (see project discussion): this
+    # is "win probability," not a replacement for "circuit fit." Returns
+    # "unknown" per driver, gracefully, if the model hasn't cleared its
+    # deployment gate yet or that driver is below the cold-start threshold.
+    outcome_roster = [{"driver": did, "team": tid} for tid, info in roster.items() for did in info["drivers"]]
+    outcome_by_driver = predict_race_outcome(season, round_no, outcome_roster)
+
     scored = []
     for did in active_driver_ids:
         driver_compat = compat.get(did, {}).get(circuit_id)
@@ -107,11 +116,15 @@ def race_predictions(season: int, round_no: int):
             continue
         cons = consistency.get(did)
         cons_median = cons["median"] if isinstance(cons, dict) else None
+        outcome = outcome_by_driver.get(did, {"podium_probability": None, "top5_probability": None, "source": "unknown"})
         scored.append({
             "driver_id": did, "driver": _driver(did), "score": score,
             "predicted_delta_s": driver_compat.get("predicted_delta_s"),
             "consistency_median_finish": cons_median,
             "style_cluster": clusters["assignments"].get(did, "unknown"),
+            "podium_probability": outcome["podium_probability"],
+            "top5_probability": outcome["top5_probability"],
+            "win_probability_source": outcome["source"],
         })
 
     if not scored:
