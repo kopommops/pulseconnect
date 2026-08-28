@@ -35,7 +35,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 24,
           "duration_s": 22.74
         },
@@ -53,13 +53,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 23,
           "duration_s": 21.33
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 24,
           "duration_s": 22.89
         },
@@ -77,7 +77,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 22,
           "duration_s": 23.77
         },
@@ -190,13 +190,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 15,
           "duration_s": 23.1
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 39,
           "duration_s": 24.36
         },
@@ -226,25 +226,25 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 15,
           "duration_s": 24.82
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 35,
           "duration_s": 24.92
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 9,
           "duration_s": 24.96
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 32,
           "duration_s": 24.64
         },
@@ -256,13 +256,13 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 16,
           "duration_s": 25.78
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 26,
           "duration_s": 24.12
         },
@@ -381,13 +381,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 13,
           "duration_s": 24.03
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 31,
           "duration_s": 23.27
         },
@@ -405,25 +405,25 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 11,
           "duration_s": 23.02
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 31,
           "duration_s": 22.61
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 12,
           "duration_s": 22.93
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 32,
           "duration_s": 22.49
         },
@@ -447,13 +447,13 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 12,
           "duration_s": 23.76
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 31,
           "duration_s": 23.16
         },
@@ -626,13 +626,13 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 2,
           "duration_s": 27.88
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 40,
           "duration_s": 26.19
         },
@@ -656,13 +656,13 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 15,
           "duration_s": 21.5
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 40,
           "duration_s": 21.01
         },
@@ -775,19 +775,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 29,
           "duration_s": 47.87
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 26,
           "duration_s": 22.44
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 40,
           "duration_s": 22.99
         },
@@ -799,7 +799,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 25,
           "duration_s": 22.37
         },
@@ -906,7 +906,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 50,
           "duration_s": 25.17
         },
@@ -924,13 +924,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 23,
           "duration_s": 24.55
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 21,
           "duration_s": 29.27
         },
@@ -948,7 +948,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 16,
           "duration_s": 24.74
         },
@@ -1055,7 +1055,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 13,
           "duration_s": 24.48
         },
@@ -1073,19 +1073,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 11,
           "duration_s": 25.34
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 9,
           "duration_s": 24.11
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 44,
           "duration_s": 23.7
         },
@@ -1103,7 +1103,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 14,
           "duration_s": 24.4
         },
@@ -1140,7 +1140,7 @@
       ]
     },
     "8": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "stops": [
         {
           "driver": "ALO",
@@ -1192,7 +1192,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 37,
           "duration_s": 25.0
         },
@@ -1222,7 +1222,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 26,
           "duration_s": 25.44
         },
@@ -1317,13 +1317,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 15,
           "duration_s": 22.54
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 27,
           "duration_s": 22.85
         },
@@ -1347,13 +1347,13 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 15,
           "duration_s": 23.2
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 34,
           "duration_s": 26.33
         },
@@ -1460,7 +1460,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 20,
           "duration_s": 28.25
         },
@@ -1472,19 +1472,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 19,
           "duration_s": 29.39
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 13,
           "duration_s": 28.67
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 32,
           "duration_s": 28.81
         },
@@ -1514,13 +1514,13 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 17,
           "duration_s": 29.04
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 32,
           "duration_s": 28.09
         },
@@ -1575,7 +1575,7 @@
       ]
     },
     "11": {
-      "circuit_id": null,
+      "circuit_id": "hockenheimring",
       "stops": [
         {
           "driver": "ALO",
@@ -1663,19 +1663,19 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 18,
           "duration_s": 19.58
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 51,
           "duration_s": 20.72
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 55,
           "duration_s": 20.82
         },
@@ -1717,13 +1717,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 25,
           "duration_s": 19.56
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 22,
           "duration_s": 26.13
         },
@@ -1741,19 +1741,19 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 20,
           "duration_s": 20.16
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 50,
           "duration_s": 19.63
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 56,
           "duration_s": 20.52
         },
@@ -1860,13 +1860,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 23,
           "duration_s": 24.18
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 50,
           "duration_s": 22.66
         },
@@ -1878,13 +1878,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 39,
           "duration_s": 22.28
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 22,
           "duration_s": 22.55
         },
@@ -1908,7 +1908,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 25,
           "duration_s": 21.89
         },
@@ -2027,25 +2027,25 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 1,
           "duration_s": 19.55
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 24,
           "duration_s": 23.11
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 1,
           "duration_s": 19.88
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 25,
           "duration_s": 23.05
         },
@@ -2063,13 +2063,13 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 1,
           "duration_s": 18.42
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 22,
           "duration_s": 23.75
         },
@@ -2188,7 +2188,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 15,
           "duration_s": 31.16
         },
@@ -2218,19 +2218,19 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 17,
           "duration_s": 32.56
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 33,
           "duration_s": 30.42
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 39,
           "duration_s": 24.2
         },
@@ -2248,7 +2248,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 37,
           "duration_s": 30.2
         },
@@ -2291,7 +2291,7 @@
       ]
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "stops": [
         {
           "driver": "ALO",
@@ -2337,7 +2337,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 35,
           "duration_s": 30.56
         },
@@ -2355,13 +2355,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 10,
           "duration_s": 30.6
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 12,
           "duration_s": 29.8
         },
@@ -2379,7 +2379,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 32,
           "duration_s": 29.99
         },
@@ -2462,7 +2462,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 30,
           "duration_s": 23.21
         },
@@ -2486,13 +2486,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 26,
           "duration_s": 23.24
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 24,
           "duration_s": 23.31
         },
@@ -2510,7 +2510,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 32,
           "duration_s": 23.6
         },
@@ -2611,7 +2611,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 23,
           "duration_s": 24.77
         },
@@ -2629,13 +2629,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 22,
           "duration_s": 24.6
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 25,
           "duration_s": 25.78
         },
@@ -2647,7 +2647,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 24,
           "duration_s": 29.38
         },
@@ -2708,7 +2708,7 @@
       ]
     },
     "19": {
-      "circuit_id": null,
+      "circuit_id": "mexico-city",
       "stops": [
         {
           "driver": "BOT",
@@ -2784,7 +2784,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 12,
           "duration_s": 21.15
         },
@@ -2802,19 +2802,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 1,
           "duration_s": 27.61
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 30,
           "duration_s": 22.74
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 30,
           "duration_s": 23.74
         },
@@ -2832,7 +2832,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 11,
           "duration_s": 22.66
         },
@@ -2957,19 +2957,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 40,
           "duration_s": 27.33
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 57,
           "duration_s": 31.27
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 39,
           "duration_s": 23.48
         },
@@ -2987,13 +2987,13 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 25,
           "duration_s": 23.88
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 48,
           "duration_s": 24.07
         },
@@ -3100,13 +3100,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 21.93
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 26,
           "duration_s": 22.11
         },
@@ -3118,7 +3118,7 @@
         },
         {
           "driver": "SAI",
-          "team": null,
+          "team": "alpine",
           "lap": 37,
           "duration_s": 21.99
         },
@@ -3197,7 +3197,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 13,
           "duration_s": 21.71
         },
@@ -3245,7 +3245,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 13,
           "duration_s": 20.73
         },
@@ -3257,7 +3257,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 1,
           "duration_s": 33.28
         },
@@ -3275,7 +3275,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 27,
           "duration_s": 22.34
         },
@@ -3364,13 +3364,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 12,
           "duration_s": 25.5
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 32,
           "duration_s": 25.27
         },
@@ -3436,13 +3436,13 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 8,
           "duration_s": 27.14
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 33,
           "duration_s": 26.82
         },
@@ -3460,7 +3460,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 24,
           "duration_s": 25.65
         },
@@ -3496,13 +3496,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 1,
           "duration_s": 34.31
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 23,
           "duration_s": 26.6
         },
@@ -3615,7 +3615,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 11,
           "duration_s": 24.17
         },
@@ -3687,7 +3687,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 20,
           "duration_s": 23.71
         },
@@ -3699,7 +3699,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 18,
           "duration_s": 23.49
         },
@@ -3729,13 +3729,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 20,
           "duration_s": 23.47
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 44,
           "duration_s": 23.76
         },
@@ -3800,13 +3800,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 8,
           "duration_s": 21.2
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 34,
           "duration_s": 20.72
         },
@@ -3872,7 +3872,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 10,
           "duration_s": 21.14
         },
@@ -3884,7 +3884,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 10,
           "duration_s": 21.33
         },
@@ -3908,7 +3908,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 10,
           "duration_s": 22.93
         },
@@ -4003,7 +4003,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 35,
           "duration_s": 22.36
         },
@@ -4063,13 +4063,13 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 24,
           "duration_s": 22.75
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 45,
           "duration_s": 22.81
         },
@@ -4087,13 +4087,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 24,
           "duration_s": 22.36
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 45,
           "duration_s": 22.64
         },
@@ -4123,7 +4123,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 22,
           "duration_s": 23.27
         },
@@ -4200,7 +4200,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 9,
           "duration_s": 25.53
         },
@@ -4242,7 +4242,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 11,
           "duration_s": 27.22
         },
@@ -4254,7 +4254,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 11,
           "duration_s": 24.25
         },
@@ -4272,7 +4272,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 39,
           "duration_s": 24.61
         },
@@ -4337,7 +4337,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 16,
           "duration_s": 23.86
         },
@@ -4373,7 +4373,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 11,
           "duration_s": 24.17
         },
@@ -4391,7 +4391,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 8,
           "duration_s": 24.08
         },
@@ -4409,7 +4409,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 45,
           "duration_s": 21.8
         },
@@ -4428,7 +4428,7 @@
       ]
     },
     "8": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "stops": [
         {
           "driver": "ALB",
@@ -4474,7 +4474,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 34,
           "duration_s": 35.31
         },
@@ -4510,7 +4510,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 37.38
         },
@@ -4522,7 +4522,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 16,
           "duration_s": 31.05
         },
@@ -4546,7 +4546,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 39,
           "duration_s": 31.47
         },
@@ -4611,7 +4611,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 26,
           "duration_s": 20.8
         },
@@ -4659,7 +4659,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 28,
           "duration_s": 22.39
         },
@@ -4671,7 +4671,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 46,
           "duration_s": 22.29
         },
@@ -4689,7 +4689,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 25,
           "duration_s": 22.0
         },
@@ -4754,7 +4754,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 13,
           "duration_s": 28.64
         },
@@ -4808,19 +4808,19 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 30.26
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 24,
           "duration_s": 38.27
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 46,
           "duration_s": 28.67
         },
@@ -4832,13 +4832,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 12,
           "duration_s": 28.39
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 20,
           "duration_s": 28.39
         },
@@ -4856,13 +4856,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 13,
           "duration_s": 30.42
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 39,
           "duration_s": 29.08
         },
@@ -4893,7 +4893,7 @@
       ]
     },
     "11": {
-      "circuit_id": null,
+      "circuit_id": "hockenheimring",
       "stops": [
         {
           "driver": "ALB",
@@ -5047,19 +5047,19 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 3,
           "duration_s": 22.17
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 15,
           "duration_s": 20.09
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 29,
           "duration_s": 20.6
         },
@@ -5197,7 +5197,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 3,
           "duration_s": 21.26
         },
@@ -5251,31 +5251,31 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 7,
           "duration_s": 22.72
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 25,
           "duration_s": 21.27
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 28,
           "duration_s": 21.99
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 41,
           "duration_s": 20.47
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 44,
           "duration_s": 20.14
         },
@@ -5394,7 +5394,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 36,
           "duration_s": 21.77
         },
@@ -5430,7 +5430,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 21.73
         },
@@ -5442,7 +5442,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 46,
           "duration_s": 22.55
         },
@@ -5460,13 +5460,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 16,
           "duration_s": 22.06
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 50,
           "duration_s": 21.57
         },
@@ -5531,13 +5531,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 11,
           "duration_s": 23.46
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 31,
           "duration_s": 22.89
         },
@@ -5573,7 +5573,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 15,
           "duration_s": 23.15
         },
@@ -5591,7 +5591,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 1,
           "duration_s": 27.53
         },
@@ -5603,13 +5603,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 14,
           "duration_s": 22.72
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 30,
           "duration_s": 25.33
         },
@@ -5680,7 +5680,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 29,
           "duration_s": 24.29
         },
@@ -5728,7 +5728,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 28,
           "duration_s": 25.35
         },
@@ -5746,7 +5746,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 30,
           "duration_s": 24.3
         },
@@ -5758,13 +5758,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 15,
           "duration_s": 18.77
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 22,
           "duration_s": 24.41
         },
@@ -5853,13 +5853,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 1,
           "duration_s": 29.92
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 36,
           "duration_s": 29.39
         },
@@ -5913,7 +5913,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 13,
           "duration_s": 28.91
         },
@@ -5925,7 +5925,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 34,
           "duration_s": 30.79
         },
@@ -5949,19 +5949,19 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 31,
           "duration_s": 29.37
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 41,
           "duration_s": 39.28
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 44,
           "duration_s": 29.39
         },
@@ -5980,7 +5980,7 @@
       ]
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "stops": [
         {
           "driver": "ALB",
@@ -6020,13 +6020,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 16,
           "duration_s": 34.37
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 29,
           "duration_s": 29.65
         },
@@ -6074,7 +6074,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 23,
           "duration_s": 29.95
         },
@@ -6092,7 +6092,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 1,
           "duration_s": 35.6
         },
@@ -6104,7 +6104,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 27,
           "duration_s": 29.89
         },
@@ -6181,7 +6181,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 19,
           "duration_s": 23.8
         },
@@ -6247,13 +6247,13 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 19,
           "duration_s": 22.93
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 41,
           "duration_s": 23.14
         },
@@ -6271,7 +6271,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 29,
           "duration_s": 22.38
         },
@@ -6289,7 +6289,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 23.12
         },
@@ -6308,7 +6308,7 @@
       ]
     },
     "18": {
-      "circuit_id": null,
+      "circuit_id": "mexico-city",
       "stops": [
         {
           "driver": "ALB",
@@ -6360,7 +6360,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 18,
           "duration_s": 22.5
         },
@@ -6408,7 +6408,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 20,
           "duration_s": 22.61
         },
@@ -6426,7 +6426,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 50,
           "duration_s": 22.08
         },
@@ -6450,7 +6450,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 37,
           "duration_s": 22.79
         },
@@ -6539,13 +6539,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 27,
           "duration_s": 24.35
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 39,
           "duration_s": 23.69
         },
@@ -6605,7 +6605,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 24,
           "duration_s": 24.33
         },
@@ -6623,7 +6623,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 21,
           "duration_s": 23.65
         },
@@ -6647,13 +6647,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 9,
           "duration_s": 24.48
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 29,
           "duration_s": 25.17
         },
@@ -6754,19 +6754,19 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 27,
           "duration_s": 23.35
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 44,
           "duration_s": 23.67
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 53,
           "duration_s": 22.84
         },
@@ -6844,13 +6844,13 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 17,
           "duration_s": 23.07
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 45,
           "duration_s": 23.15
         },
@@ -6868,13 +6868,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 8,
           "duration_s": 30.82
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 40,
           "duration_s": 29.43
         },
@@ -6904,13 +6904,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 28,
           "duration_s": 23.38
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 53,
           "duration_s": 24.88
         },
@@ -6993,7 +6993,7 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "alpine",
           "lap": 18,
           "duration_s": 21.33
         },
@@ -7035,7 +7035,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 37,
           "duration_s": 22.21
         },
@@ -7047,13 +7047,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 11,
           "duration_s": 21.93
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 42,
           "duration_s": 21.63
         },
@@ -7077,13 +7077,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 5,
           "duration_s": 28.78
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 23,
           "duration_s": 21.74
         },
@@ -7258,25 +7258,25 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 21,
           "duration_s": 21.7
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 51,
           "duration_s": 19.48
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 21,
           "duration_s": 22.38
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 51,
           "duration_s": 16.92
         },
@@ -7337,7 +7337,7 @@
       ]
     },
     "2": {
-      "circuit_id": null,
+      "circuit_id": "spielberg",
       "stops": [
         {
           "driver": "ALB",
@@ -7413,7 +7413,7 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 38,
           "duration_s": 22.75
         },
@@ -7425,7 +7425,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 37,
           "duration_s": 21.63
         },
@@ -7449,7 +7449,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 33,
           "duration_s": 21.85
         },
@@ -7616,25 +7616,25 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 4,
           "duration_s": 24.3
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 31,
           "duration_s": 21.83
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 3,
           "duration_s": 23.3
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 35,
           "duration_s": 22.07
         },
@@ -7652,13 +7652,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 4,
           "duration_s": 21.97
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 43,
           "duration_s": 22.1
         },
@@ -7694,19 +7694,19 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 3,
           "duration_s": 23.14
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 35,
           "duration_s": 22.52
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 52,
           "duration_s": 22.05
         },
@@ -7807,7 +7807,7 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 12,
           "duration_s": 30.76
         },
@@ -7825,7 +7825,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 12,
           "duration_s": 29.61
         },
@@ -7849,7 +7849,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 13,
           "duration_s": 28.74
         },
@@ -7874,7 +7874,7 @@
       ]
     },
     "5": {
-      "circuit_id": null,
+      "circuit_id": "silverstone",
       "stops": [
         {
           "driver": "ALB",
@@ -7950,19 +7950,19 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "astonmartin",
           "lap": 15,
           "duration_s": 29.0
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "astonmartin",
           "lap": 30,
           "duration_s": 28.37
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "astonmartin",
           "lap": 44,
           "duration_s": 28.73
         },
@@ -8028,7 +8028,7 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 22,
           "duration_s": 28.13
         },
@@ -8040,19 +8040,19 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 14,
           "duration_s": 28.58
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 26,
           "duration_s": 28.24
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 35,
           "duration_s": 28.04
         },
@@ -8088,13 +8088,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 28.14
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 31,
           "duration_s": 27.98
         },
@@ -8255,13 +8255,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 34,
           "duration_s": 22.36
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 29,
           "duration_s": 22.94
         },
@@ -8279,7 +8279,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 35,
           "duration_s": 21.9
         },
@@ -8309,13 +8309,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 27,
           "duration_s": 22.67
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 42,
           "duration_s": 22.71
         },
@@ -8422,13 +8422,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 11,
           "duration_s": 24.3
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 23.41
         },
@@ -8440,13 +8440,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 11,
           "duration_s": 23.91
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 11,
           "duration_s": 23.7
         },
@@ -8553,13 +8553,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 22,
           "duration_s": 25.27
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 22,
           "duration_s": 26.68
         },
@@ -8571,7 +8571,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 22,
           "duration_s": 25.48
         },
@@ -8596,7 +8596,7 @@
       ]
     },
     "9": {
-      "circuit_id": null,
+      "circuit_id": "mugello",
       "stops": [
         {
           "driver": "ALB",
@@ -8726,25 +8726,25 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 7,
           "duration_s": 17.45
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 7,
           "duration_s": 17.61
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 28,
           "duration_s": 23.16
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 43,
           "duration_s": 23.69
         },
@@ -8774,19 +8774,19 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 7,
           "duration_s": 17.14
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 27,
           "duration_s": 22.78
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 43,
           "duration_s": 22.94
         },
@@ -8810,13 +8810,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 7,
           "duration_s": 17.61
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 30,
           "duration_s": 22.83
         },
@@ -8847,7 +8847,7 @@
       ]
     },
     "10": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "stops": [
         {
           "driver": "ALB",
@@ -8941,13 +8941,13 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 18,
           "duration_s": 30.06
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 20,
           "duration_s": 29.88
         },
@@ -8959,7 +8959,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 15,
           "duration_s": 30.12
         },
@@ -8996,7 +8996,7 @@
       ]
     },
     "11": {
-      "circuit_id": null,
+      "circuit_id": "nurburgring",
       "stops": [
         {
           "driver": "ALB",
@@ -9054,13 +9054,13 @@
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "astonmartin",
           "lap": 29,
           "duration_s": 22.71
         },
         {
           "driver": "HUL",
-          "team": null,
+          "team": "astonmartin",
           "lap": 44,
           "duration_s": 22.61
         },
@@ -9120,13 +9120,13 @@
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 28,
           "duration_s": 22.92
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 45,
           "duration_s": 22.53
         },
@@ -9144,13 +9144,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 16,
           "duration_s": 22.14
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 44,
           "duration_s": 22.52
         },
@@ -9199,7 +9199,7 @@
       ]
     },
     "12": {
-      "circuit_id": null,
+      "circuit_id": "portimao",
       "stops": [
         {
           "driver": "ALB",
@@ -9287,19 +9287,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 53,
           "duration_s": 28.44
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 1,
           "duration_s": 26.12
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 45,
           "duration_s": 26.66
         },
@@ -9311,7 +9311,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 14,
           "duration_s": 26.92
         },
@@ -9329,13 +9329,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 18,
           "duration_s": 36.34
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 34,
           "duration_s": 37.49
         },
@@ -9454,19 +9454,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 13,
           "duration_s": 31.74
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 27,
           "duration_s": 30.28
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 51,
           "duration_s": 30.88
         },
@@ -9478,7 +9478,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 14,
           "duration_s": 30.27
         },
@@ -9502,19 +9502,19 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 1,
           "duration_s": 34.81
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 29,
           "duration_s": 30.95
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 52,
           "duration_s": 36.89
         },
@@ -9539,7 +9539,7 @@
       ]
     },
     "14": {
-      "circuit_id": null,
+      "circuit_id": "istanbul",
       "stops": [
         {
           "driver": "ALB",
@@ -9651,19 +9651,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 1,
           "duration_s": 25.74
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 10,
           "duration_s": 23.52
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 10,
           "duration_s": 25.13
         },
@@ -9687,13 +9687,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 10,
           "duration_s": 23.47
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 32,
           "duration_s": 23.2
         },
@@ -9723,13 +9723,13 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 9,
           "duration_s": 24.96
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 36,
           "duration_s": 23.69
         },
@@ -9896,25 +9896,25 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 17,
           "duration_s": 24.11
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 34,
           "duration_s": 25.25
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 20,
           "duration_s": 24.37
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 36,
           "duration_s": 24.58
         },
@@ -9932,13 +9932,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 16,
           "duration_s": 24.63
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 36,
           "duration_s": 24.8
         },
@@ -9999,7 +9999,7 @@
       ]
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "bahrain",
       "stops": [
         {
           "driver": "AIT",
@@ -10129,19 +10129,19 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 41,
           "duration_s": 24.41
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 1,
           "duration_s": 23.64
         },
         {
           "driver": "PER",
-          "team": null,
+          "team": "astonmartin",
           "lap": 47,
           "duration_s": 24.47
         },
@@ -10165,13 +10165,13 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 29,
           "duration_s": 24.55
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 55,
           "duration_s": 23.11
         },
@@ -10207,7 +10207,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 42,
           "duration_s": 24.36
         },
@@ -10326,7 +10326,7 @@
         },
         {
           "driver": "OCO",
-          "team": null,
+          "team": "alpine",
           "lap": 10,
           "duration_s": 21.32
         },
@@ -10338,7 +10338,7 @@
         },
         {
           "driver": "RIC",
-          "team": null,
+          "team": "alpine",
           "lap": 39,
           "duration_s": 22.16
         },
@@ -10356,7 +10356,7 @@
         },
         {
           "driver": "STR",
-          "team": null,
+          "team": "astonmartin",
           "lap": 10,
           "duration_s": 22.35
         },
@@ -10795,7 +10795,7 @@
       ]
     },
     "3": {
-      "circuit_id": null,
+      "circuit_id": "portimao",
       "stops": [
         {
           "driver": "ALO",
@@ -11643,7 +11643,7 @@
       ]
     },
     "7": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "stops": [
         {
           "driver": "ALO",
@@ -11780,7 +11780,7 @@
       ]
     },
     "8": {
-      "circuit_id": null,
+      "circuit_id": "spielberg",
       "stops": [
         {
           "driver": "ALO",
@@ -12680,7 +12680,7 @@
       ]
     },
     "15": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "stops": [
         {
           "driver": "ALO",
@@ -12919,7 +12919,7 @@
       ]
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "istanbul",
       "stops": [
         {
           "driver": "ALO",
@@ -16449,7 +16449,7 @@
       ]
     },
     "12": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "stops": [
         {
           "driver": "ALB",
@@ -33848,7 +33848,7 @@
       ]
     },
     "7": {
-      "circuit_id": null,
+      "circuit_id": "catalunya",
       "stops": [
         {
           "driver": "ALB",

@@ -33,6 +33,8 @@ FEATURE_COLUMNS = [
     "driver_age",
     "recent_form_points",
     "recent_form_avg_finish",
+    "recent_avg_quali_position",
+    "recent_quali_known",
     "reliability_rate",
     "circuit_history_avg_finish",
     "circuit_history_known",
@@ -94,6 +96,9 @@ class _HistoryAccumulator:
         recent_points = sum(r["points"] for r in recent)
         recent_positions = [r["position"] for r in recent if r["position"] is not None]
         recent_avg_finish = (sum(recent_positions) / len(recent_positions)) if recent_positions else 20.0
+        recent_quali_positions = [r.get("quali_position") for r in recent if r.get("quali_position") is not None]
+        recent_quali_known = len(recent_quali_positions) > 0
+        recent_avg_quali_position = (sum(recent_quali_positions) / len(recent_quali_positions)) if recent_quali_positions else 20.0
 
         reliab_window = prior[-10:]
         reliability_rate = sum(1 for r in reliab_window if _is_classified(r["status"])) / len(reliab_window)
@@ -102,8 +107,8 @@ class _HistoryAccumulator:
         circuit_history_known = len(ch) > 0
         circuit_history_avg_finish = (sum(ch) / len(ch)) if ch else 20.0
 
-        team_points = self.team_points_history.get(team_id, [])
-        constructor_recent_points = sum(p for (_, _, p) in team_points[-RECENT_FORM_WINDOW * 2:])
+        team_points = self.team_points_history.get(team_id, [])[-RECENT_FORM_WINDOW * 2:]
+        constructor_recent_points = (sum(p for (_, _, p) in team_points) / len(team_points)) if team_points else 0.0
 
         pit_hist = self.team_pit_history.get(team_id, [])[-20:]
         pit_stop_efficiency_known = len(pit_hist) > 0
@@ -123,6 +128,8 @@ class _HistoryAccumulator:
             "driver_age": age,
             "recent_form_points": recent_points,
             "recent_form_avg_finish": recent_avg_finish,
+            "recent_avg_quali_position": recent_avg_quali_position,
+            "recent_quali_known": 1.0 if recent_quali_known else 0.0,
             "reliability_rate": reliability_rate,
             "circuit_history_avg_finish": circuit_history_avg_finish,
             "circuit_history_known": 1.0 if circuit_history_known else 0.0,
@@ -135,12 +142,14 @@ class _HistoryAccumulator:
             "tyre_degradation_known": 1.0 if tyre_degradation_known else 0.0,
         }
 
-    def absorb_round(self, season, rnd, race_entries, pit_stop_entries):
+    def absorb_round(self, season, rnd, race_entries, pit_stop_entries, quali_entries=None):
+        quali_lookup = {q["driver"]: q["position"] for q in (quali_entries or [])}
         for entry in race_entries:
             did, team_id = entry["driver"], entry.get("team")
             self.driver_history.setdefault(did, []).append({
                 "season": season, "round": rnd, "position": entry.get("position"),
                 "points": entry.get("points", 0) or 0, "status": entry.get("status"),
+                "quali_position": quali_lookup.get(did),
             })
             if team_id:
                 self.team_points_history.setdefault(team_id, []).append((season, rnd, entry.get("points", 0) or 0))
@@ -190,7 +199,7 @@ def build_training_rows():
                 })
 
         pit_entries = pit_stops.get(str(season), {}).get(str(rnd), {}).get("stops", [])
-        acc.absorb_round(season, rnd, round_data["race"], pit_entries)
+        acc.absorb_round(season, rnd, round_data["race"], pit_entries, round_data.get("quali", []))
         for entry in round_data["race"]:
             acc.circuit_history.setdefault((entry["driver"], circuit_id), []).append(
                 entry.get("position") if entry.get("position") is not None else 20
@@ -225,7 +234,7 @@ def build_live_features(season, round_no, roster):
         if not round_data or not round_data.get("race"):
             continue
         pit_entries = pit_stops.get(str(s), {}).get(str(r), {}).get("stops", [])
-        acc.absorb_round(s, r, round_data["race"], pit_entries)
+        acc.absorb_round(s, r, round_data["race"], pit_entries, round_data.get("quali", []))
         for entry in round_data["race"]:
             acc.circuit_history.setdefault((entry["driver"], cid), []).append(
                 entry.get("position") if entry.get("position") is not None else 20

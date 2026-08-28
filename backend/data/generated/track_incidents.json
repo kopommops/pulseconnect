@@ -50,7 +50,7 @@
       "red_flag_laps": 0
     },
     "8": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "total_laps": 53,
       "sc_laps": 5,
       "vsc_laps": 3,
@@ -71,7 +71,7 @@
       "red_flag_laps": 0
     },
     "11": {
-      "circuit_id": null,
+      "circuit_id": "hockenheimring",
       "total_laps": 67,
       "sc_laps": 7,
       "vsc_laps": 0,
@@ -99,7 +99,7 @@
       "red_flag_laps": 0
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "total_laps": 53,
       "sc_laps": 0,
       "vsc_laps": 0,
@@ -120,7 +120,7 @@
       "red_flag_laps": 0
     },
     "19": {
-      "circuit_id": null,
+      "circuit_id": "mexico-city",
       "total_laps": 71,
       "sc_laps": 0,
       "vsc_laps": 6,
@@ -192,7 +192,7 @@
       "red_flag_laps": 0
     },
     "8": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "total_laps": 53,
       "sc_laps": 0,
       "vsc_laps": 2,
@@ -213,7 +213,7 @@
       "red_flag_laps": 0
     },
     "11": {
-      "circuit_id": null,
+      "circuit_id": "hockenheimring",
       "total_laps": 64,
       "sc_laps": 17,
       "vsc_laps": 3,
@@ -248,7 +248,7 @@
       "red_flag_laps": 0
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "total_laps": 53,
       "sc_laps": 7,
       "vsc_laps": 2,
@@ -262,7 +262,7 @@
       "red_flag_laps": 0
     },
     "18": {
-      "circuit_id": null,
+      "circuit_id": "mexico-city",
       "total_laps": 71,
       "sc_laps": 0,
       "vsc_laps": 3,
@@ -299,7 +299,7 @@
       "red_flag_laps": 0
     },
     "2": {
-      "circuit_id": null,
+      "circuit_id": "spielberg",
       "total_laps": 71,
       "sc_laps": 3,
       "vsc_laps": 0,
@@ -320,7 +320,7 @@
       "red_flag_laps": 0
     },
     "5": {
-      "circuit_id": null,
+      "circuit_id": "silverstone",
       "total_laps": 52,
       "sc_laps": 0,
       "vsc_laps": 0,
@@ -348,28 +348,28 @@
       "red_flag_laps": 1
     },
     "9": {
-      "circuit_id": null,
+      "circuit_id": "mugello",
       "total_laps": 59,
       "sc_laps": 11,
       "vsc_laps": 0,
       "red_flag_laps": 2
     },
     "10": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "total_laps": 53,
       "sc_laps": 5,
       "vsc_laps": 1,
       "red_flag_laps": 0
     },
     "11": {
-      "circuit_id": null,
+      "circuit_id": "nurburgring",
       "total_laps": 60,
       "sc_laps": 6,
       "vsc_laps": 1,
       "red_flag_laps": 0
     },
     "12": {
-      "circuit_id": null,
+      "circuit_id": "portimao",
       "total_laps": 66,
       "sc_laps": 0,
       "vsc_laps": 0,
@@ -383,7 +383,7 @@
       "red_flag_laps": 0
     },
     "14": {
-      "circuit_id": null,
+      "circuit_id": "istanbul",
       "total_laps": 58,
       "sc_laps": 0,
       "vsc_laps": 2,
@@ -397,7 +397,7 @@
       "red_flag_laps": 1
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "bahrain",
       "total_laps": 87,
       "sc_laps": 14,
       "vsc_laps": 3,
@@ -427,7 +427,7 @@
       "red_flag_laps": 2
     },
     "3": {
-      "circuit_id": null,
+      "circuit_id": "portimao",
       "total_laps": 66,
       "sc_laps": 5,
       "vsc_laps": 0,
@@ -455,14 +455,14 @@
       "red_flag_laps": 1
     },
     "7": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "total_laps": 53,
       "sc_laps": 0,
       "vsc_laps": 0,
       "red_flag_laps": 0
     },
     "8": {
-      "circuit_id": null,
+      "circuit_id": "spielberg",
       "total_laps": 71,
       "sc_laps": 0,
       "vsc_laps": 0,
@@ -511,14 +511,14 @@
       "red_flag_laps": 0
     },
     "15": {
-      "circuit_id": null,
+      "circuit_id": "sochi",
       "total_laps": 53,
       "sc_laps": 0,
       "vsc_laps": 0,
       "red_flag_laps": 0
     },
     "16": {
-      "circuit_id": null,
+      "circuit_id": "istanbul",
       "total_laps": 58,
       "sc_laps": 0,
       "vsc_laps": 0,
@@ -646,7 +646,7 @@
       "red_flag_laps": 0
     },
     "12": {
-      "circuit_id": null,
+      "circuit_id": "paul_ricard",
       "total_laps": 53,
       "sc_laps": 3,
       "vsc_laps": 1,
@@ -1263,7 +1263,7 @@
       "red_flag_laps": 1
     },
     "7": {
-      "circuit_id": null,
+      "circuit_id": "catalunya",
       "total_laps": 66,
       "sc_laps": 0,
       "vsc_laps": 7,

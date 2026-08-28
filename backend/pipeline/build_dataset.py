@@ -52,21 +52,16 @@ PROGRESS_FILE = os.path.join(GENERATED_DIR, "_progress.json")
 MAX_RETRIES = 5
 BACKOFF_SECONDS = 1200
 
-# FastF1's TeamName string varies by season (rebrands, sponsor-name churn —
-# e.g. "AlphaTauri" -> "RB" -> "Racing Bulls", "Alfa Romeo"/"Sauber" -> "Audi").
-# Best-effort keyword match to our stable internal team_id; unresolved names
-# are stored as None rather than guessed, so a stale/new name never silently
-# gets misattributed to the wrong constructor.
 TEAM_NAME_ALIASES = {
     "redbull": ["red bull"],
     "ferrari": ["ferrari"],
     "mercedes": ["mercedes"],
     "mclaren": ["mclaren"],
-    "astonmartin": ["aston martin"],
-    "alpine": ["alpine"],
-    "racingbulls": ["racing bulls", "alphatauri", "toro rosso"],
     "haas": ["haas"],
+    "racingbulls": ["racing bulls", "alphatauri", "toro rosso"],
     "audi": ["audi", "sauber", "alfa romeo"],
+    "alpine": ["alpine", "renault"],
+    "astonmartin": ["aston martin", "racing point", "force india"],
     "williams": ["williams"],
     "cadillac": ["cadillac"],
 }
@@ -318,6 +313,9 @@ def round_result_from_sessions(quali, race, sprint, circuit_id):
                 "status": status if isinstance(status, str) else "Unknown",
                 "fastest_lap": bool(row.get("Position") == 1 and float(points or 0) % 1 != 0) if points is not None else False,
             })
+        team_id = team_id_from_name(row.get("TeamName"))
+        if team_id is None and row.get("TeamName"):
+            print(f"    ! unmapped team name: '{row.get('TeamName')}' — add it to TEAM_NAME_ALIASES")
 
     if sprint is not None and sprint.results is not None and not sprint.results.empty:
         for _, row in sprint.results.iterrows():
@@ -332,6 +330,9 @@ def round_result_from_sessions(quali, race, sprint, circuit_id):
                 "position": int(pos) if not pd.isna(pos) else None,
                 "points": float(points) if points is not None and not pd.isna(points) else 0.0,
             })
+        team_id = team_id_from_name(row.get("TeamName"))
+        if team_id is None and row.get("TeamName"):
+            print(f"    ! unmapped team name: '{row.get('TeamName')}' — add it to TEAM_NAME_ALIASES")
 
     return result
 
