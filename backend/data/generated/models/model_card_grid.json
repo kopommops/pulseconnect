@@ -1,0 +1,68 @@
+{
+  "trained_on_seasons": [
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "test_season_holdout": 2025,
+  "feature_columns": [
+    "driver_age",
+    "recent_form_points",
+    "recent_form_avg_finish",
+    "recent_avg_quali_position",
+    "recent_quali_known",
+    "reliability_rate",
+    "circuit_history_avg_finish",
+    "circuit_history_known",
+    "constructor_recent_points",
+    "pit_stop_efficiency_s",
+    "pit_stop_efficiency_known",
+    "safety_car_rate",
+    "safety_car_rate_known",
+    "tyre_degradation_avg",
+    "tyre_degradation_known",
+    "grid_position",
+    "grid_position_known"
+  ],
+  "gate": {
+    "podium_target": 0.75,
+    "top5_target": 0.75
+  },
+  "n_training_rows_final_fit": 2642,
+  "podium_model": {
+    "algorithm": "random_forest",
+    "passed": false,
+    "holdout_precision_at_3": 0.7083333333333334
+  },
+  "top5_model": {
+    "algorithm": "gradient_boosting",
+    "passed": true,
+    "holdout_precision_at_5": 0.7833333333333333,
+    "holdout_test_races": 24,
+    "feature_importances": {
+      "driver_age": 0.0195,
+      "recent_form_points": 0.1263,
+      "recent_form_avg_finish": 0.0355,
+      "recent_avg_quali_position": 0.0682,
+      "recent_quali_known": 0.0,
+      "reliability_rate": 0.0093,
+      "circuit_history_avg_finish": 0.0274,
+      "circuit_history_known": 0.0013,
+      "constructor_recent_points": 0.1347,
+      "pit_stop_efficiency_s": 0.0641,
+      "pit_stop_efficiency_known": 0.0,
+      "safety_car_rate": 0.045,
+      "safety_car_rate_known": 0.0,
+      "tyre_degradation_avg": 0.0333,
+      "tyre_degradation_known": 0.0,
+      "grid_position": 0.4354,
+      "grid_position_known": 0.0
+    }
+  }
+}
