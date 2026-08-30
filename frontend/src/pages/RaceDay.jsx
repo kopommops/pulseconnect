@@ -197,6 +197,7 @@ function PredictionsTab({ nextRace, predictions, actual, driverTeamMap, activeDr
             </div>
 
             <ChaosIndexCard predictions={predictions} />
+            <WinProbabilityCard predictions={predictions} driverTeamMap={driverTeamMap} />
           </div>
         </SuitReveal>
       ))}
@@ -246,6 +247,50 @@ function ChaosIndexCard({ predictions }) {
         <div className="mt-3 pt-3 font-mono text-[11px] space-y-1" style={{ borderTop: '1px solid var(--border)', color: 'var(--ink-muted)' }}>
           <div>Top-8 score spread: <span style={{ color: 'var(--ink)' }}>{spread} pts</span> ({top} → {bottom})</div>
           <div style={{ color: 'var(--ink-faint)' }}>{predictions.chaos_index_basis}</div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+const SOURCE_LABEL = { 'real (grid-confirmed)': 'grid-confirmed', 'real (form)': 'form' };
+
+// Deliberately a SEPARATE ranking from the compatibility podium above —
+// this is the trained podium/top-5 classifier's own order, not the
+// compatibility model's. Two real signals, shown as two real signals,
+// never silently blended into one.
+function WinProbabilityCard({ predictions, driverTeamMap }) {
+  const ranking = predictions.win_probability_ranking || [];
+  return (
+    <div className="glass rounded-lg p-6">
+      <div className="font-mono text-[10px] uppercase tracking-wider mb-1" style={{ color: RED }}>
+        Win Probability · Podium / Top-5 model
+      </div>
+      <p className="text-xs mb-4" style={{ color: 'var(--ink-muted)' }}>
+        A separate trained classifier's own ranking — not the compatibility model above. Independent signal, can disagree.
+      </p>
+      {ranking.length === 0 ? (
+        <Unknown>unknown — this model hasn't cleared its real-data accuracy bar yet for this round</Unknown>
+      ) : (
+        <div className="space-y-2">
+          {ranking.map((r) => {
+            const team = driverTeamMap[r.driver_id] || { accent: RED };
+            return (
+              <div key={r.driver_id} className="flex items-center gap-3 px-3 py-2 rounded-md" style={{ background: 'var(--glass-strong)' }}>
+                <DriverAvatar driver={r.driver} team={team} size={32} />
+                <div className="flex-1 min-w-0">
+                  <div className="font-display font-bold text-sm truncate">{r.driver.name}</div>
+                  <div className="font-mono text-[9px]" style={{ color: 'var(--ink-faint)' }}>
+                    {SOURCE_LABEL[r.win_probability_source] || r.win_probability_source}
+                  </div>
+                </div>
+                <div className="text-right font-mono text-xs">
+                  {r.podium_probability != null && <div style={{ color: 'var(--ink)' }}>{Math.round(r.podium_probability * 100)}% podium</div>}
+                  {r.top5_probability != null && <div style={{ color: 'var(--ink-muted)' }}>{Math.round(r.top5_probability * 100)}% top 5</div>}
+                </div>
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

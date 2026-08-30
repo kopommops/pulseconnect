@@ -150,6 +150,15 @@ def race_predictions(season: int, round_no: int):
     spread = (max(top_scores) - min(top_scores)) if len(top_scores) > 1 else 0
     chaos_index = max(0, min(100, round(100 - spread * 2)))
 
+    # Win Probability — a GENUINELY SEPARATE ranking from the podium above.
+    # That podium is compatibility-score order; this is the trained
+    # podium/top-5 classifier's own order. Deliberately not merged into
+    # or reordering podium/top5 — two real signals, shown as two real
+    # signals, not blended into one number.
+    outcome_ranked = [r for r in scored if r["win_probability_source"] != "unknown"]
+    outcome_ranked.sort(key=lambda r: (r["podium_probability"] or -1, r["top5_probability"] or -1), reverse=True)
+    win_probability_ranking = outcome_ranked[:5]
+
     return {
         "season": season, "round": round_no, "circuit_id": circuit_id,
         "event_name": ev.get("event_name"), "race_date": ev.get("race_date"),
@@ -157,6 +166,7 @@ def race_predictions(season: int, round_no: int):
         "chaos_index": chaos_index,
         "chaos_index_basis": "heuristic — spread of compatibility scores among the top 8, not a trained model",
         "source": "real (compatibility model + driver clusters)",
+        "win_probability_ranking": win_probability_ranking,
     }
 
 
