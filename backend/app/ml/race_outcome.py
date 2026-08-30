@@ -24,7 +24,6 @@ from app.config import GENERATED_DIR
 MODELS_DIR = os.path.join(GENERATED_DIR, "models")
 _cache = {}
 
-
 def _load_model(filename):
     if filename in _cache:
         return _cache[filename]
@@ -33,7 +32,11 @@ def _load_model(filename):
         _cache[filename] = None
         return None
     import joblib
-    model = joblib.load(path)
+    try:
+        model = joblib.load(path)
+    except Exception as e:
+        print(f"    ! failed to load model {filename}: {e} — serving 'unknown' for it instead")
+        model = None
     _cache[filename] = model
     return model
 

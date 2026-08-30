@@ -63,10 +63,10 @@ def train_and_pick_best(X_train, y_train, X_test, test_rows, label_key, k):
             n_estimators=500, max_depth=7, min_samples_leaf=3, class_weight="balanced",
             max_features=0.8, random_state=42, n_jobs=-1,
         ),
-        "gradient_boosting": GradientBoostingClassifier(
-            n_estimators=400, max_depth=4, learning_rate=0.03,
-            max_features=0.8, subsample=0.8, random_state=42,
-        ),
+        #"gradient_boosting": GradientBoostingClassifier(
+        #    n_estimators=400, max_depth=4, learning_rate=0.03,
+        #    max_features=0.8, subsample=0.8, random_state=42,
+        #),
     }
     results = {}
     for name, clf in candidates.items():

@@ -30,9 +30,9 @@ export default function RaceDay() {
     if (!nextRace || nextRace.error) return;
     const { season, round } = nextRace;
     api.raceRoster(season, round).then(setRoster).catch(() => {});
-    api.racePredictions(season, round).then(setPredictions).catch(() => {});
-    api.raceActual(season, round).then(setActual).catch(() => {});
-    api.standings(season).then(setStandings).catch(() => {});
+    api.racePredictions(season, round).then(setPredictions).catch((e) => setPredictions({ error: `Could not load predictions: ${e.message}` }));
+    api.raceActual(season, round).then(setActual).catch((e) => setActual({ error: `Could not load actual results: ${e.message}` }));
+    api.standings(season).then(setStandings).catch((e) => setStandings({ error: `Could not load standings: ${e.message}` }));
   }, [nextRace?.season, nextRace?.round]);
 
   // Which team a driver is racing for THIS weekend (not the static default —
