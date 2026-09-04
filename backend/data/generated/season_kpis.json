@@ -5598,5 +5598,714 @@
       "HIR": "unknown",
       "ZHO": "unknown"
     }
+  },
+  "2026": {
+    "consistency": {
+      "VER": {
+        "min": 2,
+        "q1": 3.0,
+        "median": 5.5,
+        "q3": 17.0,
+        "max": 22,
+        "n_races": 12
+      },
+      "HAD": {
+        "min": 4,
+        "q1": 5.5,
+        "median": 6.0,
+        "q3": 10.0,
+        "max": 22,
+        "n_races": 11
+      },
+      "LEC": {
+        "min": 1,
+        "q1": 3.0,
+        "median": 4.0,
+        "q3": 8.0,
+        "max": 17,
+        "n_races": 12
+      },
+      "HAM": {
+        "min": 1,
+        "q1": 2.75,
+        "median": 4.0,
+        "q3": 5.0,
+        "max": 6,
+        "n_races": 12
+      },
+      "RUS": {
+        "min": 1,
+        "q1": 2.0,
+        "median": 3.5,
+        "q3": 8.25,
+        "max": 22,
+        "n_races": 12
+      },
+      "ANT": {
+        "min": 1,
+        "q1": 1.0,
+        "median": 1.5,
+        "q3": 3.0,
+        "max": 16,
+        "n_races": 12
+      },
+      "NOR": {
+        "min": 1,
+        "q1": 2.75,
+        "median": 5.0,
+        "q3": 9.75,
+        "max": 20,
+        "n_races": 12
+      },
+      "PIA": {
+        "min": 2,
+        "q1": 4.75,
+        "median": 5.5,
+        "q3": 13.0,
+        "max": 21,
+        "n_races": 12
+      },
+      "ALO": {
+        "min": 9,
+        "q1": 14.75,
+        "median": 18.0,
+        "q3": 18.25,
+        "max": 20,
+        "n_races": 12
+      },
+      "STR": {
+        "min": 13,
+        "q1": 17.0,
+        "median": 18.5,
+        "q3": 20.0,
+        "max": 22,
+        "n_races": 12
+      },
+      "GAS": {
+        "min": 3,
+        "q1": 7.0,
+        "median": 10.0,
+        "q3": 11.25,
+        "max": 21,
+        "n_races": 12
+      },
+      "COL": {
+        "min": 6,
+        "q1": 9.75,
+        "median": 12.0,
+        "q3": 14.25,
+        "max": 16,
+        "n_races": 12
+      },
+      "LAW": {
+        "min": 6,
+        "q1": 7.0,
+        "median": 8.0,
+        "q3": 9.75,
+        "max": 20,
+        "n_races": 12
+      },
+      "LIN": {
+        "min": 7,
+        "q1": 8.75,
+        "median": 10.0,
+        "q3": 12.5,
+        "max": 22,
+        "n_races": 12
+      },
+      "OCO": {
+        "min": 9,
+        "q1": 12.5,
+        "median": 13.5,
+        "q3": 16.0,
+        "max": 19,
+        "n_races": 12
+      },
+      "BEA": {
+        "min": 5,
+        "q1": 10.75,
+        "median": 14.0,
+        "q3": 19.25,
+        "max": 22,
+        "n_races": 12
+      },
+      "HUL": {
+        "min": 8,
+        "q1": 11.0,
+        "median": 12.5,
+        "q3": 19.25,
+        "max": 22,
+        "n_races": 12
+      },
+      "BOR": {
+        "min": 8,
+        "q1": 10.5,
+        "median": 11.0,
+        "q3": 13.0,
+        "max": 21,
+        "n_races": 12
+      },
+      "ALB": {
+        "min": 8,
+        "q1": 14.25,
+        "median": 17.0,
+        "q3": 20.25,
+        "max": 22,
+        "n_races": 12
+      },
+      "SAI": {
+        "min": 9,
+        "q1": 11.25,
+        "median": 15.5,
+        "q3": 16.25,
+        "max": 20,
+        "n_races": 12
+      },
+      "PER": {
+        "min": 14,
+        "q1": 15.0,
+        "median": 16.0,
+        "q3": 18.0,
+        "max": 21,
+        "n_races": 12
+      },
+      "BOT": {
+        "min": 13,
+        "q1": 17.5,
+        "median": 18.5,
+        "q3": 21.0,
+        "max": 22,
+        "n_races": 12
+      },
+      "TSU": {
+        "min": 11,
+        "q1": 11.0,
+        "median": 11.0,
+        "q3": 11.0,
+        "max": 11,
+        "n_races": 1
+      },
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": "unknown",
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "race_pace": {
+      "VER": -0.926,
+      "HAD": -0.158,
+      "LEC": -1.066,
+      "HAM": -1.063,
+      "RUS": -0.941,
+      "ANT": -1.346,
+      "NOR": -0.781,
+      "PIA": -0.627,
+      "ALO": 1.79,
+      "STR": 2.162,
+      "GAS": 0.263,
+      "COL": 0.378,
+      "LAW": 0.348,
+      "LIN": 0.4,
+      "OCO": 0.73,
+      "BEA": 0.637,
+      "HUL": 0.373,
+      "BOR": 0.404,
+      "ALB": 1.031,
+      "SAI": 0.806,
+      "PER": 1.61,
+      "BOT": 2.186,
+      "TSU": 0.468,
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": "unknown",
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "race_pace_by_circuit": {
+      "VER": {
+        "melbourne": -1.254,
+        "shanghai": -0.409,
+        "suzuka": -0.783,
+        "miami": -0.687,
+        "montreal": -0.821,
+        "catalunya": -1.216,
+        "spielberg": -0.922,
+        "silverstone": -1.008,
+        "spa-francorchamps": -1.454,
+        "hungaroring": -0.708
+      },
+      "HAD": {
+        "melbourne": 0.573,
+        "shanghai": -0.065,
+        "suzuka": 0.445,
+        "miami": 0.89,
+        "montreal": -0.511,
+        "monaco": 0.191,
+        "catalunya": -0.331,
+        "spielberg": -0.581,
+        "silverstone": -0.439,
+        "spa-francorchamps": -1.577,
+        "hungaroring": -0.338
+      },
+      "LEC": {
+        "melbourne": -1.623,
+        "shanghai": -1.288,
+        "suzuka": -1.308,
+        "miami": -1.304,
+        "montreal": -0.572,
+        "monaco": -0.363,
+        "catalunya": -0.59,
+        "spielberg": -0.725,
+        "silverstone": -1.244,
+        "spa-francorchamps": -1.63,
+        "hungaroring": -0.905,
+        "zandvoort": -1.242
+      },
+      "HAM": {
+        "melbourne": -1.477,
+        "shanghai": -1.23,
+        "suzuka": -0.656,
+        "miami": -0.611,
+        "montreal": -0.962,
+        "monaco": -0.411,
+        "catalunya": -1.912,
+        "spielberg": -0.793,
+        "silverstone": -0.958,
+        "spa-francorchamps": -1.593,
+        "hungaroring": -1.038,
+        "zandvoort": -1.115
+      },
+      "RUS": {
+        "melbourne": -1.697,
+        "shanghai": -1.712,
+        "suzuka": -1.141,
+        "miami": -0.839,
+        "montreal": -0.597,
+        "monaco": -0.101,
+        "catalunya": -1.028,
+        "spielberg": -1.034,
+        "silverstone": -0.747,
+        "hungaroring": -0.517,
+        "zandvoort": -0.939
+      },
+      "ANT": {
+        "melbourne": -1.76,
+        "shanghai": -1.647,
+        "suzuka": -1.743,
+        "miami": -1.739,
+        "montreal": -1.242,
+        "monaco": -0.765,
+        "catalunya": -1.184,
+        "spielberg": -1.013,
+        "silverstone": -1.126,
+        "spa-francorchamps": -1.877,
+        "hungaroring": -0.772,
+        "zandvoort": -1.283
+      },
+      "NOR": {
+        "melbourne": -1.18,
+        "suzuka": -1.186,
+        "miami": -1.622,
+        "montreal": 0.097,
+        "monaco": 0.834,
+        "catalunya": -0.961,
+        "spielberg": -0.712,
+        "silverstone": -0.462,
+        "spa-francorchamps": -0.962,
+        "hungaroring": -1.28,
+        "zandvoort": -1.16
+      },
+      "PIA": {
+        "suzuka": -1.594,
+        "miami": -1.041,
+        "montreal": -0.102,
+        "monaco": 0.668,
+        "catalunya": -0.475,
+        "spielberg": -0.783,
+        "silverstone": -0.238,
+        "spa-francorchamps": -1.074,
+        "hungaroring": -0.866,
+        "zandvoort": -0.769
+      },
+      "ALO": {
+        "melbourne": 1.926,
+        "shanghai": 2.224,
+        "suzuka": 2.533,
+        "miami": 2.089,
+        "monaco": -0.133,
+        "catalunya": 2.112,
+        "spielberg": 1.987,
+        "silverstone": 2.283,
+        "spa-francorchamps": 3.527,
+        "hungaroring": 0.04,
+        "zandvoort": 1.103
+      },
+      "STR": {
+        "melbourne": 1.738,
+        "shanghai": 2.958,
+        "suzuka": 3.074,
+        "miami": 1.389,
+        "montreal": 2.3,
+        "spielberg": 1.897,
+        "silverstone": 2.519,
+        "spa-francorchamps": 3.872,
+        "hungaroring": 0.619,
+        "zandvoort": 1.254
+      },
+      "GAS": {
+        "melbourne": 0.412,
+        "shanghai": -0.541,
+        "suzuka": -0.794,
+        "miami": 0.748,
+        "montreal": 0.434,
+        "monaco": 0.745,
+        "catalunya": 0.501,
+        "spielberg": 0.265,
+        "silverstone": 0.43,
+        "spa-francorchamps": 0.069,
+        "hungaroring": 0.34,
+        "zandvoort": 0.553
+      },
+      "COL": {
+        "melbourne": 0.843,
+        "shanghai": 0.258,
+        "suzuka": 0.292,
+        "miami": -0.352,
+        "montreal": 0.188,
+        "monaco": 0.009,
+        "catalunya": 0.851,
+        "spielberg": 0.611,
+        "silverstone": 0.523,
+        "spa-francorchamps": 0.096,
+        "hungaroring": 0.516,
+        "zandvoort": 0.707
+      },
+      "LAW": {
+        "melbourne": 0.353,
+        "shanghai": -0.078,
+        "suzuka": -0.385,
+        "miami": 0.886,
+        "montreal": 0.634,
+        "monaco": 0.55,
+        "catalunya": 1.001,
+        "spielberg": 0.315,
+        "silverstone": 0.451,
+        "spa-francorchamps": 0.214,
+        "hungaroring": 0.486,
+        "zandvoort": -0.251
+      },
+      "LIN": {
+        "melbourne": 0.039,
+        "shanghai": 0.418,
+        "suzuka": 0.07,
+        "miami": 0.773,
+        "monaco": 0.984,
+        "catalunya": 0.525,
+        "spielberg": 0.243,
+        "silverstone": 0.497,
+        "spa-francorchamps": -0.697,
+        "hungaroring": 0.687,
+        "zandvoort": 0.858
+      },
+      "OCO": {
+        "melbourne": 0.459,
+        "shanghai": 0.232,
+        "suzuka": -0.422,
+        "miami": 0.668,
+        "montreal": 1.435,
+        "monaco": 0.322,
+        "catalunya": 1.129,
+        "spielberg": 0.96,
+        "silverstone": 1.323,
+        "spa-francorchamps": 0.656,
+        "hungaroring": 0.849,
+        "zandvoort": 1.148
+      },
+      "BEA": {
+        "melbourne": -0.163,
+        "shanghai": -0.629,
+        "suzuka": 1.382,
+        "miami": 0.319,
+        "montreal": 0.454,
+        "monaco": 1.156,
+        "catalunya": 0.9,
+        "spielberg": 0.578,
+        "silverstone": 1.509,
+        "spa-francorchamps": 0.303,
+        "hungaroring": 1.194
+      },
+      "HUL": {
+        "shanghai": 0.263,
+        "suzuka": 0.335,
+        "miami": 0.428,
+        "montreal": 0.297,
+        "monaco": -0.661,
+        "catalunya": 1.314,
+        "spielberg": 0.245,
+        "silverstone": 0.669,
+        "spa-francorchamps": 0.313,
+        "hungaroring": 0.47,
+        "zandvoort": 0.433
+      },
+      "BOR": {
+        "melbourne": -0.096,
+        "suzuka": 0.435,
+        "miami": 0.613,
+        "montreal": 0.569,
+        "monaco": 0.675,
+        "catalunya": 0.626,
+        "spielberg": 0.502,
+        "silverstone": 0.483,
+        "spa-francorchamps": -0.54,
+        "hungaroring": 1.009,
+        "zandvoort": 0.172
+      },
+      "ALB": {
+        "melbourne": 0.507,
+        "suzuka": 1.43,
+        "miami": 0.088,
+        "montreal": 1.311,
+        "monaco": 0.748,
+        "catalunya": 1.082,
+        "spielberg": 1.254,
+        "silverstone": 1.117,
+        "spa-francorchamps": 0.883,
+        "hungaroring": 1.378,
+        "zandvoort": 1.539
+      },
+      "SAI": {
+        "melbourne": 0.643,
+        "shanghai": 0.583,
+        "suzuka": 0.796,
+        "miami": -0.062,
+        "montreal": 0.224,
+        "monaco": 0.969,
+        "catalunya": 1.168,
+        "spielberg": 1.487,
+        "silverstone": 1.315,
+        "spa-francorchamps": 0.401,
+        "hungaroring": 1.214,
+        "zandvoort": 0.941
+      },
+      "PER": {
+        "melbourne": 2.291,
+        "shanghai": 1.852,
+        "suzuka": 1.135,
+        "miami": 2.107,
+        "montreal": 1.701,
+        "monaco": 0.047,
+        "catalunya": 1.57,
+        "spielberg": 2.142,
+        "silverstone": 1.777,
+        "spa-francorchamps": 1.985,
+        "hungaroring": 1.711,
+        "zandvoort": 0.999
+      },
+      "BOT": {
+        "melbourne": 2.88,
+        "shanghai": 1.688,
+        "suzuka": 1.837,
+        "miami": 2.547,
+        "montreal": 2.043,
+        "silverstone": 2.368,
+        "spa-francorchamps": 2.763,
+        "zandvoort": 1.359
+      },
+      "TSU": {
+        "zandvoort": 0.468
+      },
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": "unknown",
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "tyre_degradation": {
+      "VER": {
+        "HARD": -0.1889,
+        "MEDIUM": 0.1025,
+        "SOFT": 0.013
+      },
+      "HAD": {
+        "MEDIUM": 0.0053,
+        "HARD": -0.9516,
+        "SOFT": 0.3108
+      },
+      "LEC": {
+        "MEDIUM": -0.0464,
+        "HARD": -0.0669,
+        "SOFT": -0.2091
+      },
+      "HAM": {
+        "MEDIUM": -0.0562,
+        "HARD": -0.0302,
+        "SOFT": 0.2739
+      },
+      "RUS": {
+        "MEDIUM": -0.1551,
+        "HARD": -0.1394,
+        "SOFT": -4.3594
+      },
+      "ANT": {
+        "MEDIUM": 0.2853,
+        "HARD": 0.0895,
+        "SOFT": -0.2734
+      },
+      "NOR": {
+        "MEDIUM": -0.0668,
+        "HARD": -0.0917,
+        "SOFT": -0.7399
+      },
+      "PIA": {
+        "MEDIUM": -0.2257,
+        "HARD": -0.2188,
+        "SOFT": -2.6034
+      },
+      "ALO": {
+        "SOFT": -1.1543,
+        "HARD": 0.0702,
+        "MEDIUM": -0.2267
+      },
+      "STR": {
+        "MEDIUM": -2.4793,
+        "HARD": -0.078,
+        "SOFT": -1.6242
+      },
+      "GAS": {
+        "MEDIUM": -0.043,
+        "HARD": -0.8569,
+        "SOFT": -0.3723
+      },
+      "COL": {
+        "HARD": -0.8235,
+        "SOFT": -1.7343,
+        "MEDIUM": -0.3051
+      },
+      "LAW": {
+        "MEDIUM": 0.5506,
+        "HARD": -0.2283,
+        "SOFT": -1.5438
+      },
+      "LIN": {
+        "MEDIUM": -0.8987,
+        "HARD": -0.1078,
+        "SOFT": -1.7253
+      },
+      "OCO": {
+        "MEDIUM": -0.1228,
+        "HARD": -0.9794,
+        "SOFT": -3.8508
+      },
+      "BEA": {
+        "MEDIUM": -0.0769,
+        "HARD": 0.0138,
+        "SOFT": -8.927
+      },
+      "HUL": {
+        "HARD": -1.3465,
+        "MEDIUM": 1.3224,
+        "SOFT": -0.3114
+      },
+      "BOR": {
+        "MEDIUM": 0.0211,
+        "HARD": -0.0634,
+        "SOFT": -0.8859
+      },
+      "ALB": {
+        "MEDIUM": -0.0756,
+        "HARD": -0.1778,
+        "SOFT": -2.8978
+      },
+      "SAI": {
+        "SOFT": -1.4257,
+        "HARD": -0.1509,
+        "MEDIUM": 0.1805
+      },
+      "PER": {
+        "MEDIUM": 0.1182,
+        "HARD": -0.1223,
+        "SOFT": -2.1768,
+        "None": 0.1177
+      },
+      "BOT": {
+        "HARD": 0.0116,
+        "MEDIUM": 0.0929,
+        "SOFT": -1.7478
+      },
+      "TSU": {
+        "SOFT": -0.1067,
+        "HARD": 0.0022
+      },
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": "unknown",
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    },
+    "quali_race_delta": {
+      "VER": -4.18,
+      "HAD": -0.82,
+      "LEC": -1.58,
+      "HAM": 0.5,
+      "RUS": -3.58,
+      "ANT": -1.92,
+      "NOR": -3.25,
+      "PIA": -3.58,
+      "ALO": 3.25,
+      "STR": 2.45,
+      "GAS": 1.17,
+      "COL": 1.92,
+      "LAW": 1.17,
+      "LIN": -0.25,
+      "OCO": 1.5,
+      "BEA": 0.83,
+      "HUL": -2.5,
+      "BOR": 0.92,
+      "ALB": 0.0,
+      "SAI": 1.27,
+      "PER": 3.08,
+      "BOT": 1.33,
+      "TSU": 1.0,
+      "IWA": "unknown",
+      "VES": "unknown",
+      "GIO": "unknown",
+      "OWA": "unknown",
+      "FOR": "unknown",
+      "CRA": "unknown",
+      "ARO": "unknown",
+      "MAI": "unknown",
+      "BRO": "unknown",
+      "DOO": "unknown",
+      "HIR": "unknown",
+      "ZHO": "unknown"
+    }
   }
 }
