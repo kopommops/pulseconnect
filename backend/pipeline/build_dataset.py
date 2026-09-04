@@ -278,6 +278,37 @@ def track_incidents_from_race(race, circuit_id):
     return result
 
 
+def practice_pace_from_sessions(fp_sessions, circuit_id):
+    """Real per-driver pace delta vs. field, pooled across whichever FP
+    sessions actually happened for this round (FP1 only on sprint
+    weekends, FP1-3 on conventional ones — handled generically rather
+    than assuming a fixed count). Same quicklap-median-vs-field-median
+    method as race_pace, just applied to practice laps.
+
+    This is the whole point of adding it: FP1 happens Thursday/Friday,
+    genuinely BEFORE qualifying — real signal usable in the pre-quali
+    model, not just the post-quali grid-confirmed one."""
+    result = {"circuit_id": circuit_id, "practice_pace": {}}
+    all_quicklaps = []
+    for session in fp_sessions:
+        if session is None or session.laps is None or session.laps.empty:
+            continue
+        laps = session.laps
+        quicklaps = laps.pick_quicklaps() if hasattr(laps, "pick_quicklaps") else laps
+        quicklaps = quicklaps[quicklaps["LapTime"].notna()]
+        if not quicklaps.empty:
+            all_quicklaps.append(quicklaps)
+
+    if not all_quicklaps:
+        return result
+    pooled = pd.concat(all_quicklaps, ignore_index=True)
+    field_median = pooled["LapTime"].dt.total_seconds().median()
+    for drv, grp in pooled.groupby("Driver"):
+        drv_median = grp["LapTime"].dt.total_seconds().median()
+        result["practice_pace"][drv] = round(float(drv_median - field_median), 3)
+    return result
+
+
 def round_result_from_sessions(quali, race, sprint, circuit_id):
     """Real per-round result — driver, team (resolved from FastF1's own
     TeamName, so a mid-season or single-weekend driver swap is captured
@@ -387,6 +418,7 @@ def build_season(season):
     round_results = {}
     pit_stops = {}
     track_incidents = {}
+    practice_pace = {}
     for ev in events:
         rnd, event_name = ev["round"], ev["event_name"]
         circuit_id = circuit_id_for_event(event_name)
@@ -419,8 +451,22 @@ def build_season(season):
         if incident_result["total_laps"]:
             track_incidents[str(rnd)] = incident_result
 
+        # FP1 only on sprint weekends (no FP2/FP3), FP1-3 on conventional
+        # ones. Real data, genuinely available Thursday/Friday — before
+        # even qualifying — so this strengthens the pre-quali model
+        # specifically, not just the post-quali grid-confirmed one.
+        fp_sessions = []
+        fp_kinds = ["FP1"] if is_sprint_weekend else ["FP1", "FP2", "FP3"]
+        for fp_kind in fp_kinds:
+            fp = load_session(season, rnd, fp_kind, telemetry=False, weather=False, messages=False)
+            if fp is not None:
+                fp_sessions.append(fp)
+        practice_result = practice_pace_from_sessions(fp_sessions, circuit_id)
+        if practice_result["practice_pace"]:
+            practice_pace[str(rnd)] = practice_result
+
     season_kpis = finalize_season_kpis(driver_kpis, season)
-    return season_kpis, round_results, events, pit_stops, track_incidents
+    return season_kpis, round_results, events, pit_stops, track_incidents, practice_pace
 
 
 def load_progress():
@@ -430,7 +476,7 @@ def load_progress():
     return {}
 
 
-def save_progress(all_seasons, all_round_results, all_calendars, all_pit_stops, all_track_incidents):
+def save_progress(all_seasons, all_round_results, all_calendars, all_pit_stops, all_track_incidents, all_practice_pace):
     with open(os.path.join(GENERATED_DIR, "season_kpis.json"), "w") as f:
         json.dump(all_seasons, f, indent=2, default=str)
     with open(os.path.join(GENERATED_DIR, "race_results.json"), "w") as f:
@@ -441,6 +487,8 @@ def save_progress(all_seasons, all_round_results, all_calendars, all_pit_stops, 
         json.dump(all_pit_stops, f, indent=2, default=str)
     with open(os.path.join(GENERATED_DIR, "track_incidents.json"), "w") as f:
         json.dump(all_track_incidents, f, indent=2, default=str)
+    with open(os.path.join(GENERATED_DIR, "practice_pace.json"), "w") as f:
+        json.dump(all_practice_pace, f, indent=2, default=str)
     with open(PROGRESS_FILE, "w") as f:
         json.dump({"completed_seasons": list(all_seasons.keys())}, f)
 
@@ -458,12 +506,13 @@ def main():
     already_done = set(progress.get("completed_seasons", []))
 
     existing, existing_round_results, existing_calendars = {}, {}, {}
-    existing_pit_stops, existing_track_incidents = {}, {}
+    existing_pit_stops, existing_track_incidents, existing_practice_pace = {}, {}, {}
     existing_kpis_path = os.path.join(GENERATED_DIR, "season_kpis.json")
     existing_results_path = os.path.join(GENERATED_DIR, "race_results.json")
     existing_calendar_path = os.path.join(GENERATED_DIR, "race_calendar.json")
     existing_pit_path = os.path.join(GENERATED_DIR, "pit_stops.json")
     existing_incidents_path = os.path.join(GENERATED_DIR, "track_incidents.json")
+    existing_practice_path = os.path.join(GENERATED_DIR, "practice_pace.json")
     if not args.force:
         if os.path.exists(existing_kpis_path):
             with open(existing_kpis_path) as f:
@@ -480,6 +529,9 @@ def main():
         if os.path.exists(existing_incidents_path):
             with open(existing_incidents_path) as f:
                 existing_track_incidents = json.load(f)
+        if os.path.exists(existing_practice_path):
+            with open(existing_practice_path) as f:
+                existing_practice_pace = json.load(f)
 
     seasons_to_build = [args.season] if args.season else SEASONS
     all_seasons = dict(existing)
@@ -487,22 +539,30 @@ def main():
     all_calendars = dict(existing_calendars)
     all_pit_stops = dict(existing_pit_stops)
     all_track_incidents = dict(existing_track_incidents)
+    all_practice_pace = dict(existing_practice_pace)
 
+    # IMPORTANT: a season already marked "complete" from before this feature
+    # existed has NO practice_pace data and will be silently skipped by the
+    # resume logic below unless you pass --force. Adding practice pace to
+    # already-built seasons requires a full --force re-run — see the
+    # module docstring / implementation notes for why this isn't optimized
+    # to skip re-fetching R/Q/S (not worth the added complexity here).
     for season in seasons_to_build:
         if str(season) in already_done and not args.force:
-            print(f"\n== Season {season} == already built, skipping (use --force to rebuild)")
+            print(f"\n== Season {season} == already built, skipping (use --force to rebuild — required once to backfill practice_pace)")
             continue
-        season_kpis, round_results, events, pit_stops, track_incidents = build_season(season)
+        season_kpis, round_results, events, pit_stops, track_incidents, practice_pace = build_season(season)
         all_seasons[str(season)] = season_kpis
         all_round_results[str(season)] = round_results
         all_calendars[str(season)] = events
         all_pit_stops[str(season)] = pit_stops
         all_track_incidents[str(season)] = track_incidents
-        save_progress(all_seasons, all_round_results, all_calendars, all_pit_stops, all_track_incidents)  # save after every season
+        all_practice_pace[str(season)] = practice_pace
+        save_progress(all_seasons, all_round_results, all_calendars, all_pit_stops, all_track_incidents, all_practice_pace)  # save after every season
 
     print(f"\nWrote {GENERATED_DIR}/season_kpis.json ({len(all_seasons)} seasons)")
     print(f"Wrote {GENERATED_DIR}/race_results.json, {GENERATED_DIR}/race_calendar.json")
-    print(f"Wrote {GENERATED_DIR}/pit_stops.json, {GENERATED_DIR}/track_incidents.json")
+    print(f"Wrote {GENERATED_DIR}/pit_stops.json, {GENERATED_DIR}/track_incidents.json, {GENERATED_DIR}/practice_pace.json")
 
     print("\n== ML: clustering driver styles ==")
     clusters = cluster_driver_styles(all_seasons, DRIVERS)

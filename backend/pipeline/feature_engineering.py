@@ -35,6 +35,8 @@ FEATURE_COLUMNS = [
     "recent_form_avg_finish",
     "recent_avg_quali_position",
     "recent_quali_known",
+    "practice_pace_delta",
+    "practice_pace_known",
     "reliability_rate",
     "circuit_history_avg_finish",
     "circuit_history_known",
@@ -84,7 +86,8 @@ class _HistoryAccumulator:
         self.circuit_history = {}      # (driver_id, circuit_id) -> [position, ...]
         self.team_pit_history = {}     # team_id -> [duration_s, ...]
 
-    def features_for(self, driver_id, team_id, circuit_id, race_date, season_kpis_for_season, circuit_sc_data):
+    def features_for(self, driver_id, team_id, circuit_id, race_date, season_kpis_for_season, circuit_sc_data,
+                      practice_pace_for_round=None):
         prior = self.driver_history.get(driver_id, [])
         if len(prior) < MIN_RACES_FOR_PREDICTION:
             return None  # cold start — caller returns "unknown"
@@ -126,12 +129,18 @@ class _HistoryAccumulator:
         tyre_degradation_known = isinstance(tyre_deg, dict) and len(tyre_deg) > 0
         tyre_degradation_avg = (sum(tyre_deg.values()) / len(tyre_deg)) if tyre_degradation_known else 0.05
 
+        practice_val = (practice_pace_for_round or {}).get(driver_id)
+        practice_pace_known = practice_val is not None
+        practice_pace_delta = float(practice_val) if practice_pace_known else 0.0
+
         feats = {
             "driver_age": age,
             "recent_form_points": recent_points,
             "recent_form_avg_finish": recent_avg_finish,
             "recent_avg_quali_position": recent_avg_quali_position,
             "recent_quali_known": 1.0 if recent_quali_known else 0.0,
+            "practice_pace_delta": practice_pace_delta,
+            "practice_pace_known": 1.0 if practice_pace_known else 0.0,
             "reliability_rate": reliability_rate,
             "circuit_history_avg_finish": circuit_history_avg_finish,
             "circuit_history_known": 1.0 if circuit_history_known else 0.0,
@@ -179,6 +188,7 @@ def build_training_rows():
     pit_stops = _load("pit_stops.json")
     track_incidents = _load("track_incidents.json")
     race_calendar = _load("race_calendar.json")
+    practice_pace = _load("practice_pace.json")
 
     acc = _HistoryAccumulator()
     rows = []
@@ -189,10 +199,11 @@ def build_training_rows():
             continue
         sc_data = track_incidents.get(str(season), {}).get(str(rnd))
         skpis = season_kpis.get(str(season))
+        practice_data = practice_pace.get(str(season), {}).get(str(rnd), {}).get("practice_pace")
 
         for entry in round_data["race"]:
             did, team_id, position = entry["driver"], entry.get("team"), entry.get("position")
-            feats = acc.features_for(did, team_id, circuit_id, race_date, skpis, sc_data)
+            feats = acc.features_for(did, team_id, circuit_id, race_date, skpis, sc_data, practice_data)
             if feats is not None:
                 rows.append({
                     "season": season, "round": rnd, "driver": did, "circuit_id": circuit_id, "team": team_id,
@@ -222,6 +233,7 @@ def build_training_rows_grid_confirmed():
     pit_stops = _load("pit_stops.json")
     track_incidents = _load("track_incidents.json")
     race_calendar = _load("race_calendar.json")
+    practice_pace = _load("practice_pace.json")
 
     acc = _HistoryAccumulator()
     rows = []
@@ -232,11 +244,12 @@ def build_training_rows_grid_confirmed():
             continue
         sc_data = track_incidents.get(str(season), {}).get(str(rnd))
         skpis = season_kpis.get(str(season))
+        practice_data = practice_pace.get(str(season), {}).get(str(rnd), {}).get("practice_pace")
         grid_lookup = {q["driver"]: q["position"] for q in round_data["quali"]}
 
         for entry in round_data["race"]:
             did, team_id, position = entry["driver"], entry.get("team"), entry.get("position")
-            feats = acc.features_for(did, team_id, circuit_id, race_date, skpis, sc_data)
+            feats = acc.features_for(did, team_id, circuit_id, race_date, skpis, sc_data, practice_data)
             if feats is not None:
                 grid_pos = grid_lookup.get(did)
                 feats = {**feats, "grid_position": float(grid_pos) if grid_pos is not None else 20.0,
@@ -268,6 +281,7 @@ def build_live_features(season, round_no, roster):
     pit_stops = _load("pit_stops.json")
     track_incidents = _load("track_incidents.json")
     race_calendar = _load("race_calendar.json")
+    practice_pace = _load("practice_pace.json")
 
     calendar_entry = next(
         (ev for ev in race_calendar.get(str(season), []) if int(ev["round"]) == round_no), None
@@ -292,11 +306,15 @@ def build_live_features(season, round_no, roster):
 
     sc_data = track_incidents.get(str(season), {}).get(str(round_no))
     skpis = season_kpis.get(str(season))
+    # THIS round's own practice pace — real data, available Thu/Fri,
+    # genuinely before qualifying. Empty dict (not error) if FP hasn't
+    # happened yet for this round; features_for() treats that as unknown.
+    practice_data = practice_pace.get(str(season), {}).get(str(round_no), {}).get("practice_pace")
 
     out = {}
     for entry in roster:
         did = entry["driver"]
-        feats = acc.features_for(did, entry.get("team"), circuit_id, race_date, skpis, sc_data)
+        feats = acc.features_for(did, entry.get("team"), circuit_id, race_date, skpis, sc_data, practice_data)
         out[did] = feats  # None means cold start / "unknown"
     return out
 
@@ -315,6 +333,7 @@ def build_live_features_grid_confirmed(season, round_no, roster):
     pit_stops = _load("pit_stops.json")
     track_incidents = _load("track_incidents.json")
     race_calendar = _load("race_calendar.json")
+    practice_pace = _load("practice_pace.json")
 
     calendar_entry = next(
         (ev for ev in race_calendar.get(str(season), []) if int(ev["round"]) == round_no), None
@@ -339,12 +358,13 @@ def build_live_features_grid_confirmed(season, round_no, roster):
 
     sc_data = track_incidents.get(str(season), {}).get(str(round_no))
     skpis = season_kpis.get(str(season))
+    practice_data = practice_pace.get(str(season), {}).get(str(round_no), {}).get("practice_pace")
     grid_lookup = {q["driver"]: q["position"] for q in round_data["quali"]}
 
     out = {}
     for entry in roster:
         did = entry["driver"]
-        feats = acc.features_for(did, entry.get("team"), circuit_id, race_date, skpis, sc_data)
+        feats = acc.features_for(did, entry.get("team"), circuit_id, race_date, skpis, sc_data, practice_data)
         if feats is not None:
             grid_pos = grid_lookup.get(did)
             feats = {**feats, "grid_position": float(grid_pos) if grid_pos is not None else 20.0,
