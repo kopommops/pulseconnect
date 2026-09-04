@@ -17,6 +17,8 @@
     "recent_form_avg_finish",
     "recent_avg_quali_position",
     "recent_quali_known",
+    "practice_pace_delta",
+    "practice_pace_known",
     "reliability_rate",
     "circuit_history_avg_finish",
     "circuit_history_known",
@@ -38,7 +40,7 @@
   "podium_model": {
     "algorithm": "random_forest",
     "passed": false,
-    "holdout_precision_at_3": 0.7083333333333334
+    "holdout_precision_at_3": 0.7222222222222222
   },
   "top5_model": {
     "algorithm": "random_forest",
@@ -46,22 +48,24 @@
     "holdout_precision_at_5": 0.7666666666666666,
     "holdout_test_races": 24,
     "feature_importances": {
-      "driver_age": 0.0145,
-      "recent_form_points": 0.1508,
-      "recent_form_avg_finish": 0.0251,
-      "recent_avg_quali_position": 0.0544,
+      "driver_age": 0.0126,
+      "recent_form_points": 0.144,
+      "recent_form_avg_finish": 0.023,
+      "recent_avg_quali_position": 0.049,
       "recent_quali_known": 0.0,
-      "reliability_rate": 0.0083,
-      "circuit_history_avg_finish": 0.0179,
-      "circuit_history_known": 0.0011,
-      "constructor_recent_points": 0.1703,
-      "pit_stop_efficiency_s": 0.0332,
+      "practice_pace_delta": 0.0287,
+      "practice_pace_known": 0.0,
+      "reliability_rate": 0.0076,
+      "circuit_history_avg_finish": 0.0161,
+      "circuit_history_known": 0.0008,
+      "constructor_recent_points": 0.1619,
+      "pit_stop_efficiency_s": 0.0309,
       "pit_stop_efficiency_known": 0.0,
-      "safety_car_rate": 0.0364,
+      "safety_car_rate": 0.0342,
       "safety_car_rate_known": 0.0,
-      "tyre_degradation_avg": 0.0222,
+      "tyre_degradation_avg": 0.0197,
       "tyre_degradation_known": 0.0,
-      "grid_position": 0.4658,
+      "grid_position": 0.4716,
       "grid_position_known": 0.0
     }
   }
